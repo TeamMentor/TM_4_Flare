@@ -15,81 +15,36 @@ mixin left-navigation
       li
         +index-icon
       li
+        +curated-content-icon
+      li
         +info-icon
       li
         +user-icon
       li
         +logout-icon
-  .accordion
-    .accordion-title
-      a(href="#navigate")
+  ul.side-nav
+    li
+      a(href='navigate')
         +index-icon
         span.text Index
-    #navigate.accordion-panel
-      ul
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-        li
-          a(href='navigate') Directory
-  ul.side-nav
-      li
-        a(href='/misc/help-index')
-          +info-icon
-          span.text Docs
-      li
-        a(href='/user/user')
-          +user-icon
-          span.text User
-      li
-        a(href='/guest/index')
-          +logout-icon
-          span.text Logout
-      li
-        a.button.full-width(href='#') Back
+    li
+      a(href='curated-content')
+        +curated-content-icon
+        span.text Curated Content
+    li
+      a(href='/misc/help-index')
+        +info-icon
+        span.text Docs
+    li
+      a(href='/user/user')
+        +user-icon
+        span.text User
+    li
+      a(href='/guest/index')
+        +logout-icon
+        span.text Logout
+    li
+      a.button.full-width(href='#') Back
 
 mixin links_user_pages
     h3 Account Details
@@ -102,6 +57,24 @@ mixin links_user_pages
             a(href='developer-utilities') Developer Utilities
         li
             a(href='other') Other
+
+mixin navigate
+  #sub-nav
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+    .item
+      a(href='navigate') Directory
+
 
 mixin help-navigation
     #sub-nav
