@@ -9,17 +9,17 @@ mixin team-mentor-summary
                 td
                     .fix-vulnerabilities
                 td
-                    include:md ../../content/getting-started/summary-point-1.md
+                    include:marked ../../TM_Static/content/getting-started/summary-point-1.md
             tr
                 td
                     .reduce-vulnerabilities
                 td
-                    include:md ../../content/getting-started/summary-point-2.md
+                    include:marked ../../TM_Static/content/getting-started/summary-point-2.md
             tr
                 td
                     .improve-process
                 td
-                    include:md ../../content/getting-started/summary-point-3.md
+                    include:marked ../../TM_Static/content/getting-started/summary-point-3.md
 
 mixin login-form
     form#login-form(role='form' method='post' action='/flare/home/main-app-view')
@@ -48,7 +48,7 @@ mixin sign-up-form
             li
                 +sign-up-button
         .conditions
-            include:md ../../content/getting-started/agree-to-toc.md
+            include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
 
 mixin flare-forgot-password-form
     form#forgot-passward-form(action='#')
