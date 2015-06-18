@@ -46,34 +46,32 @@ mixin left-navigation
     li
       a.button.full-width(href='#') Back
 
-mixin links_user_pages
-    h3 Account Details
-    ul.side-nav
-        li
-            a(href='user') User
-        li
-            a(href='backend') Backend
-        li
-            a(href='developer-utilities') Developer Utilities
-        li
-            a(href='other') Other
-
 mixin navigate
   #sub-nav
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
-    .item
-      a(href='navigate') Directory
+    .header
+        span.label.no-underline.white Directory
+    .scroll
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 1
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 12
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 122
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 1222
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 12
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 1
+        a.item(href='navigate')
+          span.text Directory
+          span.badge 122
 
 
 mixin help-navigation

@@ -4,6 +4,9 @@ include mixins/getting-started-mixins
 block content
   .application
     section.row
+      .col-4
+        .getting-started
+          +team-mentor-summary
       .col-8
         br
         +flare-alert
@@ -15,6 +18,4 @@ block content
         section.row__label
           .label Sign Up
         section.row
-            +sign-up-form
-      .col-4
-        +team-mentor-summary
+            +sign-up-form 

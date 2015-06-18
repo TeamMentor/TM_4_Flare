@@ -52,18 +52,21 @@ mixin sign-up-form
 
 mixin flare-forgot-password-form
     form#forgot-passward-form(action='#')
-        .input-field
-            +email-input
-        .button-field
-            br
-            +get-password-button
+        section.row
+            .col-8.input-field
+                +email-input
+            .col-4.button-field
+                br
+                +get-password-button
 
 mixin pwd-reset-form
     form#password-reset-form(role='form' method='post' action='/flare/home/main-app-view')
-        .input-field
-            +password-input
-        .input-field
-            +confirm-new-password-input
-        .button-field
-            br
-            +reset-pwd-button
+        section.row
+            .col-6.input-field
+                +password-input
+            .col-6.input-field
+                +confirm-new-password-input
+        section.row
+            .col-4.button-field
+                br
+                +reset-pwd-button
