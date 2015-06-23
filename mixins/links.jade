@@ -24,23 +24,23 @@ mixin left-navigation
         +logout-icon
   ul.side-nav
     li
-      a(href='navigate')
+      a(href='/flare/navigate')
         +index-icon
         span.text Index
     li
-      a(href='curated-content')
+      a(href='/flare/curated-content')
         +curated-content-icon
         span.text Curated Content
     li
-      a(href='help-index')
+      a(href='/flare/help-index')
         +info-icon
         span.text Docs
     li
-      a(href='user')
+      a(href='/flare/user')
         +user-icon
         span.text User
     li
-      a(href='index')
+      a(href='/flare/index')
         +logout-icon
         span.text Logout
     li
@@ -59,25 +59,6 @@ mixin navigate
                         a.item(href= href + ',' +container.id , id=container.id)
                           span.text= container.title
                           span.badge= container.size
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 12
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 122
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 1222
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 12
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 1
-        //a.item(href='navigate')
-          span.text Directory
-          span.badge 122
-
 
 mixin help-navigation
     #sub-nav
