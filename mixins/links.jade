@@ -10,39 +10,22 @@ mixin links-navbar__landing-page
       a.button.btn-nav(href='../guest/get-started') Get Started
 
 mixin left-navigation
-  .nav-icon
-    ul
-      li
-        +index-icon
-      //li
-        +curated-content-icon
-      li
-        +info-icon
-      //li
-        +user-icon
-      li
-        +logout-icon
   ul.side-nav
     li
       a(href='navigate')
         +index-icon
-        span.text Index
     //li
       a(href='curated-content')
         +curated-content-icon
-        span.text Curated Content
     li
       a(href='/misc/help-index')
         +info-icon
-        span.text Docs
     //li
       a(href='/user/user')
         +user-icon
-        span.text User
     li
       a(href='/guest/index')
         +logout-icon
-        span.text Logout
     li
       a.button.full-width(href='#') Back
 
