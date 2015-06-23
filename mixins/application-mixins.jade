@@ -10,17 +10,17 @@ mixin search-bar
         a.button.btn-mobile(href='#right-nav')
             +filters-icon
 
-//- Clear and Save Results
-mixin results-save-clear
+//- Save and Share Results
+mixin results-save-share
     section.row__label
         .label 0/200 results showing
         ul.display-inline
-            li.half-width
+            li
                 +save-results-button
-            li.half-width
-                +delete-results-button
+            li
+                +share-results-button
 
-//-Clear and Delete Results
+//-Delete and Share Results
 mixin results-delete-share
     .label 0/200 results showing
     ul.display-inline

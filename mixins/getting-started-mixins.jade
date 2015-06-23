@@ -2,71 +2,117 @@ include ../../TM_Jade/shared-mixins/globals.jade
 include globals.jade
 
 mixin team-mentor-summary
-    section.tm-summary
-        .label With TEAM Mentor, you can...
-        table
-            tr
-                td
-                    .fix-vulnerabilities
-                td
-                    include:marked ../../TM_Static/content/getting-started/summary-point-1.md
-            tr
-                td
-                    .reduce-vulnerabilities
-                td
-                    include:marked ../../TM_Static/content/getting-started/summary-point-2.md
-            tr
-                td
-                    .improve-process
-                td
-                    include:marked ../../TM_Static/content/getting-started/summary-point-3.md
+  section.tm-summary
+    section.row__label
+      .label With TEAM Mentor, you can...
+    section.row
+      table
+        tr
+          td
+            .fix-vulnerabilities
+          td
+            include:marked ../../TM_Static/content/getting-started/summary-point-1.md
+        tr
+          td
+            .reduce-vulnerabilities
+          td
+            include:marked ../../TM_Static/content/getting-started/summary-point-2.md
+        tr
+          td
+            .improve-process
+          td
+            include:marked ../../TM_Static/content/getting-started/summary-point-3.md
 
 mixin login-form
-    form#login-form(role='form' method='post' action='/flare/user/login')
-        .input-field
-            +username-input
-        .input-field
-            +password-input
-        .button-field
-            li
-                button.full-width(type='submit', id='btn-login') Login
-        .button-field
-            li
-                button.minor(href='/guest/pwd-forgot.html') Forgot password?
+  section.row__label
+    .label Login
+  section.row
+    form#login-form(role='form' method='post' action='/flare/home/main-app-view')
+      .input-field
+        +username-input
+      .input-field
+        +password-input
+      .button-field
+        +login-button
+      .button-field
+        +get-password-button
 
 mixin sign-up-form
+  section.row__label
+    .label Sign Up
+  section.row
     form#sign-up-form(action='../home/main-app-view')
-        .input-field
-            +username-input
-        .input-field
-            +email-input
-        .input-field
-            +password-input
-        .input-field
-            +confirm-password-input
-        .button-field
-            li
-                +sign-up-button
-        .conditions
-            include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
+      .input-field
+        +username-input
+      .input-field
+        +email-input
+      .input-field
+        +password-input
+      .input-field
+        +confirm-password-input
+      .button-field
+        +sign-up-button
+      .conditions
+          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
 
-mixin flare-forgot-password-form
-    form#forgot-passward-form(action='#')
-        section.row
-            .col-8.input-field
-                +email-input
-            .col-4.button-field
-                br
-                +get-password-button
+mixin forgot-pwd-form
+  section.row__label
+    .label Forgot your password?
+  section.row
+    form#forgot-pwd-form(action='#')
+      section.row
+        .col-8.input-field
+          +email-input
+        .col-4.button-field
+          br
+          +get-password-button
 
 mixin pwd-reset-form
+  section.row__label
+    .label Reset your password
+  section.row
     form#password-reset-form(role='form' method='post' action='/flare/home/main-app-view')
-        section.row
-            .col-6.input-field
-                +password-input
-            .col-6.input-field
-                +confirm-new-password-input
-        section.row
-            .col-4.button-field
-                br
-                +reset-pwd-button
+      section.row
+        .col-6.input-field
+          +password-input
+        .col-6.input-field
+          +confirm-new-password-input
+        .col-4.button-field
+          br
+          +reset-pwd-button
+
+mixin login-form-validation
+  section.row__label
+    .label Login
+  section.row
+    form#login-form(role='form' method='post' action='/flare/home/main-app-view')
+      .input-field
+        +username-input
+      .input-field
+        +password-input
+      .button-field
+        +login-button
+      .button-field
+        +get-password-button
+
+mixin sign-up-form-validation
+  section.row__label
+    .label Sign Up
+  section.row
+    form#sign-up-form(action='../home/main-app-view')
+      .input-field
+        +username-input
+        p.validation Your username should only contain letters and numbers.
+      .input-field
+        +email-input
+        p.validation We'll email you a confirmation.
+      .input-field
+        +password-input
+        p.validation Your password should be at least 8 characters long. It should have at least one of each of the following: uppercase and lowercase letters, number and special character.
+      .input-field
+        +confirm-password-input
+        p.validation Type your password again.
+      .button-field
+        +sign-up-button
+      .conditions
+          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md

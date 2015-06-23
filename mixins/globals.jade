@@ -273,28 +273,22 @@ mixin open-button
             a(href='#') Scala
 
 mixin save-button
-    button.btn-result.icon-Save
+    button.btn-result.icon-Save(title='Save article to Collection')
 
 mixin delete-button
-    button.btn-result.icon-Delete
+    button.btn-result.icon-Delete(title='Delete article from Collection')
 
 mixin share-button
-    button.btn-result.icon-Share
+    button.btn-result.icon-Share(title='Share article')
 
 mixin save-results-button
-    button.btn-app Save Results
+    button.btn-result.icon-Save(title='Save results to Collection')
 
 mixin delete-results-button
-    button.btn-app Delete Results
+    button.btn-result.icon-Delete(title='Delete results from Collection')
 
 mixin share-results-button
-    button.btn-app Share Results
-
-mixin save-article-button
-    button.btn-app Save Article
-
-mixin share-article-button
-    button.btn-app Share Article
+    button.btn-result.icon-Share(title='Share results')
 
 mixin clear-selected-button
     button(type='submit', id='btn-clear-selected') Clear Selected
