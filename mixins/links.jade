@@ -47,31 +47,29 @@ mixin left-navigation
       a.button.full-width(href='#') Back
 
 mixin navigate
-  #sub-nav
-    .header
-        span.label.no-underline.white Directory
-    .scroll
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 1
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 12
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 122
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 1222
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 12
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 1
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 122
+  dl
+    dt
+      .label.no-underline Directory
+    a.item(href='navigate')
+      dd
+        span.text Directory
+        span.badge 1
+    a.item(href='navigate')
+      dd
+        span.text Directory
+        span.badge 1
+    a.item(href='navigate')
+      dd
+        span.text Directory
+        span.badge 1
+    a.item(href='navigate')
+      dd
+        span.text Directory
+        span.badge 1
+    a.item(href='navigate')
+      dd
+        span.text Directory
+        span.badge 1
 
 
 mixin help-navigation
