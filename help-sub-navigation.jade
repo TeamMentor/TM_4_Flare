@@ -1,12 +1,8 @@
-extends _layouts/flare_page
+extends _layouts/flare_page_landing
 
 block content
-  .application
-    aside#left-nav
-      +left-navigation
-    aside#right-nav
-      +filters-div
-    main
+  .application.logged-out
+    section.row
       .col-3
         +help-sub-navigation
       .col-9

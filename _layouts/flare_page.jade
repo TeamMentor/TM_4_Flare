@@ -1,7 +1,13 @@
 doctype html
 html(lang='en')
-	include head
+  include head
 
-	body
-		include navbar_flare
-		block content
+  body
+    include navbar_flare
+    .application
+      aside#left-nav
+        +left-navigation
+      aside#right-nav
+        +filters-div
+      main
+        block content
