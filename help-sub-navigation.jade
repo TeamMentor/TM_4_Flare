@@ -1,8 +1,10 @@
-extends _layouts/flare_page
+extends _layouts/flare_page_landing
 
 block content
-  .col-3
-    +help-sub-navigation
-  .col-9
-    article
-      include:marked ../TM_Static/content/help/page-index.md
+  .application.logged-out
+    section.row
+      .col-3
+        +help-sub-navigation
+      .col-9
+        article
+          include:marked ../TM_Static/content/help/page-index.md
