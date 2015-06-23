@@ -49,27 +49,32 @@ mixin left-navigation
 mixin navigate
   #sub-nav
     .header
-        span.label.no-underline.white Directory
+        if title
+            span.label.no-underline.white= title
     .scroll
-        a.item(href='navigate')
-          span.text Directory
-          span.badge 1
-        a.item(href='navigate')
+        #containers
+            if(containers)
+                each container in containers
+                    if container.size > 0
+                        a.item(href= href + ',' +container.id , id=container.id)
+                          span.text= container.title
+                          span.badge= container.size
+        //a.item(href='navigate')
           span.text Directory
           span.badge 12
-        a.item(href='navigate')
+        //a.item(href='navigate')
           span.text Directory
           span.badge 122
-        a.item(href='navigate')
+        //a.item(href='navigate')
           span.text Directory
           span.badge 1222
-        a.item(href='navigate')
+        //a.item(href='navigate')
           span.text Directory
           span.badge 12
-        a.item(href='navigate')
+        //a.item(href='navigate')
           span.text Directory
           span.badge 1
-        a.item(href='navigate')
+        //a.item(href='navigate')
           span.text Directory
           span.badge 122
 
