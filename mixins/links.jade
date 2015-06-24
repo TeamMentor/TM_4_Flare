@@ -10,125 +10,62 @@ mixin links-navbar__landing-page
       a.button.btn-nav(href='get-started') Get Started
 
 mixin left-navigation
-  .nav-icon
-    ul
-      li
-        +index-icon
-      li
-        +curated-content-icon
-      li
-        +info-icon
-      li
-        +user-icon
-      li
-        +logout-icon
   ul.side-nav
     li
       a(href='/flare/navigate')
         +index-icon
-        span.text Index
-    li
+    //li
       a(href='/flare/curated-content')
         +curated-content-icon
-        span.text Curated Content
     li
       a(href='/flare/help-index')
         +info-icon
-        span.text Docs
-    li
+    //li
       a(href='/flare/user')
         +user-icon
-        span.text User
     li
       a(href='/flare/index')
         +logout-icon
-        span.text Logout
     li
       a.button.full-width(href='#') Back
 
 mixin navigate
-  #sub-nav
-    .header
-        if title
-            span.label.no-underline.white= title
-    .scroll
-        #containers
-            if(containers)
-                each container in containers
-                    if container.size > 0
-                        a.item(href= href + ',' +container.id , id=container.id)
-                          span.text= container.title
-                          span.badge= container.size
+  dl
+    dt
+      if title
+        span.label.no-underline= title
+    if(containers)
+      #containers
+        each container in containers
+          if container.size > 0
+            dd
+              a.item(href= href + ',' +container.id , id=container.id)
+                span.text= container.title
+                span.badge= container.size
 
 mixin help-navigation
-    #sub-nav
-        .item
-            a(href='help-sub-navigation')
-                span About TEAM Mentor
-        .item
-            a(href='help-sub-navigation')
-                span Installation
-        .item
-            a(href='help-sub-navigation')
-                span Administration
-        .item
-            a(href='help-sub-navigation')
-                span UI Elements
-        .item
-            a(href='help-sub-navigation')
-                span Reading Content
-        .item
-            a(href='help-sub-navigation')
-                span Editing Content
-        .item
-            a(href='help-sub-navigation')
-                span Eclipse for Fortify plugin
-        .item
-            a(href='help-sub-navigation')
-                span HP Fortify SCA UI Integration
-        .item
-            a(href='help-sub-navigation')
-                span Visual Studio Plugin
+  dl.help
+    dt
+      span.label.no-underline Documentation
+    dd
+      a(href='help-sub-navigation') About TEAM Mentor
 
 mixin help-sub-navigation
-    #sub-nav
-        .item
-            a(href='help-sub-navigation')
-                span About TEAM Mentor
-                ul
-                    li
-                        a(href='help-docs')
-                            span What's new in this release?
-                    li
-                        a(href='help-docs')
-                            span Introduction to TEAM Mentor
-                    li
-                        a(href='help-docs')
-                            span Quick Start Guide
-                    li
-                        a(href='help-docs')
-                            span Support
-        .item
-            a(href='help-sub-navigation')
-                span Installation
-        .item
-            a(href='help-sub-navigation')
-                span Administration
-        .item
-            a(href='help-sub-navigation')
-                span UI Elements
-        .item
-            a(href='help-sub-navigation')
-                span Reading Content
-        .item
-            a(href='help-sub-navigation')
-                span Editing Content
-        .item
-            a(href='help-sub-navigation')
-                span Eclipse for Fortify plugin
-        .item
-            a(href='help-sub-navigation')
-                span HP Fortify SCA UI Integration
-        .item
-            a(href='help-sub-navigation')
-                span Visual Studio Plugin
+  dl.help
+    dt
+      span.label.no-underline Documentation
+    dd
+      a(href='help-sub-navigation') About TEAM Mentor
+      ul
+        li
+            a(href='help-docs')
+                span What's new in this release?
+        li
+            a(href='help-docs')
+                span Introduction to TEAM Mentor
+        li
+            a(href='help-docs')
+                span Quick Start Guide
+        li
+            a(href='help-docs')
+                span Support
