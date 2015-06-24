@@ -11,14 +11,16 @@ mixin article
 						li #
 						li #
 					.article-title
-						h1 Article Title Article Title Article Title Article Title Article Title Article Title
-				include:marked ../../TM_Static/content/articles/article-new-window.md
+						//h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
+						h1= title
+				#html.article-content!= article_Html
+				//include:marked ../../TM_Static/content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
 	.label
 		span #
-		span This article is a part of  
+		span This article is a part of
 			span
 				a(href='curated-content') Curated Content
 	ul.display-inline
@@ -33,11 +35,11 @@ mixin related-options
 	section.row__label
 		.label Related Articles
 	section.row
-			+articles-list
+			//+articles-list
 	section.row__label
 		.label Related Courses
 	section.row
-		+articles-list
+		//+articles-list
 
 mixin terms-and-conditions
 	include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

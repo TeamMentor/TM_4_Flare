@@ -13,7 +13,13 @@ mixin search-bar
 //- Save and Share Results
 mixin results-save-share
     section.row__label
-        .label 0/200 results showing
+        if results
+            if results.size() > 25
+                td
+                    .label#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+            else
+                td
+                    .label#resultsTitle= results.take(25).size() + ' results showing'
         ul.display-inline
             li
                 +save-results-button
@@ -40,24 +46,24 @@ mixin start-view
         section.row__label
             .label Recently Viewed Articles
         section.row
-            +articles-list
+            //+articles-list
     section.row
         section.row__label
             .label Top Articles
         section.row
-            +articles-list
+            //+articles-list
 
 //- Articles List
 mixin articles-list
-    article.result
-        +metadata
-        +article-summary
-    article.result
-        +metadata
-        +article-summary
-    article.result
-        +metadata
-        +article-summary
+    if results
+        each result,index in results.take(10)
+            if result && result.id && result.title
+                article.result
+                    .summary
+                        +metadata
+                        a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                            h3#article-headline= result.title
+                        p= result.summary + '...'
 
 //- Saved Articles List
 mixin saved-articles-list
@@ -176,42 +182,21 @@ mixin filters-div
     ul.side-nav
         li
             +filters-icon
-    #filters
-        .label
-            +filters-icon
-            span.text Technology
-        ul.filters
-            li # .NET
-            li # .NET 3.5
-            li # Android
-            li # ASP.NET
-            li # C ++
-            li # HTML5
-            li # iOS
-            li # Java
-            li # PHP
-            li # Scala
-            li # Technology Independent
-            li # WCF
-            li # Web Application
-        br
-        .label
-            +filters-icon
-            span.text Phase
-        ul.filters
-            li # Deployment
-            li # Design
-            li # Implementation
-            li # Test
-        br
-        .label
-            +filters-icon
-            span.text Type
-        ul.filters
-            li # Checklist Item
-            li # Code Example
-            li # Guideline
-            li # How To
-            li # Vulnerability
+    if filters
+      #filters
+        for filter in filters
+          .label
+              +filters-icon
+              span.text= ' ' + filter.title
+              ul.filters
+                  for result in filter.results
+                      if result.size > 0
+                          li
+                              a(href=href + '/'+result.id)
+                                  span
+                                      +filter-icon(filter.title, result.title)
+                                  span= ' ' + result.title
+                              span= '  '
+                              span.right.badge= result.size
         br
         a.button.full-width(href='#') Back

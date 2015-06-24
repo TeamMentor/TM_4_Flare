@@ -5,55 +5,45 @@ mixin links-navbar__landing-page
     li
       a.action(href='features') Features
     li
-      a.action(href='../help/index') Docs
+      a.action(href='help-index') Docs
     li
-      a.button.btn-nav(href='../guest/get-started') Get Started
+      a.button.btn-nav(href='get-started') Get Started
 
 mixin left-navigation
   ul.side-nav
     li
-      a(href='navigate')
+      a(href='/flare/navigate')
         +index-icon
+        span.text Index
     //li
-      a(href='curated-content')
+      a(href='/flare/curated-content')
         +curated-content-icon
     li
-      a(href='/misc/help-index')
+      a(href='/flare/help-index')
         +info-icon
+        span.text Docs
     //li
-      a(href='/user/user')
+      a(href='/flare/user')
         +user-icon
     li
-      a(href='/guest/index')
+      a(href='/flare/index')
         +logout-icon
     li
       a.button.full-width(href='#') Back
 
 mixin navigate
   dl
-    dt
-      .label.no-underline Directory
-    a.item(href='navigate')
-      dd
-        span.text Directory
-        span.badge 1
-    a.item(href='navigate')
-      dd
-        span.text Directory
-        span.badge 1
-    a.item(href='navigate')
-      dd
-        span.text Directory
-        span.badge 1
-    a.item(href='navigate')
-      dd
-        span.text Directory
-        span.badge 1
-    a.item(href='navigate')
-      dd
-        span.text Directory
-        span.badge 1
-
+    if title
+      dt
+        .label.no-underline= title
+    if(containers)
+      #containers
+        each container in containers
+          if container.size > 0
+            a(href= href + ',' +container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
 
 mixin help-navigation
   dl.help
