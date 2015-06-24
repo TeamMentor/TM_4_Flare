@@ -2,9 +2,15 @@ extends _layouts/flare_page
 include mixins/articles-mixins
 
 block content
-  +flare-alert
-  +article
-  br
-  br
-  +related-options
-  +copyright
+  .application
+    aside#left-nav
+      +left-navigation
+    aside#right-nav
+      +filters-div
+    main
+      +flare-alert
+      +article
+      br
+      br
+      +related-options
+      +copyright

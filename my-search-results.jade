@@ -2,4 +2,10 @@ extends _layouts/flare_page
 include mixins/articles-mixins
 
 block content
-  +saved-search-results
+  .application
+    aside#left-nav
+      +left-navigation
+    aside#right-nav
+      +filters-div
+    main
+      +saved-search-results

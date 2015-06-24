@@ -134,109 +134,82 @@ mixin saved-search-results
 
 //- Search Results List
 mixin search-term-list
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
 
 //- Saved Search Results List
 mixin saved-search-term-list
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
 
 //- Flare Filters Div
 mixin filters-div
-    .nav-icon
-        ul
-            li
-                +filters-icon
-    if filters
-        #filters
-            .bg
-                for filter in filters
-                    .label
-                        +filters-icon
-                        span.text= ' ' + filter.title
-                        ul.filters
-                            for result in filter.results
-                                if result.size > 0
-                                    li
-                                        a(href=href + '/'+result.id)
-                                            span
-                                                +filter-icon(filter.title, result.title)
-                                            span= ' ' + result.title
-                                        span= '  '
-                                        span.right.badge= result.size
+  ul.side-nav
+    li
+      +filters-icon
+  if filters
+    #filters
+      for filter in filters
+        .label
+          +filters-icon
+          span.text= ' ' + filter.title
+        ul.filters
+          for result in filter.results
+            if result.size > 0
+              li
+                a(href=href + '/'+result.id)
+                  span
+                    +filter-icon(filter.title, result.title)
+                  span= ' ' + result.title
+                span= '  '
+                span.right.badge= result.size
+  a.button.btn-minor(href='#')
+    +arrow-left-icon
 
-    //#filters
-        .label
-            +filters-icon
-            span.text Technology....
-        ul.filters
-            li # .NET
-            li # .NET 3.5
-            li # Android
-            li # ASP.NET
-            li # C ++
-            li # HTML5
-            li # iOS
-            li # Java
-            li # PHP
-            li # Scala
-            li # Technology Independent
-            li # WCF
-            li # Web Application
-        br
-        .label
-            +filters-icon
-            span.text Phase
-        ul.filters
-            li # Deployment
-            li # Design
-            li # Implementation
-            li # Test
-        br
-        .label
-            +filters-icon
-            span.text Type
-        ul.filters
-            li # Checklist Item
-            li # Code Example
-            li # Guideline
-            li # How To
-            li # Vulnerability
-        br
-        a.button.full-width(href='#') Back
+//- Pagination
+mixin pagination
+  section.row#pagination
+    .previous
+      +arrow-left-icon
+    .number
+      select
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+    .next
+      +arrow-right-icon
