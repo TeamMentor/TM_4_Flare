@@ -3,10 +3,12 @@ mixin search-bar
     .search
         a.button.btn-mobile(href='#left-nav')
             +index-icon
-        .search-field
-            input.search-input(type='text', placeholder='Type keywords here')
-            a.button.btn-search#search-button(href='app-keyword-search')
-                +search-icon
+        form(method='get', action='/flare/user/search')
+            .search-field
+                input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
+            .search-field
+                button.btn-search#search-button(type='submit')
+                    +search-icon
         a.button.btn-mobile(href='#right-nav')
             +filters-icon
 
