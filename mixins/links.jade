@@ -26,6 +26,7 @@ mixin left-navigation
     li
       a(href='/flare/index')
         +logout-icon
+<<<<<<< HEAD
     a.button.btn-minor(href='#')
       +arrow-left-icon
 
@@ -34,25 +35,72 @@ mixin navigate
     dt
       if title
         span.label.no-underline= title
+=======
+    li
+      a.button.full-width(href='#') Back
+
+mixin navigate
+  dl
+    if title
+      dt
+        .label.no-underline= title
+>>>>>>> Issue_871
     if(containers)
       #containers
         each container in containers
           if container.size > 0
+<<<<<<< HEAD
             dd
               a.item(href= href + ',' +container.id , id=container.id)
+=======
+            a(href= href + ',' +container.id , id=container.id)
+              dd
+>>>>>>> Issue_871
                 span.text= container.title
                 span.badge= container.size
 
 mixin help-navigation
   dl.help
     dt
+<<<<<<< HEAD
       span.label.no-underline Documentation
     dd
       a(href='help-sub-navigation') About TEAM Mentor
+=======
+      .label.no-underline Documentation
+    dd
+      a(href='help-sub-navigation')
+        span About TEAM Mentor
+    dd
+      a(href='help-sub-navigation')
+        span Installation
+    dd
+      a(href='help-sub-navigation')
+        span Administration
+    dd
+      a(href='help-sub-navigation')
+        span UI Elements
+    dd
+      a(href='help-sub-navigation')
+        span Reading Content
+    dd
+      a(href='help-sub-navigation')
+        span Editing Content
+    dd
+      a(href='help-sub-navigation')
+        span Eclipse for Fortify plugin
+    dd
+      a(href='help-sub-navigation')
+        span HP Fortify SCA UI Integration
+    dd
+      a(href='help-sub-navigation')
+        span Visual Studio Plugin
+>>>>>>> Issue_871
 
 mixin help-sub-navigation
   dl.help
     dt
+<<<<<<< HEAD
       span.label.no-underline Documentation
     dd
       a(href='help-sub-navigation') About TEAM Mentor
@@ -69,3 +117,46 @@ mixin help-sub-navigation
         li
             a(href='help-docs')
                 span Support
+=======
+      .label.no-underline Documentation
+    dd
+      a(href='help-sub-navigation')
+        span About TEAM Mentor
+        ul
+          li
+            a(href='help-docs')
+              span What's new in this release?
+          li
+            a(href='help-docs')
+              span Introduction to TEAM Mentor
+          li
+            a(href='help-docs')
+              span Quick Start Guide
+          li
+            a(href='help-docs')
+              span Support
+    dd
+      a(href='help-sub-navigation')
+        span Installation
+    dd
+      a(href='help-sub-navigation')
+        span Administration
+    dd
+      a(href='help-sub-navigation')
+        span UI Elements
+    dd
+      a(href='help-sub-navigation')
+        span Reading Content
+    dd
+      a(href='help-sub-navigation')
+        span Editing Content
+    dd
+      a(href='help-sub-navigation')
+        span Eclipse for Fortify plugin
+    dd
+      a(href='help-sub-navigation')
+        span HP Fortify SCA UI Integration
+    dd
+      a(href='help-sub-navigation')
+        span Visual Studio Plugin
+>>>>>>> Issue_871
