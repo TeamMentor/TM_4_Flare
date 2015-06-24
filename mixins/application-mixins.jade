@@ -3,11 +3,10 @@ mixin search-bar
     .search
         a.button.btn-mobile(href='#left-nav')
             +index-icon
-        .search-field
-            input.search-input(type='text', placeholder='Type keywords here')
-            a.button.btn-search#search-button(href='app-keyword-search')
-                +search-icon
-        a.button.btn-mobile(href='#right-nav')
+        input.search-input(type='text', placeholder='Type keywords here')
+        a.button.btn-search#search-button(href='app-keyword-search')
+            +search-icon
+        a.button.btn-mobile#filters-button(href='#right-nav')
             +filters-icon
 
 //- Save and Share Results
@@ -199,7 +198,7 @@ mixin filters-div
                 span= '  '
                 span.right.badge= result.size
   a.button.btn-minor(href='#')
-    +arrow-left-icon
+    +close-icon
 
 //- Pagination
 mixin pagination
