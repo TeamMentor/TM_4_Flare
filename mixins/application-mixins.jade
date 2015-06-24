@@ -198,5 +198,18 @@ mixin filters-div
                   span= ' ' + result.title
                 span= '  '
                 span.right.badge= result.size
-  br
-  a.button.full-width(href='#') Back
+  a.button.btn-minor(href='#')
+    +arrow-left-icon
+
+//- Pagination
+mixin pagination
+  section.row#pagination
+    .previous
+      +arrow-left-icon
+    .number
+      select
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+    .next
+      +arrow-right-icon
