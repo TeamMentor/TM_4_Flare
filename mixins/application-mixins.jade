@@ -134,69 +134,70 @@ mixin saved-search-results
 
 //- Search Results List
 mixin search-term-list
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
 
 //- Saved Search Results List
 mixin saved-search-term-list
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
-    article.search-term
-        a(href='app-keyword-search')
-            +search-icon
-            span Search Term
-    ul.display-inline
-        li.half-width
-            +delete-button
-        li.half-width
-            +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
 
 //- Flare Filters Div
 mixin filters-div
-    ul.side-nav
-        li
+  ul.side-nav
+      li
+        a(href='#right-nav')
+          +filters-icon
+  if filters
+    #filters
+      for filter in filters
+        .label
             +filters-icon
-    if filters
-      #filters
-        for filter in filters
-          .label
-              +filters-icon
-              span.text= ' ' + filter.title
-              ul.filters
-                  for result in filter.results
-                      if result.size > 0
-                          li
-                              a(href=href + '/'+result.id)
-                                  span
-                                      +filter-icon(filter.title, result.title)
-                                  span= ' ' + result.title
-                              span= '  '
-                              span.right.badge= result.size
-        br
-        a.button.full-width(href='#') Back
+            span.text= ' ' + filter.title
+            ul.filters
+                for result in filter.results
+                    if result.size > 0
+                        li
+                            a(href=href + '/'+result.id)
+                                span
+                                    +filter-icon(filter.title, result.title)
+                                span= ' ' + result.title
+                            span= '  '
+                            span.right.badge= result.size
+      br
+      a.button.full-width(href='#') Back
