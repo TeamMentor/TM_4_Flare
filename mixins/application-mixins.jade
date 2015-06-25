@@ -2,28 +2,29 @@
 mixin search-bar
     .search
         a.button.btn-mobile(href='#left-nav')
-            +index-icon
-        input.search-input(type='text', placeholder='Type keywords here')
-        a.button.btn-search#search-button(href='app-keyword-search')
+          +index-icon
+        form.search-input(method='get', action='/flare/user/search')
+          input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
+          button.btn-search#search-button(type='submit')
             +search-icon
-        a.button.btn-mobile#filters-button(href='#right-nav')
+          a.button.btn-mobile.btn-desktop(href='#right-nav')
             +filters-icon
 
 //- Save and Share Results
 mixin results-save-share
-    section.row__label
-        if results
-            if results.size() > 25
-                td
-                    .label#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
-            else
-                td
-                    .label#resultsTitle= results.take(25).size() + ' results showing'
-        ul.display-inline
-            li
-                +save-results-button
-            li
-                +share-results-button
+  section.row__label
+    if results
+      if results.size() > 25
+        td
+          .label#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+      else
+        td
+          .label#resultsTitle= results.take(25).size() + ' results showing'
+    ul.display-inline
+        li
+          +save-results-button
+        li
+          +share-results-button
 
 //-Delete and Share Results
 mixin results-delete-share
