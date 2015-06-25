@@ -1,9 +1,9 @@
 //- Flare Search Bar Input
 mixin search-bar
     .search
-        a.button.btn-mobile(href='#left-nav')
-          +index-icon
         form.search-input(method='get', action='/flare/user/search')
+          a.button.btn-mobile(href='#left-nav')
+            +index-icon
           input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
             +search-icon
