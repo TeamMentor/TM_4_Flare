@@ -1,25 +1,20 @@
 //- Article
 mixin article
 	section.row
-		.col-3
-			+article-info
-		.col-9
-			article
-				section.row
-					ul.article-info
-						li #
-						li #
-						li #
-					.article-title
-						//h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
-						h1= title
+		.col-2
+			//+article-info
+		.col-8
+			section.row__article
+				.article-title
+					//h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
+					h1= title
 				#html.article-content!= article_Html
 				//include:marked ../../TM_Static/content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
 	.label
-		span #
+		+curated-content-icon
 		span This article is a part of
 			span
 				a(href='curated-content') Curated Content
