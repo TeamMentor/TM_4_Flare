@@ -1,0 +1,215 @@
+//- Flare Search Bar Input
+mixin search-bar
+    .search
+        form(method='get', action='/flare/user/search')
+          a.button.btn-mobile(href='#left-nav')
+            +index-icon
+          input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
+          button.btn-search#search-button(type='submit')
+            +search-icon
+          a.button.btn-mobile(href='#right-nav')
+              +filters-icon
+
+//- Save and Share Results
+mixin results-save-share
+    section.row__label
+        if results
+            if results.size() > 25
+                td
+                    .label#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+            else
+                td
+                    .label#resultsTitle= results.take(25).size() + ' results showing'
+        ul.display-inline
+            li
+                +save-results-button
+            li
+                +share-results-button
+
+//-Delete and Share Results
+mixin results-delete-share
+    .label 0/200 results showing
+    ul.display-inline
+        li.half-width
+            +delete-results-button
+        li.half-width
+            +share-results-button
+
+//- Start View
+mixin start-view
+    section.row
+        section.row__label
+            .label Popular Search Terms
+        section.row
+            +search-term-list
+    section.row
+        section.row__label
+            .label Recently Viewed Articles
+        section.row
+            //+articles-list
+    section.row
+        section.row__label
+            .label Top Articles
+        section.row
+            //+articles-list
+
+//- Articles List
+mixin articles-list
+    if results
+        each result,index in results.take(10)
+            if result && result.id && result.title
+                article.result
+                    .summary
+                        +metadata
+                        a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                            h3#article-headline= result.title
+                        p= result.summary + '...'
+
+//- Saved Articles List
+mixin saved-articles-list
+    section.row
+        section.row__label
+            +results-delete-share
+        section.row
+            article.result
+                +metadata-saved
+                +article-summary
+            article.result
+                +metadata-saved
+                +article-summary
+            article.result
+                +metadata-saved
+                +article-summary
+
+//- Article Metadata (unsaved)
+mixin metadata
+    .metadata
+        ul
+            li
+                +tick-icon
+            li #
+                // Technology Icon
+            li #
+                // Phase Icon
+            li #
+                // Type Icon
+            li
+                +save-button
+            li
+                +share-button
+
+//- Article Metadata (saved)
+mixin metadata-saved
+    .metadata
+        ul
+            li
+                +tick-icon
+            li #
+                // Technology Icon
+            li #
+                // Phase Icon
+            li #
+                // Type Icon
+            li
+                +delete-button
+            li
+                +share-button
+
+//- Article Summary
+mixin article-summary
+    .summary
+        a(href='article-new-window-view')
+            h3#article-headline Article Headline Article Headline Article Headline
+        include:marked ../../TM_Static/content/articles/article-details.md
+
+
+//- Saved Search Results List
+mixin saved-search-results
+    section.row__label
+        +results-delete-share
+    section.row
+        +saved-search-term-list
+        +saved-search-term-list
+        +saved-search-term-list
+
+//- Search Results List
+mixin search-term-list
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+
+//- Saved Search Results List
+mixin saved-search-term-list
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+  article.search-term
+    a(href='app-keyword-search')
+      +search-icon
+      span Search Term
+  ul.display-inline
+    li.half-width
+      +delete-button
+    li.half-width
+      +share-button
+
+//- Flare Filters Div
+mixin filters-div
+  ul.side-nav
+    li
+      +filters-icon
+  if filters
+    #filters
+      for filter in filters
+        .label
+          +filters-icon
+          span.text= ' ' + filter.title
+        ul.filters
+          for result in filter.results
+            if result.size > 0
+              li
+                a(href=href + '/'+result.id)
+                  span
+                    +filter-icon(filter.title, result.title)
+                  span= ' ' + result.title
+                span= '  '
+                span.right.badge= result.size
+  a.button.btn-minor(href='#')
+    +arrow-left-icon
+
+//- Pagination
+mixin pagination
+  section.row#pagination
+    .previous
+      +arrow-left-icon
+    .number
+      select
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+    .next
+      +arrow-right-icon
