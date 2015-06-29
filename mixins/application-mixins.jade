@@ -2,12 +2,12 @@
 mixin search-bar
     .search
         form(method='get', action='/flare/user/search')
-          a.button.btn-mobile(href='#left-nav')
+          a.button.desktop-hide(href='#left-nav')
             +index-icon
           input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
             +search-icon
-          a.button.btn-mobile(href='#right-nav')
+          a.button(href='#right-nav')
               +filters-icon
 
 //- Save and Share Results
@@ -179,9 +179,6 @@ mixin saved-search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-  ul.side-nav
-    li
-      +filters-icon
   if filters
     #filters
       for filter in filters
@@ -199,7 +196,7 @@ mixin filters-div
                 span= '  '
                 span.right.badge= result.size
   a.button.btn-minor(href='#')
-    +arrow-left-icon
+    +close-icon
 
 //- Pagination
 mixin pagination

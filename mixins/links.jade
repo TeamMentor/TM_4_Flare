@@ -14,20 +14,25 @@ mixin left-navigation
     li
       a(href='/flare/navigate')
         +index-icon
+        span.text Index
     //li
       a(href='/flare/curated-content')
         +curated-content-icon
+        span.text Curated Content
     li
       a(href='/flare/help-index')
         +info-icon
+        span.text Documentation
     //li
       a(href='/flare/user')
         +user-icon
+        span.text User
     li
       a(href='/flare/index')
         +logout-icon
+        span.text Logout
     a.button.btn-minor(href='#')
-      +arrow-left-icon
+      +close-icon
 
 mixin navigate
   dl
