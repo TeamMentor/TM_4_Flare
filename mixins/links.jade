@@ -41,7 +41,7 @@ mixin navigate
       if title
         span.label.no-underline= title
     if(containers)
-      #containers
+      #containers.scroll
         each container in containers
           if container.size > 0
             a(href= href + ',' +container.id , id=container.id)
