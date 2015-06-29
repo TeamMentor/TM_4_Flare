@@ -179,24 +179,25 @@ mixin saved-search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-  if filters
-    #filters
-      for filter in filters
-        .label
-          +filters-icon
-          span.text= ' ' + filter.title
-        ul.filters
-          for result in filter.results
-            if result.size > 0
-              li
-                a(href=href + '/'+result.id)
-                  span
-                    +filter-icon(filter.title, result.title)
-                  span= ' ' + result.title
-                span= '  '
-                span.right.badge= result.size
-  a.button.btn-minor(href='#')
-    +close-icon
+  aside#right-nav
+    if filters
+      #filters
+        for filter in filters
+          .label
+            +filters-icon
+            span.text= ' ' + filter.title
+          ul.filters
+            for result in filter.results
+              if result.size > 0
+                li
+                  a(href=href + '/'+result.id)
+                    span
+                      +filter-icon(filter.title, result.title)
+                    span= ' ' + result.title
+                  span= '  '
+                  span.right.badge= result.size
+    a.button.btn-minor(href='#')
+      +close-icon
 
 //- Pagination
 mixin pagination
