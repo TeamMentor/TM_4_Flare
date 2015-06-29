@@ -3,10 +3,8 @@ include mixins/application-mixins
 
 block content
   .application
-    aside#left-nav
-      +left-navigation
-    aside#right-nav
-      +filters-div
+    +left-navigation
+    +filters-div
     main
       +results-save-share
       section.row

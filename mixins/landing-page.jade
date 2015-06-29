@@ -7,7 +7,7 @@ mixin usp
     a.button.btn-landing(href='get-started') Start your free trial today
 
 mixin reasons
-  section.reasons
+  section.row.reasons
     include:md ../../TM_Static/content/landing-pages/reasons-div-heading.md
     section.row
       .col-3
@@ -28,7 +28,7 @@ mixin reasons
 mixin clients
   section.clients
     include:md ../../TM_Static/content/landing-pages/clients-div-heading.md
-    img(src='/assets/clients/client-logos.png')
+    img(src='/assets/clients/flare-logos.jpg')
 
 mixin about-tagline
   section.about
@@ -44,25 +44,25 @@ mixin features
     section.row
       .col-3
         .delivers-compliance
-      .col-9.content
+      .col-9
         include:md ../../TM_Static/content/landing-pages/feature-1.md
     section.row
       .col-3
         .integrates
-      .col-9.content
+      .col-9
         include:md ../../TM_Static/content/landing-pages/feature-2.md
     section.row
       .col-3
         .cross-references
-      .col-9.content
+      .col-9
         include:md ../../TM_Static/content/landing-pages/feature-3.md
     section.row
       .col-3
         .provides-guidance
-      .col-9.content
+      .col-9
         include:md ../../TM_Static/content/landing-pages/feature-4.md
 
 mixin call-to-action
   section.call-to-action
     include:md ../../TM_Static/content/landing-pages/call-to-action.md
-    a.button.btn-landing(href='../getting-started/index') See for yourself
+    a.button.btn-landing.half-width(href='../getting-started/index') See for yourself

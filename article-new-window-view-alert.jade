@@ -3,14 +3,10 @@ include mixins/articles-mixins
 
 block content
   .application
-    aside#left-nav
-      +left-navigation
-    aside#right-nav
-      +filters-div
+    +left-navigation
+    +filters-div
     main
       +flare-alert
       +article
-      br
-      br
-      +related-options
-      +copyright
+      //+related-options
+      //+copyright
