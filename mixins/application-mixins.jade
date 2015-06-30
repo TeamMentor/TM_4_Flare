@@ -1,15 +1,13 @@
 //- Flare Search Bar Input
 mixin search-bar
     .search
-        a.button.btn-mobile(href='#left-nav')
-            +index-icon
         form(method='get', action='/flare/user/search')
-            .search-field
-                input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
-            .search-field
-                button.btn-search#search-button(type='submit')
-                    +search-icon
-        a.button.btn-mobile(href='#right-nav')
+          a.button.desktop-hide(href='#left-nav')
+            +index-icon
+          input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
+          button.btn-search#search-button(type='submit')
+            +search-icon
+          a.button(href='#right-nav')
             +filters-icon
 
 //- Save and Share Results
@@ -18,10 +16,10 @@ mixin results-save-share
         if results
             if results.size() > 25
                 td
-                    .label#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+                    .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
             else
                 td
-                    .label#resultsTitle= results.take(25).size() + ' results showing'
+                    .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
         ul.display-inline
             li
                 +save-results-button
@@ -57,31 +55,31 @@ mixin start-view
 
 //- Articles List
 mixin articles-list
-    if results
-        each result,index in results.take(10)
-            if result && result.id && result.title
-                article.result
-                    .summary
-                        +metadata
-                        a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-                            h3#article-headline= result.title
-                        p= result.summary + '...'
+  if results
+    each result,index in results.take(10)
+      if result && result.id && result.title
+        article.result
+          +metadata
+          .summary
+            a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+                h3#article-headline= result.title
+            p= result.summary + '...'
 
 //- Saved Articles List
 mixin saved-articles-list
+  section.row
+    section.row__label
+      +results-delete-share
     section.row
-        section.row__label
-            +results-delete-share
-        section.row
-            article.result
-                +metadata-saved
-                +article-summary
-            article.result
-                +metadata-saved
-                +article-summary
-            article.result
-                +metadata-saved
-                +article-summary
+      article.result
+        +metadata-saved
+        +article-summary
+      article.result
+        +metadata-saved
+        +article-summary
+      article.result
+        +metadata-saved
+        +article-summary
 
 //- Article Metadata (unsaved)
 mixin metadata
@@ -181,27 +179,25 @@ mixin saved-search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-  ul.side-nav
-    li
-      +filters-icon
-  if filters
-    #filters
-      for filter in filters
-        .label
-          +filters-icon
-          span.text= ' ' + filter.title
-        ul.filters
-          for result in filter.results
-            if result.size > 0
-              li
-                a(href=href + '/'+result.id)
-                  span
-                    +filter-icon(filter.title, result.title)
-                  span= ' ' + result.title
-                span= '  '
-                span.right.badge= result.size
-  a.button.btn-minor(href='#')
-    +arrow-left-icon
+  aside#right-nav
+    if filters
+      #filters
+        for filter in filters
+          .label
+            +filters-icon
+            span.text= ' ' + filter.title
+          ul.filters
+            for result in filter.results
+              if result.size > 0
+                li
+                  a(href=href + '/'+result.id)
+                    span
+                      +filter-icon(filter.title, result.title)
+                    span= ' ' + result.title
+                  span= '  '
+                  span.right.badge= result.size
+    a.button.btn-minor(href='#')
+      +close-icon
 
 //- Pagination
 mixin pagination

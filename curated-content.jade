@@ -3,15 +3,22 @@ include mixins/application-mixins
 
 block content
   .application
-    aside#left-nav
-      +left-navigation
-    aside#right-nav
-      +filters-div
+    +left-navigation
+    +filters-div
     main
       section.row
         .col-3
-          .map
-            .label Map
+          dl
+            dt
+              section.row
+                .col-11
+                  .label Curated Content
+                .col-1
+                  br
+                  +back-icon
+            dd Item One
+            dd Item Two
+            dd Item Three
         .col-9
           section.row
             +articles-list

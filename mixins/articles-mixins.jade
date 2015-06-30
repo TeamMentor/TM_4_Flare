@@ -1,45 +1,42 @@
 //- Article
 mixin article
-	section.row
-		.col-3
-			+article-info
-		.col-9
-			article
-				section.row
-					ul.article-info
-						li #
-						li #
-						li #
-					.article-title
-						//h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
-						h1= title
-				#html.article-content!= article_Html
-				//include:marked ../../TM_Static/content/articles/article-new-window.md
+  section.row
+    .col-2
+      +article-info
+    .col-8
+      section.row__article
+        .article-title
+          //h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
+          h1= title
+        #html.article-content!= article_Html
+        //include:marked ../../TM_Static/content/articles/article-new-window.md
 
 //- Article Info
 mixin article-info
-	.label
-		span #
-		span This article is a part of
-			span
-				a(href='curated-content') Curated Content
-	ul.display-inline
-		li.half-width
-			+save-button
-		li.half-width
-			+share-button
+  section.row__label
+    .label
+      +curated-content-icon
+      span     This article is
+        span     
+          a(href='curated-content') Curated Content
+  section.row
+    ul.display-inline
+      li.half-width
+        +save-button
+      li.half-width
+        +share-button
 
 
 //- Related Courses and Articles
 mixin related-options
-	section.row__label
-		.label Related Articles
-	section.row
-			//+articles-list
-	section.row__label
-		.label Related Courses
-	section.row
-		//+articles-list
+  section.row__label
+    .label Related Articles
+  section.row
+      //+articles-list
+  section.row__label
+    .label Related Courses
+  section.row
+    //+articles-list
 
 mixin terms-and-conditions
-	include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md
+  include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md
