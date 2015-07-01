@@ -2,22 +2,21 @@
 mixin article
   section.row
     .col-2
-      +article-info
+      //+article-info
     .col-8
       section.row__article
         .article-title
-          //h1 title ..... Article Title Article Title Article Title Article Title Article Title Article Title
           h1= title
         #html.article-content!= article_Html
-        //include:marked ../../TM_Static/content/articles/article-new-window.md
+    .col-2
 
 //- Article Info
 mixin article-info
   section.row__label
     .label
       +curated-content-icon
-      span     This article is
-        span     
+      span This article is
+        span
           a(href='curated-content') Curated Content
   section.row
     ul.display-inline

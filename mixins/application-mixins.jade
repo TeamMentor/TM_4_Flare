@@ -85,17 +85,16 @@ mixin saved-articles-list
 mixin metadata
     .metadata
         ul
-            li
+            //li
+              span.label.no-underline
                 +tick-icon
-            li #
-                // Technology Icon
-            li #
-                // Phase Icon
-            li #
-                // Type Icon
-            li
+                span   Seen
+            li # Technology Icon
+            li # Phase Icon
+            li # Type Icon
+            //li
                 +save-button
-            li
+            //li
                 +share-button
 
 //- Article Metadata (saved)
@@ -180,6 +179,8 @@ mixin saved-search-term-list
 //- Flare Filters Div
 mixin filters-div
   aside#right-nav
+    a.button.btn-minor(href='#')
+      +close-icon
     if filters
       #filters
         for filter in filters
@@ -191,13 +192,8 @@ mixin filters-div
               if result.size > 0
                 li
                   a(href=href + '/'+result.id)
-                    span
-                      +filter-icon(filter.title, result.title)
-                    span= ' ' + result.title
-                  span= '  '
-                  span.right.badge= result.size
-    a.button.btn-minor(href='#')
-      +close-icon
+                    +filter-icon(filter.title, result.title)
+                    span.badge= result.size
 
 //- Pagination
 mixin pagination
