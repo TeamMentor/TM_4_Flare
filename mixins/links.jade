@@ -11,7 +11,7 @@ mixin links-navbar__landing-page
 
 mixin left-navigation
   aside#left-nav
-    ul.side-nav
+    ul
       li
         a(href='/flare/navigate')
           +index-icon
@@ -27,6 +27,8 @@ mixin navigate
     dt
       if title
         span.label.no-underline= title
+        span
+          +back-icon
     if(containers)
       #containers.scroll
         each container in containers

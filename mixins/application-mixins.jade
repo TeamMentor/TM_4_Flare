@@ -25,12 +25,14 @@ mixin results-save-share
             else
                 td
                     .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
-            td Filter
         ul.display-inline
-            li
-                +save-results-button
-            li
-                +share-results-button
+          li
+            button.btn-result.icon-Filter(title='Filter results')
+          li
+            +save-results-button
+          li
+            +share-results-button
+
 
 //-Delete and Share Results
 mixin results-delete-share
@@ -200,13 +202,13 @@ mixin filters-div
 
 //- Pagination
 mixin pagination
-  section.row#pagination
+  section.row.pagination
     .previous
-      +arrow-left-icon
+      +back-icon
     .number
       select
         option(value='1') 1
         option(value='2') 2
         option(value='3') 3
     .next
-      +arrow-right-icon
+      +forward-icon
