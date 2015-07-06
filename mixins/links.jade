@@ -39,79 +39,25 @@ mixin navigate
                 span.badge= container.size
 
 mixin help-navigation
-  dl.help
-    dt.vertical-align
-      span.label.no-underline Documentation
-    .scroll
-      dd
-        a(href='help-sub-navigation')
-          span About TEAM Mentor
-      dd
-        a(href='help-sub-navigation')
-          span Installation
-      dd
-        a(href='help-sub-navigation')
-          span Administration
-      dd
-        a(href='help-sub-navigation')
-          span UI Elements
-      dd
-        a(href='help-sub-navigation')
-          span Reading Content
-      dd
-        a(href='help-sub-navigation')
-          span Editing Content
-      dd
-        a(href='help-sub-navigation')
-          span Eclipse for Fortify plugin
-      dd
-        a(href='help-sub-navigation')
-          span HP Fortify SCA UI Integration
-      dd
-        a(href='help-sub-navigation')
-          span Visual Studio Plugin
+  if library
+    dl.help
+      dt.vertical-align
+        span.label.no-underline Documentation
+      .scroll
+        each view in library.Views
+          dd
+            a(href='help-sub-nav')=view.Title
 
 mixin help-sub-navigation
-  dl.help
-    dt
-      span.label.no-underline Documentation
-    dd
-      a(href='help-sub-navigation')
-        span About TEAM Mentor
-        ul
-          li
-            a(href='help-sub-navigation')
-              span What's new in this release?
-          li
-            a(href='help-sub-navigation')
-              span Introduction to TEAM Mentor
-          li
-            a(href='help-sub-navigation')
-              span Quick Start Guide
-          li
-            a(href='help-sub-navigation')
-              span Support
-    dd
-      a(href='help-sub-navigation')
-        span Installation
-    dd
-      a(href='help-sub-navigation')
-        span Administration
-    dd
-      a(href='help-sub-navigation')
-        span UI Elements
-    dd
-      a(href='help-sub-navigation')
-        span Reading Content
-    dd
-      a(href='help-sub-navigation')
-        span Editing Content
-    dd
-      a(href='help-sub-navigation')
-        span Eclipse for Fortify plugin
-    dd
-      a(href='help-sub-navigation')
-        span HP Fortify SCA UI Integration
-    dd
-      a(href='help-sub-navigation')
-        span Visual Studio Plugin
+  if library
+    dl.help
+      dt.vertical-align
+        span.label.no-underline Documentation
+      .scroll
+        each view in library.Views
+          dd
+            a(href='help-sub-nav')=view.Title
+              ul
+                each article in view.Articles
+                  li
+                    a(href= '/help/' + article.Id)= article.Title

@@ -27,7 +27,7 @@ mixin results-save-share
                     .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
         ul.display-inline
           li
-            button.btn-result.icon-Filter(title='Filter results')
+            a.button.btn-result.icon-Filter(href='#right-nav')
           li
             +save-results-button
           li
@@ -185,14 +185,14 @@ mixin saved-search-term-list
 
 //- Flare Filters Div
 mixin filters-div
-  //aside#right-nav
+  aside#right-nav
     if filters
       #filters
         for filter in filters
           .label
             +filters-icon
             span.text= ' ' + filter.title
-          ul.filters
+          form
             for result in filter.results
               if result.size > 0
                 li
