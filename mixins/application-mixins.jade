@@ -187,12 +187,14 @@ mixin saved-search-term-list
 mixin filters-div
   aside#right-nav
     if filters
+      a.button.btn-minor(href='#')
+        +close-icon
       #filters
         for filter in filters
           .label
             +filters-icon
             span.text= ' ' + filter.title
-          form
+          ul.filters
             for result in filter.results
               if result.size > 0
                 li
