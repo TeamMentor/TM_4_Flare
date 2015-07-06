@@ -5,12 +5,12 @@ mixin search-bar
     .search
         form(method='get', action='/flare/user/search')
           select
-            option(value='Technology')
-              +index-icon
-              span Any
-            option(value='Filter') Filter
-            option(value='Filter 2') Filter 2
-            option(value='Filter 3') Filter 3
+            option(value="Technology") Technology
+            option(value="Technology1") Technology1
+            option(value="Technology2") Technology2
+            option(value="Technology3") Technology3
+            option(value="Technology4") Technology4
+            option(value="Technology5") Technology5
           input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
             +search-icon
