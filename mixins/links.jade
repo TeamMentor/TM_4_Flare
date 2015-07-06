@@ -47,17 +47,3 @@ mixin help-navigation
         each view in library.Views
           dd
             a(href='help-sub-nav')=view.Title
-
-mixin help-sub-navigation
-  if library
-    dl.help
-      dt.vertical-align
-        span.label.no-underline Documentation
-      .scroll
-        each view in library.Views
-          dd
-            a(href='help-sub-nav')=view.Title
-              ul
-                each article in view.Articles
-                  li
-                    a(href= '/help/' + article.Id)= article.Title
