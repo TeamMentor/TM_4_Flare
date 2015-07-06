@@ -1,14 +1,19 @@
+include globals.jade
+
 //- Flare Search Bar Input
 mixin search-bar
     .search
         form(method='get', action='/flare/user/search')
-          a.button.desktop-hide(href='#left-nav')
-            +index-icon
+          select
+            option(value="Technology") Technology
+            option(value="Technology1") Technology1
+            option(value="Technology2") Technology2
+            option(value="Technology3") Technology3
+            option(value="Technology4") Technology4
+            option(value="Technology5") Technology5
           input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
             +search-icon
-          a.button(href='#right-nav')
-            +filters-icon
 
 //- Save and Share Results
 mixin results-save-share
@@ -21,10 +26,13 @@ mixin results-save-share
                 td
                     .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
         ul.display-inline
-            li
-                +save-results-button
-            li
-                +share-results-button
+          li
+            a.button.btn-result.icon-Filter(href='#right-nav')
+          li
+            +save-results-button
+          li
+            +share-results-button
+
 
 //-Delete and Share Results
 mixin results-delete-share
@@ -59,7 +67,22 @@ mixin articles-list
     each result,index in results.take(10)
       if result && result.id && result.title
         article.result
-          +metadata
+          .metadata
+            ul
+                //li
+                  span.label.no-underline
+                    +tick-icon
+                    span   Seen
+                li
+                  +filter-icon('Technology',result.technology)
+                li
+                  +filter-icon('Type', result.type)
+                li
+                  +filter-icon('Phase', result.phase)
+                //li
+                    +save-button
+                //li
+                    +share-button
           .summary
             a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                 h3#article-headline= result.title
@@ -80,22 +103,6 @@ mixin saved-articles-list
       article.result
         +metadata-saved
         +article-summary
-
-//- Article Metadata (unsaved)
-mixin metadata
-    .metadata
-        ul
-            //li
-              span.label.no-underline
-                +tick-icon
-                span   Seen
-            li # Technology Icon
-            li # Phase Icon
-            li # Type Icon
-            //li
-                +save-button
-            //li
-                +share-button
 
 //- Article Metadata (saved)
 mixin metadata-saved
@@ -179,9 +186,9 @@ mixin saved-search-term-list
 //- Flare Filters Div
 mixin filters-div
   aside#right-nav
-    a.button.btn-minor(href='#')
-      +close-icon
     if filters
+      a.button.btn-minor(href='#')
+        +close-icon
       #filters
         for filter in filters
           .label
@@ -197,13 +204,13 @@ mixin filters-div
 
 //- Pagination
 mixin pagination
-  section.row#pagination
+  section.row.pagination
     .previous
-      +arrow-left-icon
+      +back-icon
     .number
       select
         option(value='1') 1
         option(value='2') 2
         option(value='3') 3
     .next
-      +arrow-right-icon
+      +forward-icon
