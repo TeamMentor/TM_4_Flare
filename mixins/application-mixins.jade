@@ -5,12 +5,9 @@ mixin search-bar
     .search
         form(method='get', action='/flare/user/search')
           select
-            option(value="Technology") Technology
-            option(value="Technology1") Technology1
-            option(value="Technology2") Technology2
-            option(value="Technology3") Technology3
-            option(value="Technology4") Technology4
-            option(value="Technology5") Technology5
+            if filters
+              for filter in filters
+                //option(value=result.technology)=result.technology
           input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
             +search-icon
@@ -28,9 +25,9 @@ mixin results-save-share
         ul.display-inline
           li
             a.button.btn-result.icon-Filter(href='#right-nav')
-          li
+          //li
             +save-results-button
-          li
+          //li
             +share-results-button
 
 
@@ -189,18 +186,18 @@ mixin filters-div
     if filters
       a.button.btn-minor(href='#')
         +close-icon
-      #filters
+      form#filters
         for filter in filters
           .label
             +filters-icon
             span.text= ' ' + filter.title
-          ul.filters
-            for result in filter.results
-              if result.size > 0
-                li
-                  a(href=href + '/'+result.id)
-                    +filter-icon(filter.title, result.title)
-                    span.badge= result.size
+          for result in filter.results
+            if result.size > 0
+              //a(href=href + '/'+result.id)
+              input(type="checkbox" id=result.title)
+              label(for=result.title)
+                +filter-icon(filter.title, result.title)
+                span.badge= result.size
 
 //- Pagination
 mixin pagination
