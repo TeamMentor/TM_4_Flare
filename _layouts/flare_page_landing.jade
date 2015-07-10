@@ -1,7 +1,10 @@
 doctype html
 html(lang='en')
-	include head
+  include head
 
-	body.container
-		include flare_navbar_landing
-		block content
+  body.container
+    if (loggedIn)
+      include navbar_flare
+    else
+      include flare_navbar_landing
+    block content

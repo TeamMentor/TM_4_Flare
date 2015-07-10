@@ -1,0 +1,11 @@
+extends ../_layouts/flare_page_landing
+include ../mixins/application-mixins.jade
+
+block content
+  .application.logged-out
+    section.row
+      .col-3
+        +help-navigation
+      .col-9
+        article
+          +help-content
