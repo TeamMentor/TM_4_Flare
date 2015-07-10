@@ -1,9 +1,5 @@
-extends _layouts/flare_page
+extends _layouts/page
 include mixins/application-mixins
 
 block content
-  .application
-    +left-navigation
-    +filters-div
-    main
-      +saved-articles-list
+  +saved-articles-list

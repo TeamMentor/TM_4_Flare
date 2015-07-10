@@ -1,16 +1,12 @@
-extends _layouts/flare_page
+extends _layouts/page
 
 block content
-  .application
-    +left-navigation
-    +filters-div
-    main
+  section.row
+    .col-3
+      +navigate
+    .col-9
+      +results-save-share
       section.row
-        .col-3
-          +navigate
-        .col-9
-          +results-save-share
-          section.row
-            +articles-list
-          section.row
-            +pagination
+        +articles-list
+      section.row
+        +pagination

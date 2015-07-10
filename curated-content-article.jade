@@ -1,9 +1,5 @@
-extends _layouts/flare_page
+extends _layouts/page
 include mixins/articles-mixins
 
 block content
-  .application
-    +left-navigation
-    +filters-div
-    main
-      +curated-content-article
+  +curated-content-article

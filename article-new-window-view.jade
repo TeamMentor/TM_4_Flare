@@ -1,11 +1,7 @@
-extends _layouts/flare_page
+extends _layouts/page
 include mixins/articles-mixins
 
 block content
-  .application
-    +left-navigation
-    +filters-div
-    main
-      +article
-      //+related-options
-      //+copyright
+  +article
+  //+related-options
+  //+copyright
