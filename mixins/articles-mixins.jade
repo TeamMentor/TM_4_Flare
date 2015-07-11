@@ -6,30 +6,46 @@ mixin article
       section.row__article
         h1= title
         #html.article-content!= article_Html
+        ul.display-inline
+          li
+            +filter-icon('Technology', technology)
+          li
+            +filter-icon('Type', type)
+          li
+            +filter-icon('Phase', phase)
     .col-2
 
 mixin curated-content-article
   section.row
-    .col-3
-      section.article-info
-        +article-info
     .col-9
       section.article-body
         section.row__article
           h1= title
           include:md ../../TM_Static/content/articles/article-new-window.md
           //#html.article-content!= article_Html
+    .col-3
+      section.article-info
+        +article-info
 
 //- Article Info
 mixin article-info
   section.row__label
-    .label
-      +curated-content-icon
-      span This article is
-        span
-          a(href='curated-content') Curated Content
+    .label This article belongs to:
   section.row
     ul.display-inline
+      li
+        +filter-icon('Technology', technology)
+        span.text= technology
+      li
+        +filter-icon('Phase', phase)
+      li
+        +filter-icon('Type', type)
+    ul
+      li
+        a(href='/flare/curated-content')
+          +curated-content-icon
+          span.text Curated Content
+    //ul.display-inline
       li.half-width
         +save-button
       li.half-width
