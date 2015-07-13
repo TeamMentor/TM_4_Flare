@@ -1,11 +1,14 @@
-extends ../_layouts/flare_page_landing
+extends ../_layouts/page
 include ../mixins/application-mixins.jade
 
 block content
-  .application.logged-out
-    section.row
-      .col-3
-        +help-navigation
-      .col-9
-        article
-          +help-content
+  .application
+    +left-navigation
+    +filters-div
+    main
+      section.row
+        .col-3
+          +help-navigation
+        .col-9
+          article
+            +help-content
