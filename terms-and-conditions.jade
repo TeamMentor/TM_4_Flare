@@ -3,13 +3,17 @@ include mixins/articles-mixins
 include mixins/application-mixins
 
 block content
-  section.row
-    .col-3
-      dl
-        dt
-          .label.no-underline Terms & Conditions
-        a(href='#')
-          dd Terms & Conditions Heading
-    .col-9
-      article
-        include:md ../TM_Static/content/terms-and-conditions/terms-and-conditions.md
+  .application
+    +left-navigation
+    +filters-div
+    main
+      section.row
+        .col-3
+          dl
+            dt
+              .label.no-underline Terms & Conditions
+            a(href='#')
+              dd Terms & Conditions Heading
+        .col-9
+          article
+            include:md ../TM_Static/content/terms-and-conditions/terms-and-conditions.md

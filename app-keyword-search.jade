@@ -2,8 +2,12 @@ extends _layouts/page
 include mixins/application-mixins
 
 block content
-  +results-save-share
-  section.row
-    +articles-list
-    +articles-list
-    +articles-list
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +results-save-share
+      section.row
+        +articles-list
+        +articles-list
+        +articles-list

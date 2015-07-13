@@ -2,6 +2,10 @@ extends _layouts/page
 include mixins/articles-mixins
 
 block content
-  +article
-  //+related-options
-  //+copyright
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +article
+      //+related-options
+      //+copyright

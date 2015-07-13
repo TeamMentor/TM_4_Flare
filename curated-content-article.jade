@@ -2,4 +2,8 @@ extends _layouts/page
 include mixins/articles-mixins
 
 block content
-  +curated-content-article
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +curated-content-article

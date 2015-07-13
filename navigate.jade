@@ -2,12 +2,16 @@ extends _layouts/page
 include mixins/application-mixins.jade
 
 block content
-  section.row
-    .col-3
-      +navigate
-    .col-9
-      +results-save-share
+  .application
+    +left-navigation
+    +filters-div
+    main
       section.row
-        +articles-list
-      section.row
-        +pagination
+        .col-3
+          +navigate
+        .col-9
+          +results-save-share
+          section.row
+            +articles-list
+          section.row
+            +pagination

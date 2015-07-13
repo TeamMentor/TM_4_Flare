@@ -2,5 +2,9 @@ extends _layouts/page
 include mixins/application-mixins
 
 block content
-  +flare-alert
-  +start-view
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +flare-alert
+      +start-view

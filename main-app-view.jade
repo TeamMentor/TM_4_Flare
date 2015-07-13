@@ -3,4 +3,8 @@ include mixins/application-mixins.jade
 include mixins/links.jade
 
 block content
-  +start-view
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +start-view
