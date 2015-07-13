@@ -1,0 +1,10 @@
+//extends _layouts/page
+include ../mixins/application-mixins.jade
+include ../mixins/links.jade
+
+block content
+  .application
+    +left-navigation
+    +filters-div
+    main
+      +start-view
