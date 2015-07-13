@@ -1,9 +1,9 @@
-extends _layouts/page
+extends _layouts/page_logged_in
 include mixins/articles-mixins
 
 block content
   .application
     +left-navigation
-    +filters-div
+    //+filters-div
     main
       +curated-content-article
