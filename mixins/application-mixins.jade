@@ -5,8 +5,11 @@ mixin search-bar
     .search
         form(method='get', action='/flare/user/search')
           select
+              option(value='.Net')= 'Net'
+              option(value='Java')= 'abc'
+              option(value='php')= 'php'
             if filters
-              for filter in filters
+              //for filter in filters
                 //option(value=result.technology)=result.technology
           input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
           button.btn-search#search-button(type='submit')
@@ -24,7 +27,8 @@ mixin results-save-share
           .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
       ul.display-inline
         li
-          a.button.btn-result.icon-Filter(href='#right-nav')
+          //a.button.btn-result.icon-Filter(href='#right-nav') aaaaaaa
+          a.button.btn-result.icon-Filter(href='')
         //li
           +save-results-button
         //li

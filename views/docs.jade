@@ -1,14 +1,16 @@
-extends ../_layouts/page
+//extends ../_layouts/page
 include ../mixins/application-mixins.jade
-
+include ../mixins/links.jade
 block content
-  .application
-    +left-navigation
+    //.application
+    //+left-navigation
     +filters-div
     main
       section.row
         .col-3
+          h1 docs nav
           +help-navigation
         .col-9
           article
+            h1 docs Content
             +help-content

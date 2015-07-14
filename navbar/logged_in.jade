@@ -1,3 +1,4 @@
+//extends ../_to_be_wired_in/_layouts/page
 include ../mixins/links.jade
 include ../mixins/application-mixins.jade
 include ../../TM_Jade/shared-mixins/globals.jade
@@ -5,5 +6,6 @@ include ../../TM_Jade/shared-mixins/globals.jade
 nav
   div(style="width:100%;")
     br
-a.logo.application-logo(href='main-app-view')
+a.logo.application-logo(ui-sref='main')
 +search-bar
++left-navigation

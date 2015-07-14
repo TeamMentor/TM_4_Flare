@@ -2,5 +2,9 @@ include ../mixins/links.jade
 include ../mixins/application-mixins.jade
 include ../../TM_Jade/shared-mixins/globals.jade
 
-a.logo.application-logo(href='/flare/main-app-view')
+nav
+  div(style="width:100%;")
+    br
+a.logo.application-logo(ui-sref='main')
 +search-bar
++left-navigation
