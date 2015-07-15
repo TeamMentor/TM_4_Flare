@@ -48,8 +48,8 @@ mixin navigate
 
 mixin help-navigation
   if library
-    dl.help
-      each view in library.Views
+    each view in library.Views
+      dl.help
         dt.vertical-align
           span.label.no-underline= view.Title
         .scroll

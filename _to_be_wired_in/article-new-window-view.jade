@@ -1,4 +1,4 @@
-extends _layouts/page
+extends _layouts/page_logged_in
 include mixins/articles-mixins
 include mixins/application-mixins
 include mixins/links
@@ -6,7 +6,7 @@ include mixins/links
 block content
   .application
     +left-navigation
-    +filters-div
+    //+filters-div
     main
       +article
       //+related-options

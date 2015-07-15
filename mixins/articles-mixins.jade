@@ -16,21 +16,20 @@ mixin article
     .col-2
 
 mixin curated-content-article
-  section.row
-    .col-9
-      section.article-body
-        section.row__article
-          h1= title
-          include:md ../../TM_Static/content/articles/article-new-window.md
-          //#html.article-content!= article_Html
-    .col-3
-      section.article-info
-        +article-info
+  .col-9
+    section.article-body
+      section.row__article
+        h1= title
+        include:md ../../TM_Static/content/articles/article-new-window.md
+        //#html.article-content!= article_Html
+  .col-3
+    section.article-info
+      +article-info
 
 //- Article Info
 mixin article-info
   section.row__label
-    .label This article belongs to:
+    .label Relates to:
   section.row
     ul.display-inline
       li
@@ -40,6 +39,9 @@ mixin article-info
         +filter-icon('Phase', phase)
       li
         +filter-icon('Type', type)
+  section.row__label
+    .label Belongs to:
+  section.row
     ul
       li
         a(href='/flare/curated-content')
