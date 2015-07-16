@@ -1,0 +1,12 @@
+section.row__label
+  .label Login
+section.row
+  form#login-form(role='form' method='post' action='/flare/user/login')
+    .input-field
+      +username-input
+    .input-field
+      +password-input
+    .button-field
+      +login-button
+    .button-field
+      +get-password-button

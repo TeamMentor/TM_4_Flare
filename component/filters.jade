@@ -1,0 +1,16 @@
+aside#right-nav
+  if filters
+    a.button.btn-minor(href='#')
+      +close-icon
+    form#filters
+      for filter in filters
+        .label
+          +filters-icon
+          span.text= ' ' + filter.title
+        for result in filter.results
+          if result.size > 0
+            //a(href=href + '/'+result.id)
+            input(type="checkbox" id=result.title)
+            label(for=result.title)
+              +filter-icon(filter.title, result.title)
+              span.badge= result.size
