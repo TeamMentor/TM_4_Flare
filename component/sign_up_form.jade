@@ -1,0 +1,16 @@
+section.row__label
+  .label Sign Up
+section.row
+  form#sign-up-form(action='/flare/user/sign-up')
+    .input-field
+      +username-input
+    .input-field
+      +email-input
+    .input-field
+      +password-input
+    .input-field
+      +confirm-password-input
+    .button-field
+      +sign-up-button
+    .conditions
+        include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
