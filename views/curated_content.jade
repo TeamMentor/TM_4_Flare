@@ -1,0 +1,26 @@
+//extends ../_to_be_wired_in/_layouts/page_logged_in
+include ../mixins/application-mixins
+
+block content
+  .application
+    //+left-navigation
+    //+filters-div
+    main
+      section.row
+        .col-3
+          dl
+            dt
+              .label Curated Content
+              span.sub-nav__icon
+                +back-icon
+            dd
+              a(href='#') Item One
+            dd
+              a(href='#') Item Two
+            dd
+              a(href='#') Item Three
+        .col-9
+          section.row
+            +articles-list
+            +articles-list
+            +articles-list

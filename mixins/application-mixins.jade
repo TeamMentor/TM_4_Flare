@@ -20,11 +20,9 @@ mixin results-save-share
   section.row__label
     if results
       if results.size() > 25
-        td
-          .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+        .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
       else
-        td
-          .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
+        .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
       ul.display-inline
         li
           //a.button.btn-result.icon-Filter(href='#right-nav') aaaaaaa
@@ -33,6 +31,18 @@ mixin results-save-share
           +save-results-button
         //li
           +share-results-button
+
+//- Delete and Share Results
+mixin results-delete-share
+  section.row__label
+    .label.no-underline You have 200 articles saved
+    ul.display-inline
+      li
+        a.button.btn-result.icon-Filter(href='')
+      li
+        +delete-results-button
+      li
+        +share-results-button
 
 //- Start View
 mixin start-view
@@ -78,6 +88,54 @@ mixin articles-list
             a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
                 h3#article-headline= result.title
             p= result.summary + '...'
+
+//- Saved Articles List
+mixin saved-articles-list
+  article.result
+    .metadata
+      ul
+          //li
+            +filter-icon('Type', result.type)
+          //li
+            +filter-icon('Phase', result.phase)
+          li
+              +delete-button
+          li
+              +share-button
+    .summary
+      a(href='#')
+          h3#article-headline Article Headline
+      p Article Summary
+  article.result
+    .metadata
+      ul
+          //li
+            +filter-icon('Type', result.type)
+          //li
+            +filter-icon('Phase', result.phase)
+          li
+              +delete-button
+          li
+              +share-button
+    .summary
+      a(href='#')
+          h3#article-headline Article Headline
+      p Article Summary
+  article.result
+    .metadata
+      ul
+          //li
+            +filter-icon('Type', result.type)
+          //li
+            +filter-icon('Phase', result.phase)
+          li
+              +delete-button
+          li
+              +share-button
+    .summary
+      a(href='#')
+          h3#article-headline Article Headline
+      p Article Summary
 
 //- Search Results List
 mixin search-term-list
