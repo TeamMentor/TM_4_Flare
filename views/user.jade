@@ -18,7 +18,22 @@ block content
               button(type='submit')
                 +tick-icon
         .col-8
+          section.row__label
+            .label Saved Search Terms
+            ul.display-inline
+              li
+                +delete-results-button
+              li
+                +share-button
           section.row
-            //+saved-search-results
+            +saved-search-term-list
+          section.row__label
+            .label Saved Articles
+            ul.display-inline
+              li
+                +delete-results-button
+              li
+                +share-button
+          section.row
             +saved-articles-list
           +copyright
