@@ -1,13 +1,11 @@
-//extends ../_to_be_wired_in/_layouts/page_logged_in
+extends ../_to_be_wired_in/_layouts/page_logged_in
 include ../mixins/application-mixins
 
 block content
   .application
-    //+left-navigation
-    //+filters-div
+    include ../component/left_navigation.jade
+    include ../component/filters.jade
     main
-      +results-save-share
+      include ../component/results_save_share.jade
       section.row
-        +articles-list
-        +articles-list
-        +articles-list
+        include ../component/result_article.jade

@@ -1,20 +1,3 @@
-//- Article
-mixin article
-  section.row
-    .col-2
-    .col-8
-      section.row__article
-        h1= title
-        #html.article-content!= article_Html
-        ul.display-inline
-          li
-            +filter-icon('Technology', technology)
-          li
-            +filter-icon('Type', type)
-          li
-            +filter-icon('Phase', phase)
-    .col-2
-
 mixin curated-content-article
   .col-9
     section.article-body
@@ -53,7 +36,6 @@ mixin article-info
       li.half-width
         +share-button
 
-
 //- Related Courses and Articles
 mixin related-options
   section.row__label
@@ -64,6 +46,3 @@ mixin related-options
     .label Related Courses
   section.row
     //+articles-list
-
-mixin terms-and-conditions
-  include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

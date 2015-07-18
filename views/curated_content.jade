@@ -3,8 +3,8 @@ include ../mixins/application-mixins
 
 block content
   .application
-    //+left-navigation
-    //+filters-div
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
     main
       section.row
         .col-3
@@ -21,6 +21,4 @@ block content
               a(href='#') Item Three
         .col-9
           section.row
-            +articles-list
-            +articles-list
-            +articles-list
+            include ../component/result_article.jade

@@ -1,39 +1,18 @@
-extends ../_to_be_wired_in/_layouts/page_logged_in
+//extends ../_to_be_wired_in/_layouts/page_logged_in
 include ../mixins/application-mixins
 
 block content
   .application
-    +left-navigation
-    +filters-div
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
     main
       section.row
         .col-3
-          section.row__label
-            .label @username
+          include ../component/user_panel.jade
+        .col-9
+          include ../component/results_delete_share.jade
           section.row
-            form
-              input(type='text', name="name", value="First name, Last name")
-              input(type='text', name="work", value="Position, Company")
-              input(type='email', name="email", value="Email")
-              button(type='submit')
-                +tick-icon
-        .col-8
-          section.row__label
-            .label Saved Search Terms
-            ul.display-inline
-              li
-                +delete-results-button
-              li
-                +share-button
+            include ../component/result_saved_search_term.jade
           section.row
-            +saved-search-term-list
-          section.row__label
-            .label Saved Articles
-            ul.display-inline
-              li
-                +delete-results-button
-              li
-                +share-button
-          section.row
-            +saved-articles-list
+            include ../component/result_saved_article.jade
           +copyright

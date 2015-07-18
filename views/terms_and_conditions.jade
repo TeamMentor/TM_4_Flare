@@ -1,54 +1,16 @@
-extends ../_to_be_wired_in/_layouts/page_logged_in
-include ../mixins/application-mixins
+//extends ../_to_be_wired_in/_layouts/page_logged_in
+include ../mixins/articles-mixins
+include ../mixins/links
 
 block content
   .application
-    //+left-navigation
-    //+filters-div
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
     main
       section.row
         .col-3
-          dl
-            dt
-              .label.no-underline Terms & Conditions
-            .scroll
-              dd
-                a(href='#article-i-definitions') Article I - Definitions
-              dd
-                a(href='#article-ii-deliverables') Article II - Deliverables
-              dd
-                a(href='#article-iii-license-grant') Article III - License Grant
-              dd
-                a(href='#article-iv-ownership-of-intellectual-property') Article IV - Ownership of Intellectual Property
-              dd
-                a(href='#article-v-trademarks') Article V - Trademarks
-              dd
-                a(href='#article-vi-support') Article VI - Support
-              dd
-                a(href='#article-vii-fees-royalties-and-payments') Article VII - Fees, Royalties and Payments
-              dd
-                a(href='#article-viii-records-reports-and-audit-rights') Article VIII - Records, Reports and Audit Rights
-              dd
-                a(href='#article-ix-license-administrative-contacts') Article IX - License Administrative Contacts
-              dd
-                a(href='#article-x-assignment') Article X - Assignment
-              dd
-                a(href='#article-xi-confidentiality') Article XI - Confidentiality
-              dd
-                a(href='#article-xii-warranties') Article XII - Warranties
-              dd
-                a(href='#article-xiii-indemnities') Article XIII - Indemnities
-              dd
-                a(href='#article-xiv-limitations') Article XIV - Limitations
-              dd
-                a(href='#article-xv-term-of-agreement') Article XV - Term of Agreement
-              dd
-                a(href='#article-xvi-termination') Article XVI - Termination
-              dd
-                a(href='#article-xvii-effect-of-termination') Article XVII - Effect of Termination
-              dd
-                a(href='#article-xviii-general-provisions') Article XVIII - General Provisions
+          +terms-and-conditions-navigation
         .col-9
           section.row
             article
-              include:md ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md
+              include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

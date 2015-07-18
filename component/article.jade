@@ -1,24 +1,14 @@
-if results
-  each result,index in results.take(10)
-    if result && result.id && result.title
-      article.result
-        .metadata
-          ul
-              //li
-                span.label.no-underline
-                  +tick-icon
-                  span   Seen
-              li
-                +filter-icon('Technology',result.technology)
-              li
-                +filter-icon('Type', result.type)
-              li
-                +filter-icon('Phase', result.phase)
-              //li
-                  +save-button
-              //li
-                  +share-button
-        .summary
-          a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
-              h3#article-headline= result.title
-          p= result.summary + '...'
+section.row
+    .col-2
+    .col-8
+      section.row__article
+        h1= title
+        #html.article-content!= article_Html
+        ul.display-inline
+          li
+            +filter-icon('Technology', technology)
+          li
+            +filter-icon('Type', type)
+          li
+            +filter-icon('Phase', phase)
+    .col-2

@@ -1,18 +1,18 @@
-extends ../_to_be_wired_in/_layouts/page_logged_in
+//extends ../_to_be_wired_in/_layouts/page_logged_in
 include ../mixins/application-mixins.jade
 include ../mixins/links.jade
 
 block content
   .application
-    +left-navigation
-    +filters-div
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
     main
       section.row
         .col-3
           +navigate
         .col-9
-          +results-save-share
+          include ../component/results_save_share.jade
           section.row
-            +articles-list
+            include ../component/result_article.jade
           section.row
-            +pagination
+            include ../component/pagination.jade
