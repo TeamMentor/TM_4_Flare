@@ -20,8 +20,8 @@ mixin curated-content-article
     section.article-body
       section.row__article
         h1= title
-        include:md ../../TM_Static/content/articles/article-new-window.md
-        //#html.article-content!= article_Html
+        //include:md ../../TM_Static/content/articles/article-new-window.md
+        #html.article-content!= article_Html
   .col-3
     section.article-info
       +article-info

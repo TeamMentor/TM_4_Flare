@@ -2,10 +2,12 @@
 include ../mixins/links.jade
 include ../mixins/application-mixins.jade
 include ../../TM_Jade/shared-mixins/globals.jade
+include ../component/search_bar.jade
+
 
 nav
   div(style="width:100%;")
     br
-a.logo.application-logo(ui-sref='main')
-+search-bar
-+left-navigation
+    a.logo.application-logo(ui-sref='main')
+    +search-bar
+    +left-navigation

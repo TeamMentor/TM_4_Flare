@@ -1,20 +1,5 @@
 include globals.jade
 
-//- Flare Search Bar Input
-mixin search-bar
-  .search
-    form(method='get', action='/flare/user/search')
-      select
-          option(value='.Net')= 'Net'
-          option(value='Java')= 'abc'
-          option(value='php')= 'php'
-        if filters
-          //for filter in filters
-            //option(value=result.technology)=result.technology
-      input.search-input#search-text(type='text', name='text', placeholder='Type keywords here', value=text)
-      button.btn-search#search-button(type='submit')
-        +search-icon
-
 //- Save and Share Results
 mixin results-save-share
   section.row__label
