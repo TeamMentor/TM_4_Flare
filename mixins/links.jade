@@ -9,26 +9,6 @@ mixin links-navbar__landing-page
     li
       a(ui-sref="get_started") Get Started
 
-mixin left-navigation
-  aside#left-nav
-    ul
-      li
-        //a(ui-sref="main")
-        a(href="#main")
-          +home-icon
-      li
-        //a(ui-sref="navigate")
-        a(href="#navigate")
-          +index-icon
-      li
-        //a(ui-sref="docs")
-        a(href="#docs")
-          +info-icon
-      li
-        //a(ui-sref="logout")
-        a(href="#logout")
-          +logout-icon
-
 mixin navigate
   dl
     dt
@@ -57,7 +37,50 @@ mixin help-navigation
             a(href= '/flare/help/' + article.Id)= article.Title
 
 mixin help-content
-  #help.bg.content
+  #help
     if title
       h1#help-title= title
     #help-content!= content
+
+// Terms and Conditions Navigation
+mixin terms-and-conditions-navigation
+  dl
+    dt
+      .label.no-underline Terms & Conditions
+    .scroll
+      dd
+        a(href='#article-i-definitions') Article I - Definitions
+      dd
+        a(href='#article-ii-deliverables') Article II - Deliverables
+      dd
+        a(href='#article-iii-license-grant') Article III - License Grant
+      dd
+        a(href='#article-iv-ownership-of-intellectual-property') Article IV - Ownership of Intellectual Property
+      dd
+        a(href='#article-v-trademarks') Article V - Trademarks
+      dd
+        a(href='#article-vi-support') Article VI - Support
+      dd
+        a(href='#article-vii-fees-royalties-and-payments') Article VII - Fees, Royalties and Payments
+      dd
+        a(href='#article-viii-records-reports-and-audit-rights') Article VIII - Records, Reports and Audit Rights
+      dd
+        a(href='#article-ix-license-administrative-contacts') Article IX - License Administrative Contacts
+      dd
+        a(href='#article-x-assignment') Article X - Assignment
+      dd
+        a(href='#article-xi-confidentiality') Article XI - Confidentiality
+      dd
+        a(href='#article-xii-warranties') Article XII - Warranties
+      dd
+        a(href='#article-xiii-indemnities') Article XIII - Indemnities
+      dd
+        a(href='#article-xiv-limitations') Article XIV - Limitations
+      dd
+        a(href='#article-xv-term-of-agreement') Article XV - Term of Agreement
+      dd
+        a(href='#article-xvi-termination') Article XVI - Termination
+      dd
+        a(href='#article-xvii-effect-of-termination') Article XVII - Effect of Termination
+      dd
+        a(href='#article-xviii-general-provisions') Article XVIII - General Provisions

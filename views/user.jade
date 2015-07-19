@@ -1,0 +1,18 @@
+//extends ../_to_be_wired_in/_layouts/page_logged_in
+include ../mixins/application-mixins
+
+block content
+  .application
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
+    main
+      section.row
+        .col-3
+          include ../component/user_panel.jade
+        .col-9
+          include ../component/results_delete_share.jade
+          section.row
+            include ../component/result_saved_search_term.jade
+          section.row
+            include ../component/result_saved_article.jade
+          +copyright

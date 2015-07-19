@@ -1,0 +1,20 @@
+article.result
+  .metadata
+    ul
+      li
+        br
+      //li
+        +filter-icon('Type', result.type)
+      //li
+        +filter-icon('Phase', result.phase)
+      //li
+        +filter-icon('Technology', result.technology)
+  .summary
+    a(href='#')
+        h3#article-headline Article Headline
+    p Article Summary
+    ul.display-inline
+      li
+        +delete-saved-button
+      li
+        +share-saved-button

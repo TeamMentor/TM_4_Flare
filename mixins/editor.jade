@@ -1,0 +1,22 @@
+mixin editor-navigate
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dt
+      ul.text-center
+        li Add
+        li
+          +edit-icon
+        li Move
+        li
+          +delete-icon
