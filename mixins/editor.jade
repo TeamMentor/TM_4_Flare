@@ -12,11 +12,19 @@ mixin editor-navigate
               dd
                 span.text= container.title
                 span.badge= container.size
-    dt
-      ul.text-center
-        li Add
-        li
-          +edit-icon
-        li Move
-        li
-          +delete-icon
+    dt.editor
+      form.text-center
+        div
+          input(type='radio' name='editor' value='add' id='add')
+          label(for='add') Add
+        div
+          input(type='radio' name='editor' value='edit' id='edit')
+          label(for='edit')
+            +edit-icon
+        div
+          input(type='radio' name='editor' value='move' id='move')
+          label(for='move') Move
+        div
+          input(type='radio' name='editor' value='delete' id='delete')
+          label(for='delete')
+            +delete-icon

@@ -5,12 +5,12 @@ include ../mixins/editor.jade
 
 block content
   .application
-    //include ../component/left_navigation.jade
-    //include ../component/filters.jade
+    include ../component/left_navigation.jade
+    include ../component/filters.jade
     main
       section.row
         .col-3
-          +navigate
+          +editor-navigate
         .col-9
           include ../component/results_save_share.jade
           section.row
