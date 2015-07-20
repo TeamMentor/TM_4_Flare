@@ -1,4 +1,22 @@
-mixin editor-navigate
+mixin editor-navbar
+  dt.editor
+    form.text-center
+      div
+        input(type='radio' name='editor' value='add' id='add')
+        label(for='add') Add
+      div
+        input(type='radio' name='editor' value='edit' id='edit')
+        label(for='edit')
+          +edit-icon
+      div
+        input(type='radio' name='editor' value='move' id='move')
+        label(for='move') Move
+      div
+        input(type='radio' name='editor' value='delete' id='delete')
+        label(for='delete')
+          +delete-icon
+
+mixin editor-directory
   dl
     dt
       span.label.no-underline Title
@@ -12,11 +30,58 @@ mixin editor-navigate
               dd
                 span.text= container.title
                 span.badge= container.size
+    +editor-navbar
+
+mixin directory-add
+  dl
     dt
-      ul.text-center
-        li Add
-        li
-          +edit-icon
-        li Move
-        li
-          +delete-icon
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      +editor-add-form
+    +editor-navbar
+
+mixin directory-edit
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      +editor-edit-form
+    +editor-navbar
+
+mixin directory-delete
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      +editor-delete-form
+    +editor-navbar

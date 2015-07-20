@@ -3,10 +3,7 @@ extends index.jade
 append head
   base(href='/angular/guest/')
 
-  //@luchia this is a hack to allow me to see the top bar ok (can you fix it?)
-  style.
-    nav { width: 1024px}
-
 append body
   landing-bar
-  div(ui-view)
+  .container
+    div(ui-view)
