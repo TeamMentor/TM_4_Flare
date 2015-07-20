@@ -8,8 +8,10 @@ mixin links-navbar__landing-page
       a(ui-sref="docs") Docs
     li
       a(ui-sref="get_started") Get Started
+    li
+      a(ui-sref="this-seems-to-be-needed")
 
-mixin navigate
+//mixin navigate
   dl
     dt
       if title
@@ -24,23 +26,6 @@ mixin navigate
               dd
                 span.text= container.title
                 span.badge= container.size
-
-mixin help-navigation
-  if library
-    each view in library.Views
-      dl.help
-        dt.vertical-align
-          span.label.no-underline= view.Title
-        .scroll
-        each article in view.Articles
-          dd
-            a(href= '/flare/help/' + article.Id)= article.Title
-
-mixin help-content
-  #help
-    if title
-      h1#help-title= title
-    #help-content!= content
 
 // Terms and Conditions Navigation
 mixin terms-and-conditions-navigation

@@ -6,12 +6,12 @@ block content
   .application
     //include ../component/left_navigation.jade
     //include ../component/filters.jade
-    main
+    main(ng-controller='Help_Controller')
       section.row
         .col-3
-          h1 docs nav
-          +help-navigation
+          help-navigation
         .col-9
           article
-            h1 docs Content
-            +help-content
+            #help
+              h1#help-title {{title}}
+              help-content(ng-bind-html='content')

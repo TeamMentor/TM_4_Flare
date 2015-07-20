@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+
+  head
+      block head
+        include head.jade
+
+  body
+    block body
+      //div(ui-view='navbar')
+      //div(ui-view='content')
+    script.
+      angular.bootstrap(document, ["App"])
