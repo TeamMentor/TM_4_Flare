@@ -1,6 +1,10 @@
-aside#right-nav
+include ../mixins/icons.jade
+include ../mixins/globals.jade
+
+//aside#right-nav
+#right-nav
   if filters
-    a.button.btn-minor(href='#')
+    //a.button.btn-minor(href='#')
       +close-icon
     form#filters
       for filter in filters
@@ -9,8 +13,9 @@ aside#right-nav
           span.text= ' ' + filter.title
         for result in filter.results
           if result.size > 0
-            //a(href=href + '/'+result.id)
-            input(type="checkbox" id=result.title)
-            label(for=result.title)
-              +filter-icon(filter.title, result.title)
-              span.badge= result.size
+            //a(ng-href=href + '/'+result.id)
+            a(ng-href='#')
+              input(type="checkbox" id=result.title)
+              label(for=result.title)
+                +show-icon(filter.title, result.title)
+                span.badge= result.size
