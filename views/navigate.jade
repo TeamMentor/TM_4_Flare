@@ -2,9 +2,9 @@ block content
   .application
     main(ng-controller='Navigate_Controller')
       section.row
-        .col-2
-          navigate-queries
-        .col-6
-          navigate-results
         .col-3
-          filters
+          navigate-queries
+        .col-9
+          include ../component/results_save_share.jade
+          navigate-results
+          //filters

@@ -1,11 +1,12 @@
 section.row__label
-  if results
+  .label.no-underline#resultsTitle # results showing
+
+//if results
+  section.row__label
     if results.size() > 25
-      td
-        .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+      .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
     else
-      td
-        .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
+      .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
     ul.display-inline
       li
         //a.button.btn-result.icon-Filter(href='#right-nav') aaaaaaa
