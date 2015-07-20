@@ -1,5 +1,5 @@
 include ../mixins/icons.jade
-aside#left-nav
+aside#left-nav(ng-controller='User_Navigation_Controller')
   ul
     li
       a(ui-sref="main")
@@ -7,7 +7,7 @@ aside#left-nav
       //a(href="#main")
 
     li
-      //a(href="/angular/user/navigate")
+      //a(ng-href="#", ng-click='navigate()')
         +index-icon
       a(ui-sref="navigate")
         +index-icon

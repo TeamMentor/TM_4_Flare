@@ -20,6 +20,6 @@ if results
             //li
                 +share-button
         .summary
-          a(href='/flare/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
+          a(href='/angular/user/article/' + result.id.remove('article-') + '/' + result.title.replace(/ /g,'-').remove('.'), id=result.id)
             h3#article-headline= result.title
           p= result.summary + '...'
