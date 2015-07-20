@@ -1,3 +1,21 @@
+mixin editor-navbar
+  dt.editor
+    form.text-center
+      div
+        input(type='radio' name='editor' value='add' id='add')
+        label(for='add') Add
+      div
+        input(type='radio' name='editor' value='edit' id='edit')
+        label(for='edit')
+          +edit-icon
+      div
+        input(type='radio' name='editor' value='move' id='move')
+        label(for='move') Move
+      div
+        input(type='radio' name='editor' value='delete' id='delete')
+        label(for='delete')
+          +delete-icon
+
 mixin editor-navigate
   dl
     dt
@@ -12,22 +30,7 @@ mixin editor-navigate
               dd
                 span.text= container.title
                 span.badge= container.size
-    dt.editor
-      form.text-center
-        div
-          input(type='radio' name='editor' value='add' id='add')
-          label(for='add') Add
-        div
-          input(type='radio' name='editor' value='edit' id='edit')
-          label(for='edit')
-            +edit-icon
-        div
-          input(type='radio' name='editor' value='move' id='move')
-          label(for='move') Move
-        div
-          input(type='radio' name='editor' value='delete' id='delete')
-          label(for='delete')
-            +delete-icon
+    +editor-navbar
 
 mixin editor-navigate-add
   dl
@@ -52,19 +55,32 @@ mixin editor-navigate-add
           .col-2.text-center
             button.btn-editor(type='submit')
               +tick-icon
-    dt.editor
-      form.text-center
-        div
-          input(type='radio' name='editor' value='add' id='add')
-          label(for='add') Add
-        div
-          input(type='radio' name='editor' value='edit' id='edit')
-          label(for='edit')
-            +edit-icon
-        div
-          input(type='radio' name='editor' value='move' id='move')
-          label(for='move') Move
-        div
-          input(type='radio' name='editor' value='delete' id='delete')
-          label(for='delete')
-            +delete-icon
+    +editor-navbar
+
+mixin editor-navigate-edit
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      form
+        label(for='add-directory') Edit directory
+        section.row
+          .col-8
+            input(type='text' id='add-directory')
+          .col-2.text-center
+            button.btn-editor(type='submit')
+              +tick-icon
+          .col-2.text-center
+            button.btn-editor.cancel(type='submit')
+              +close-icon
+    +editor-navbar
