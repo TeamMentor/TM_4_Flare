@@ -16,7 +16,7 @@ mixin editor-navbar
         label(for='delete')
           +delete-icon
 
-mixin editor-navigate
+mixin editor-directory
   dl
     dt
       span.label.no-underline Title
@@ -32,7 +32,7 @@ mixin editor-navigate
                 span.badge= container.size
     +editor-navbar
 
-mixin editor-navigate-add
+mixin directory-add
   dl
     dt
       span.label.no-underline Title
@@ -47,17 +47,10 @@ mixin editor-navigate-add
                 span.text= container.title
                 span.badge= container.size
     dd
-      form
-        label(for='add-directory') Add new directory
-        section.row
-          .col-10
-            input(type='text' id='add-directory')
-          .col-2.text-center
-            button.btn-editor(type='submit')
-              +tick-icon
+      +editor-add-form
     +editor-navbar
 
-mixin editor-navigate-edit
+mixin directory-edit
   dl
     dt
       span.label.no-underline Title
@@ -72,15 +65,23 @@ mixin editor-navigate-edit
                 span.text= container.title
                 span.badge= container.size
     dd
-      form
-        label(for='add-directory') Edit directory
-        section.row
-          .col-8
-            input(type='text' id='add-directory')
-          .col-2.text-center
-            button.btn-editor(type='submit')
-              +tick-icon
-          .col-2.text-center
-            button.btn-editor.cancel(type='submit')
-              +close-icon
+      +editor-edit-form
+    +editor-navbar
+
+mixin directory-delete
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      +editor-delete-form
     +editor-navbar

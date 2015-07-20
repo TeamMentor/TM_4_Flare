@@ -1,3 +1,5 @@
+// Getting Started
+
 mixin username-input
     label Username
     input(type='text', id='username', placeholder='Username')
@@ -18,6 +20,8 @@ mixin email-input
     label Email Address
     input(type='email', id='email', placeholder='Email Address')
 
+// User Inputs
+
 mixin name-input
     label Name
     input(type='text', id='name', placeholder='Full Name')
@@ -29,3 +33,41 @@ mixin title-input
 mixin company-input
     label Company
     input(type='text', id='company', placeholder='Company')
+
+
+// Editor Inputs
+
+mixin editor-add-form
+  form
+    label(for='add-directory') Add new directory
+    section.row
+      .col-10
+        input(type='text' id='add-directory')
+      .col-2
+        button.btn-editor(type='submit')
+          +tick-icon
+
+mixin editor-edit-form
+  form
+    label(for='edit-directory') Edit directory
+    section.row
+      .col-8
+        input(type='text' id='edit-directory')
+      .col-2
+        button.btn-editor(type='submit')
+          +tick-icon
+      .col-2
+        button.btn-editor.cancel(type='submit')
+          +close-icon
+
+mixin editor-delete-form
+  form
+    section.row
+      .col-8
+        label(for='delete-directory') Are you sure you want to delete this?
+      .col-2
+        button.btn-editor(type='submit')
+          +tick-icon
+      .col-2
+        button.btn-editor.cancel(type='cancel')
+          +close-icon
