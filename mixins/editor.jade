@@ -43,6 +43,15 @@ mixin editor-navigate-add
               dd
                 span.text= container.title
                 span.badge= container.size
+    dd
+      form
+        label(for='add-directory') Add new directory
+        section.row
+          .col-10
+            input(type='text' id='add-directory')
+          .col-2.text-center
+            button.btn-editor(type='submit')
+              +tick-icon
     dt.editor
       form.text-center
         div
