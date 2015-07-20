@@ -28,3 +28,34 @@ mixin editor-navigate
           input(type='radio' name='editor' value='delete' id='delete')
           label(for='delete')
             +delete-icon
+
+mixin editor-navigate-add
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dt.editor
+      form.text-center
+        div
+          input(type='radio' name='editor' value='add' id='add')
+          label(for='add') Add
+        div
+          input(type='radio' name='editor' value='edit' id='edit')
+          label(for='edit')
+            +edit-icon
+        div
+          input(type='radio' name='editor' value='move' id='move')
+          label(for='move') Move
+        div
+          input(type='radio' name='editor' value='delete' id='delete')
+          label(for='delete')
+            +delete-icon
