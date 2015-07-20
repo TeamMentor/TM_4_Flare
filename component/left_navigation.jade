@@ -1,18 +1,26 @@
-aside#left-nav
+include ../mixins/icons.jade
+aside#left-nav(ng-controller='User_Navigation_Controller')
   ul
     li
-      //a(ui-sref="main")
-      a(href="#main")
+      a(ui-sref="main")
         +home-icon
+      //a(href="#main")
+
     li
-      //a(ui-sref="navigate")
-      a(href="#navigate")
+      //a(ng-href="#", ng-click='navigate()')
         +index-icon
+      a(ui-sref="navigate")
+        +index-icon
+
+
     li
-      //a(ui-sref="docs")
-      a(href="#docs")
+      a(ui-sref="docs")
         +info-icon
+      //a(href="#docs")
+
     li
-      //a(ui-sref="logout")
-      a(href="#logout")
+      a(href="/angular/guest/index")
         +logout-icon
+      //a(ui-sref="logout")
+
+

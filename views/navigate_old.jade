@@ -1,0 +1,19 @@
+extends ../_to_be_wired_in/_layouts/page_logged_in
+include ../mixins/application-mixins.jade
+include ../mixins/links.jade
+include ../mixins/editor.jade
+
+block content
+  .application
+    //include ../component/left_navigation.jade
+    //include ../component/filters.jade
+    main
+      section.row
+        .col-3
+          +navigate
+        .col-9
+          include ../component/results_save_share.jade
+          section.row
+            include ../component/result_article.jade
+          section.row
+            include ../component/pagination.jade

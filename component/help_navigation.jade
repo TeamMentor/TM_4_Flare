@@ -1,4 +1,4 @@
-if library
+//if library
   dl.help
     each view in library.Views
       dt.vertical-align
@@ -6,4 +6,12 @@ if library
       .scroll
         each article in view.Articles
           dd
-            a(href= '/flare/help/' + article.Id)= article.Title
+            a(href= '#' + article.Id)= article.Title
+
+dl.help
+  span(ng-repeat = 'view in Views')
+    dt.vertical-align
+      span.label.no-underline {{view.Title}}
+    .scroll
+      dd(ng-repeat = 'article in view.Articles')
+        a(href='#'+'{{article.Id}}' ng-click='show_Doc(article)') {{article.Title}}
