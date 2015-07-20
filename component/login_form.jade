@@ -1,12 +1,27 @@
-section.row__label
-  .label Login
-section.row
-  form#login-form(role='form' method='post' action='/flare/user/login')
-    .input-field
-      +username-input
-    .input-field
-      +password-input
-    .button-field
-      +login-button
-    .button-field
-      +get-password-button
+div(ng-controller='Login_Controller')
+  section.row__label
+    .label Login
+  section.row
+    form#login-form(role='form' ng-submit='login()')
+      .input-field
+        label(for='username') Username
+          input(type='text', id='username', placeholder='Username',ng-model='username', required, maxlength='256')
+      .input-field
+        label(for='password') Password
+          input(type='password', id='password', placeholder='Password',ng-model='password',required,maxlength='256')
+      .button-field
+        button.full-width(type='submit', id='btn-login') Login
+      .button-field
+        button.full-width.btn-minor(type='submit' id='btn-get-password') Get Password
+
+  section.row(ng-show="showErrorMessage()")
+    .alert.alert-bad(role='alert')
+      #message
+        span.alert-icon !
+        span.alert-text Error:  {{errorMessage}}
+
+  section.row(ng-show="showInfoMessage()")
+    .alert.alert-ok(role='alert')
+      #message
+        span.alert-icon |
+        span.alert-text Info:  {{infoMessage}}
