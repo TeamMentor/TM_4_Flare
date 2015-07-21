@@ -1,31 +1,3 @@
-mixin links-navbar__landing-page
-  ul.display-inline
-    li
-      a(ui-sref="about") About
-    li
-      a(ui-sref="features") Features
-    li
-      a(ui-sref="docs") Docs
-    li
-      a(ui-sref="get_started") Get Started
-    li
-      a(ui-sref="this-seems-to-be-needed")
-
-//mixin navigate
-  dl
-    dt
-      if title
-        span.label.no-underline= title
-        span.sub-nav__icon
-          +back-icon
-    if(containers)
-      #containers.scroll
-        each container in containers
-          if container.size > 0
-            a(href= href + container.id , id=container.id)
-              dd
-                span.text= container.title
-                span.badge= container.size
 
 // Terms and Conditions Navigation
 mixin terms-and-conditions-navigation
