@@ -5,20 +5,40 @@ mixin username-input
     input(type='text', id='username', placeholder='Username',  ng-model='username')
 
 mixin password-input
-    label Password
-    input(type='password', id='password', placeholder='Password', ng-model='password')
+    label(for='password') Password
+    input(type='password', id='password', placeholder='Password',ng-model='password',required,maxlength='256')
 
-mixin new-password-input
-    label(for='user-new-password') New Password
-    input(type='password', id='user-new-password', placeholder='New Password')
-
-mixin confirm-new-password-input
-    label(for='user-confirm-new-password') Confirm New Password
-    input(type='password', id='user-confirm-new-password', placeholder='Confirm New Password')
+mixin confirm-password-input
+  label(for='confirm-password') Confirm Password
+  input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
 
 mixin email-input
-    label Email Address
-    input(type='email', id='email', placeholder='Email Address' , ng-model='email', required, maxlength='256')
+  label(for='email') Email Address
+  input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',required,maxlength='256')
+
+mixin first-name-input
+  label(for='firstname') First Name
+  input(type='text', id='firstname', name='firstName', placeholder='First Name',value='#{viewModel?viewModel.firstname:""}',required,maxlength='100')
+
+mixin last-name-input
+  label(for='lastname') Last Name
+  input(type='text', id='lastname', name='lastname', placeholder='Last Name',value='#{viewModel?viewModel.lastname:""}',required,maxlength='100')
+
+mixin company-input
+  label(for='company') Company
+  input(type='text', id='company', name='company', placeholder='Company',value='#{viewModel?viewModel.company:""}',maxlength='100')
+
+mixin title-input
+  label(for='title') Job/Title
+  input(type='text', id='title', name='title', placeholder='Job/Title',value='#{viewModel?viewModel.title:""}',maxlength='100')
+
+mixin country-input
+  label(for='country') Country
+  input(type='text', id='country', name='country', placeholder='Country',value='#{viewModel?viewModel.country:""}',required,maxlength='100')
+
+mixin state-input
+  label(for='state') State
+  input(type='text', id='state', name='state', placeholder='state',value='#{viewModel?viewModel.state:""}',maxlength='100')
 
 // User Inputs
 
