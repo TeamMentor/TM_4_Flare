@@ -2,11 +2,11 @@
 
 mixin username-input
     label Username
-    input(type='text', id='username', placeholder='Username')
+    input(type='text', id='username', placeholder='Username',  ng-model='username')
 
 mixin password-input
     label Password
-    input(type='password', id='password', placeholder='Password')
+    input(type='password', id='password', placeholder='Password', ng-model='password')
 
 mixin new-password-input
     label(for='user-new-password') New Password
