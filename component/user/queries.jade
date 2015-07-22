@@ -1,0 +1,17 @@
+include ../../mixins/icons.jade
+div(ng-controller='Queries_Controller')
+  dl
+    dt
+      span.label.no-underline {{title}}
+      span.sub-nav__icon
+        //if previous_Query
+        a(ng-click="show_Previous_Query()")
+          +back-icon
+
+    #containers.scroll
+      div(ng-repeat="container in containers")
+        //if container.size > 0
+        a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' )
+          dd
+            span.text {{container.title}}
+            span.badge {{container.size}}
