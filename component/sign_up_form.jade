@@ -1,4 +1,4 @@
-include ../mixins/globals.jade
+include ../../TM_Jade/shared-mixins/globals.jade
 
 section.row__label
   .label Sign Up
@@ -12,7 +12,19 @@ section.row
       +password-input
     .input-field
       +confirm-password-input
+    .input-field
+      +first-name-input
+    .input-field
+      +last-name-input
+    .input-field
+      +company-input
+    .input-field
+      +title-input
+    .input-field
+      +country-input
+    .input-field
+      +state-input
+    .conditions
+      include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
     .button-field
       +sign-up-button
-    .conditions
-        include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
