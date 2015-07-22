@@ -2,10 +2,9 @@
 include ../mixins/getting-started-mixins
 //include ../component/login_form.jade
 block content
-  .application
-    section.row
-      .col-6
-        +team-mentor-summary
-      .col-6
-        section.getting-started
-          sign-up-form
+  section.row
+    .col-4
+      +team-mentor-summary
+    .col-8
+      section.getting-started
+        include ../component/sign_up_form.jade
