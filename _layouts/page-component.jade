@@ -1,0 +1,14 @@
+extends index.jade
+append head
+  base(href='/angular/component/')
+  script.
+    angular.module('TM_App')      //disable routing
+           .config(
+              function($stateProvider, $urlRouterProvider, $locationProvider)
+                {
+                  $urlRouterProvider.deferIntercept();
+                });
+
+
+append body
+  show_Component

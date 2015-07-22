@@ -18,13 +18,13 @@ mixin confirm-new-password-input
 
 mixin email-input
     label Email Address
-    input(type='email', id='email', placeholder='Email Address')
+    input(type='email', id='email', placeholder='Email Address' , ng-model='email', required, maxlength='256')
 
 // User Inputs
 
 mixin name-input
     label Name
-    input(type='text', id='name', placeholder='Full Name')
+    input(type='text', id='name', placeholder='Full Name', ng-model='name')
 
 mixin title-input
     label Title
