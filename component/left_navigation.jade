@@ -7,9 +7,10 @@ aside#left-nav(ng-controller='User_Navigation_Controller')
       a(ui-sref="main")
         +home-icon
     li
-      //a(ng-href="#", ng-click='navigate()')
-        +index-icon
       a(ui-sref="navigate")
+        +index-icon
+    li
+      a(ui-sref="queries")
         +index-icon
     li
       a(ui-sref="docs")
