@@ -2,13 +2,12 @@ include ../mixins/application-mixins.jade
 include ../mixins/links.jade
 
 block content
-    //.application
-    main(ng-controller='Help_Controller' class='help')
-      section.row
-        .col-3
-          help-navigation
-        .col-9
-          article
-            #help
-              h1#help-title {{title}}
-              help-content(ng-bind-html='content')
+  main(ng-controller='Help_Controller' class='help')
+    section.row
+      .col-3
+        help-navigation
+      .col-9
+        article
+          #help
+            h1#help-title {{title}}
+            help-content(ng-bind-html='content')
