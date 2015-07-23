@@ -1,0 +1,6 @@
+div(ng-controller='Breadcrumbs_Controller')
+  .sub-nav
+    .navigation
+      dl
+        dd.active(ng-repeat='breadcrumb in breadcrumbs')
+          a(ng-href='#' ng-click='load_Query(breadcrumb)') {{breadcrumb.title}}
