@@ -2,26 +2,29 @@ mixin curated-content-article
   .col-9
     section.article-body
       section.row__article
-        h1= title
-        //include:md ../../TM_Static/content/articles/article-new-window.md
-        //#html.article-content!= article_Html
+        h1 Article Title
   .col-3
     section.article-info
-      +article-info
+      +article-info-editor-option
 
 //- Article Info
 mixin article-info
+  ul.display-inline
+      li.half-width
+        +save-button
+      li.half-width
+        +share-button
   section.row__label
     .label Relates to:
   section.row
     ul.display-inline
       li
-        +show-icon('Technology', technology)
+        //+show-icon('Technology', technology)
         span.text= technology
       li
-        +show-icon('Phase', phase)
+        //+show-icon('Phase', phase)
       li
-        +show-icon('Type', type)
+        //+show-icon('Type', type)
   section.row__label
     .label Belongs to:
   section.row
@@ -30,19 +33,109 @@ mixin article-info
         a(href='/flare/curated-content')
           +curated-content-icon
           span.text Curated Content
-    //ul.display-inline
-      li.half-width
-        +save-button
-      li.half-width
-        +share-button
+  section.row__label
+    .label Related Articles:
+  section.row
+    ul
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
 
-//- Related Courses and Articles
-mixin related-options
+mixin article-info-editor-option
+  ul.display-inline
+    li
+      +edit-button
+    li.one-third
+      +save-button
+    li.one-third
+      +share-button
   section.row__label
-    .label Related Articles
+    .label Relates to:
   section.row
-      //+articles-list
+    ul.display-inline
+      li
+        //+show-icon('Technology', technology)
+        span.text= technology
+      li
+        //+show-icon('Phase', phase)
+      li
+        //+show-icon('Type', type)
   section.row__label
-    .label Related Courses
+    .label Belongs to:
   section.row
-    //+articles-list
+    ul
+      li
+        a(href='/flare/curated-content')
+          +curated-content-icon
+          span.text Curated Content
+  section.row__label
+    .label Related Articles:
+  section.row
+    ul
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+
+mixin article-editor
+  .col-9
+    section.article-body
+      section.row__article
+        form
+          input(type='text', name='article-title', placeholder='Article Title')
+          textarea(name='article-body', placeholder='Article Body')
+          ul.display-inline
+            li Import
+            li Images
+            li PDF
+            li Word Doc
+
+      section.row__label
+        .label Directories
+        ul.display-inline
+          li Add
+          li Edit
+          li Delete
+      section.row
+        p Directories Here
+
+      section.row__label
+        .label Filters
+      section.row
+        p Filters Here
+
+      section.row__label
+        .label Quality
+      section.row
+        p Quality slider
+
+  .col-3
+    section.article-info
+      ul.display-inline
+        li
+          button.btn-editor(type='submit')
+            +tick-icon
+        li
+          button.btn-editor.cancel(type='submit')
+            +close-icon
