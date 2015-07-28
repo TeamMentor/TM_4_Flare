@@ -1,3 +1,5 @@
+include icons.jade
+
 mixin curated-content-article
   .col-9
     section.article-body
@@ -101,22 +103,47 @@ mixin article-info-editor-option
 mixin article-editor
   .col-9
     section.article-body
-      section.row__article
-        form
+      section.row
+        form.article-editor
           input(type='text', name='article-title', placeholder='Article Title')
           textarea(name='article-body', placeholder='Article Body')
-          ul.display-inline
-            li Import
-            li Images
-            li PDF
-            li Word Doc
+          section.import-files
+            p
+              | You can
+              a(href='#')  import
+              |  PDFs, images or Word documents.
 
       section.row__label
         .label Directories
-        ul.display-inline
-          li Add
-          li Edit
-          li Delete
+        form
+          ul.display-inline
+            li
+              input(type='radio' name='editor' value='add' id='add')
+              label(for='add')
+                +add-icon
+            li Edit
+            li Delete
+
+
+
+dt.editor
+    form.text-center
+      div
+        input(type='radio' name='editor' value='add' id='add')
+        label(for='add') Add
+      div
+        input(type='radio' name='editor' value='edit' id='edit')
+        label(for='edit')
+          +edit-icon
+      div
+        input(type='radio' name='editor' value='move' id='move')
+        label(for='move') Move
+      div
+        input(type='radio' name='editor' value='delete' id='delete')
+        label(for='delete')
+          +delete-icon
+
+
       section.row
         p Directories Here
 
