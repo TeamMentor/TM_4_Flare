@@ -12,9 +12,9 @@ mixin curated-content-article
 //- Article Info
 mixin article-info
   ul.display-inline
-      li.half-width
+      li.
         +save-button
-      li.half-width
+      li.
         +share-button
   section.row__label
     .label Relates to:
@@ -58,9 +58,9 @@ mixin article-info-editor-option
   ul.display-inline
     li
       +edit-button
-    li.one-third
+    li
       +save-button
-    li.one-third
+    li
       +share-button
   section.row__label
     .label Relates to:
@@ -115,37 +115,57 @@ mixin article-editor
 
       section.row__label
         .label Directories
-        form
-          ul.display-inline
-            li
-              input(type='radio' name='editor' value='add' id='add')
-              label(for='add')
-                +add-icon
-            li Edit
-            li Delete
-
-
-
-dt.editor
-    form.text-center
-      div
-        input(type='radio' name='editor' value='add' id='add')
-        label(for='add') Add
-      div
-        input(type='radio' name='editor' value='edit' id='edit')
-        label(for='edit')
-          +edit-icon
-      div
-        input(type='radio' name='editor' value='move' id='move')
-        label(for='move') Move
-      div
-        input(type='radio' name='editor' value='delete' id='delete')
-        label(for='delete')
-          +delete-icon
-
-
+        // This toggles the different editor functionalities for heirarchical structure.
+        ul.toggle-bar.display-inline
+          form.article-editor.text-center
+            li.one-third
+              .button.btn-result
+                input(type='radio' name='editor' value='add' id='add')
+                label(for='add')
+                  +add-icon
+            li.one-third
+              input(type='radio' name='editor' value='edit' id='edit')
+              label(for='edit')
+                +edit-icon
+            li.one-third
+              input(type='radio' name='editor' value='delete' id='delete')
+              label(for='delete')
+                +delete-icon
       section.row
-        p Directories Here
+        ul.display-inline
+          // This is for display before any action is taken
+          li.one-third
+            dl
+              dt
+                .label Container
+          // This should be used for when the user toggles the Add or Edit functionality
+          li.one-third
+            dl
+              dt
+                .label Container
+                span.sub-nav__icon
+                  +back-icon
+              dd
+                a.active(href='#') Directory
+              dd
+                a(href='#') Directory
+              dd
+                a(href='#') Directory
+          // This should be used if the user wants to delete a container
+          li.one-third
+            dl
+              dt
+                .label Container
+              dd
+                form
+                  label(for='delete-directory') Are you sure you want to delete this?
+                  ul.display-inline
+                    li
+                      button.btn-editor(type='submit')
+                        +tick-icon
+                    li
+                      button.btn-editor.cancel(type='cancel')
+                        +close-icon
 
       section.row__label
         .label Filters
