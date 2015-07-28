@@ -119,18 +119,14 @@ mixin article-editor
         ul.toggle-bar.display-inline
           form.article-editor.text-center
             li.one-third
-              .button.btn-result
-                input(type='radio' name='editor' value='add' id='add')
-                label(for='add')
-                  +add-icon
+              input(type='radio' name='editor' value='add' id='add')
+              label.button.btn-result.icon-Add(for='add')
             li.one-third
               input(type='radio' name='editor' value='edit' id='edit')
-              label(for='edit')
-                +edit-icon
+              label.button.btn-result.icon-Edit(for='edit')
             li.one-third
               input(type='radio' name='editor' value='delete' id='delete')
-              label(for='delete')
-                +delete-icon
+              label.button.btn-result.icon-Delete(for='delete')
       section.row
         ul.display-inline
           // This is for display before any action is taken
@@ -170,7 +166,43 @@ mixin article-editor
       section.row__label
         .label Filters
       section.row
-        p Filters Here
+        br
+        form.article-editor-grid
+          div
+            input(type="checkbox" id='filter1')
+            label(for='filter1')
+              +all-icon
+              span Technology Independant
+          div
+            input(type="checkbox" id='filter2')
+            label(for='filter2')
+              +android-icon
+              span Android
+          div
+            input(type="checkbox" id='filter3')
+            label(for='filter3')
+              +scala-icon
+              span Scala
+          div
+            input(type="checkbox" id='filter4')
+            label(for='filter4')
+              +wcf-icon
+              span WCF
+          div
+            input(type="checkbox" id='filter5')
+            label(for='filter5')
+              +web-app-icon
+              span Web Application
+          div
+            input(type="checkbox" id='filter6')
+            label(for='filter6')
+              +ios-icon
+              span iOS
+          div
+            input(type="checkbox" id='filter7')
+            label(for='filter7')
+              +html5-icon
+              span.text HTML5
 
       section.row__label
         .label Quality
