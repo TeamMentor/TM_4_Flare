@@ -2,7 +2,7 @@
 
 mixin username-input
     label Username
-    input(type='text', id='username', placeholder='Username',  ng-model='username')
+    input(type='text', id='username', placeholder='Username',  ng-model='username',required=)
 
 mixin password-input
     label(for='password') Password
@@ -10,7 +10,7 @@ mixin password-input
 
 mixin confirm-password-input
   label(for='confirm-password') Confirm Password
-  input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
+  input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',required,maxlength='256')
 
 mixin email-input
   label(for='email') Email Address
@@ -18,7 +18,7 @@ mixin email-input
 
 mixin first-name-input
   label(for='firstname') First Name
-  input(type='text', id='firstname', name='firstName', placeholder='First Name',value='#{viewModel?viewModel.firstname:""}',required,maxlength='100')
+  input(type='text', id='firstname', name='firstname', placeholder='First Name',value='#{viewModel?viewModel.firstname:""}',required,maxlength='100')
 
 mixin last-name-input
   label(for='lastname') Last Name
@@ -38,7 +38,7 @@ mixin country-input
 
 mixin state-input
   label(for='state') State
-  input(type='text', id='state', name='state', placeholder='state',value='#{viewModel?viewModel.state:""}',maxlength='100')
+  input(type='text', id='state', name='state', placeholder='State',value='#{viewModel?viewModel.state:""}',maxlength='100')
 
 // User Inputs
 
