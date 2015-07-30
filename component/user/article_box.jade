@@ -1,0 +1,16 @@
+
+article.result
+  .metadata
+    ul
+      li
+        #icon-technology(ng-bind-html='icon_Technology')
+      li
+        #icon-technology(ng-bind-html='icon_Type')
+      li
+        #icon-technology(ng-bind-html='icon_Phase')
+  .summary
+    a(ng-href='{{article.url}}', id='{{article.id}}')
+      h3#article-headline {{article.title}} {{title}}
+    p {{article.summary}} ...
+
+
