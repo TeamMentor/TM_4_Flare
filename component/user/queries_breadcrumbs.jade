@@ -2,3 +2,5 @@ div(ng-controller='Breadcrumbs_Controller')
   dl.breadcrumbs
     dd.active(ng-repeat='breadcrumb in breadcrumbs')
       a(ng-href='#' ng-click='load_Query(breadcrumb)') {{breadcrumb.title}}
+        span= '   '
+          span.badge(ng-show='breadcrumb.filter_Title') {{breadcrumb.filter_Title}}
