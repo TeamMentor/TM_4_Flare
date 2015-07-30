@@ -3,7 +3,9 @@ include ../../mixins/icons.jade
 div(ng-controller='Articles_Controller')
   section.row
     article.result(ng-repeat='article in articles')
-      .metadata
+      article-box
+
+      //.metadata
         ul
           li
             //+show-icon('Technology',result.technology)
@@ -15,7 +17,7 @@ div(ng-controller='Articles_Controller')
               +save-button
           //li
               +share-button
-      .summary
+      //.summary
         a(ng-href='{{article.url}}', id='{{article.id}}')
           h3#article-headline {{article.title}}
         p {{article.summary}} ...

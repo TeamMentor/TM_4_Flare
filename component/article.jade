@@ -4,13 +4,15 @@ section.row
   .col-2
   .col-8
     section.row__article
-      h1 {{title}}
+      h1 {{article.title}}
       #html.article-content(ng-bind-html='article_Html')
-      ul.display-inline
-        li
-          +show-icon('Technology', technology)
-        li
-          +show-icon('Type', type)
-        li
-          +show-icon('Phase', phase)
   .col-2
+    br
+    br
+    ul.display-inline
+      li
+        #icon-technology(ng-bind-html='icon_Technology')
+      li
+        #icon-Type(ng-bind-html='icon_Type')
+      li
+        #icon-Phase(ng-bind-html='icon_Phase')
