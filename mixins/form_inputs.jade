@@ -38,7 +38,7 @@ mixin country-input
 
 mixin state-input
   label(for='state') State
-  input(type='text', id='state', name='state', placeholder='state',value='#{viewModel?viewModel.state:""}',maxlength='100')
+  input(type='text', id='state', name='state', placeholder='State',value='#{viewModel?viewModel.state:""}',maxlength='100')
 
 // User Inputs
 
@@ -53,41 +53,3 @@ mixin title-input
 mixin company-input
     label Company
     input(type='text', id='company', placeholder='Company')
-
-
-// Editor Inputs
-
-mixin editor-add-form
-  form
-    label(for='add-directory') Add new directory
-    section.row
-      .col-10
-        input(type='text' id='add-directory')
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-
-mixin editor-edit-form
-  form
-    label(for='edit-directory') Edit directory
-    section.row
-      .col-8
-        input(type='text' id='edit-directory')
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-      .col-2
-        button.btn-editor.cancel(type='submit')
-          +close-icon
-
-mixin editor-delete-form
-  form
-    section.row
-      .col-8
-        label(for='delete-directory') Are you sure you want to delete this?
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-      .col-2
-        button.btn-editor.cancel(type='cancel')
-          +close-icon
