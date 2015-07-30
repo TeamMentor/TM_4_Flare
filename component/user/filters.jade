@@ -1,0 +1,34 @@
+span(ng-controller='Filters_Controller')
+  //a.button.btn-minor(href='#')
+     icon.Close
+  form#filters
+    span(ng-repeat ='filter in filters')
+      .label
+        icon.Filter
+        span.text= ' ' + '{{filter.title}}'
+      span(ng-repeat='result in filter.results')
+          a(ng-click='apply_Filter(result.id, result.title)' ng-show='result.size >0')
+            input(type="checkbox" id='{{result.title}}')
+            label(for='{{result.title}}')
+              #filter-icon(ng-bind-html='result.icon')
+              //+show-icon(filter.title, result.title)
+              span.badge {{result.size}}
+
+
+
+  //if filters
+    //a.button.btn-minor(href='#')
+      +close-icon
+    form#filters
+      for filter in filters
+        .label
+          +filters-icon
+          span.text= ' ' + filter.title
+        for result in filter.results
+          if result.size > 0
+            //a(ng-href=href + '/'+result.id)
+            a(ng-href='#')
+              input(type="checkbox" id=result.title)
+              label(for=result.title)
+                +show-icon(filter.title, result.title)
+                span.badge= result.size
