@@ -1,13 +1,3 @@
-//if library
-  dl.help
-    each view in library.Views
-      dt.vertical-align
-        span.label.no-underline= view.Title
-      .scroll
-        each article in view.Articles
-          dd
-            a(href= '#' + article.Id)= article.Title
-
 dl.help
   span(ng-repeat = 'view in Views')
     dt.vertical-align
