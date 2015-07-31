@@ -1,31 +1,44 @@
 include ../mixins/form_inputs.jade
 include ../mixins/buttons.jade
 
-section.row__label
-  .label Sign Up
-section.row
-  form#sign-up-form(action='/flare/user/sign-up')
-    .input-field
-      +username-input
-    .input-field
-      +email-input
-    .input-field
-      +password-input
-    .input-field
-      +confirm-password-input
-    .input-field
-      +first-name-input
-    .input-field
-      +last-name-input
-    .input-field
-      +company-input
-    .input-field
-      +title-input
-    .input-field
-      +country-input
-    .input-field
-      +state-input
-    .conditions
-      include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
-    .button-field
-      +sign-up-button
+div(ng-controller="Signup_Controller")
+  section.row__label
+    .label Sign Up
+  section.row(ng-show="showErrorMessage()")
+    .alert.alert-bad(role="alert")
+      #message
+        span.alert-icon !
+        span.alert-text Error:  {{errorMessage}}
+
+  section.row(ng-show="showInfoMessage()")
+    .alert.alert-ok(role="alert")
+      #message
+        span.alert-icon |
+        span.alert-text Info:  {{infoMessage}}
+
+  section.row
+    form#sign-up-form(role="form" ng-submit="signup()")
+      .input-field
+        +username-input
+      .input-field
+        +email-input
+      .input-field
+        +password-input
+      .input-field
+        +confirm-password-input
+      .input-field
+        +first-name-input
+      .input-field
+        +last-name-input
+      .input-field
+        +company-input
+      .input-field
+        +title-input
+      .input-field
+        +country-input
+      .input-field
+        +state-input
+      .conditions
+        include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
+      .button-field
+        +sign-up-button

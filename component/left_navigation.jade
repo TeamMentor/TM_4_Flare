@@ -7,7 +7,9 @@ aside(ng-controller='User_Navigation_Controller')
       a(ui-sref="main")
         +home-icon
     li
-      a(ui-sref="queries")
+      //a(ui-sref="queries")
+        +index-icon
+      a(ng-click="open_Query_State()")
         +index-icon
     li
       a(ui-sref="docs")
