@@ -3,7 +3,7 @@ include ../../mixins/icons.jade
   form(ng-submit="submit()")
     ul
       li
-        div.application-logo
+        div.logo
     select
       option(ng-repeat="technology in technologies" value="{{technology}}") {{technology}}
     input.search-input#search-text(type="text", ng-model="text", placeholder="Type keywords here")
