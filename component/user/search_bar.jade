@@ -4,8 +4,10 @@ include ../../mixins/icons.jade
     ul
       li
         div.logo
-    select
-      option(ng-repeat="technology in technologies" value="{{technology.query_Id}}") {{technology.title}}
+    select(ng-model='selected_Technology'
+           ng-change='select_Technology(selected_Technology)'
+           ng-options='technology as technology.title for technology in technologies')
+
     input.search-input#search-text(type="text", ng-model="text", placeholder="Type keywords here")
     button.btn-search#search-button(type="submit")
       +search-icon
