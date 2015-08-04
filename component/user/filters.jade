@@ -14,5 +14,5 @@ div(ng-controller='Filters_Controller')
       filter-item(ng-repeat='result in filter.results')
         a.filter(ng-href='#'  ng-click='apply_Filter(result.id, result.title)' ng-show='result.size >0')
           #filter-icon(ng-bind-html='result.icon')
-          span.text Filter Name
+          span.text {{result.title}}
           span.badge {{result.size}}
