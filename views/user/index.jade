@@ -1,11 +1,13 @@
 block content
   //.application
-  main
-    section.row
-      .col-3
-        queries
-      .col-6
-        //queries_breadcrumbs
-        articles
-      .col-3
-        filters
+  div(ng-controller='Index_Controller')
+    main
+      section.row
+        .col-3
+          queries
+        .col-6
+          results
+          breadcrumbs
+          articles
+        .col-3
+          filters

@@ -1,0 +1,65 @@
+div(ng-controller='Results_Controller')
+  .desktop
+    #results
+      table
+        tr
+          //if no_Results
+            td
+              p.label#no_results No Results
+              p Please try again
+          td
+            p.label#resultsTitle= 'Showing n {{size}} articles'
+          td
+            ul.display-inline
+              li
+                a.button.btn-result.icon-Filter(href='')
+              li
+                button.btn-result.icon-Save(title='Save results to Collection')
+              li
+                button.btn-result.icon-Share(title='Share results')
+          td
+            table
+              tr
+                td.text-right
+                  span#activeFilter.filter  'filter 1'
+                  span.close
+                    a(href='#') x
+                td.text-right
+                  span#activeFilter.filter 'filter 2'
+                  span.close
+                    a(href='#') x
+        //if activeFilter
+          for filter in activeFilter
+            span#activeFilter.filter= filter.title
+            span.close
+              a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
+  //dl.breadcrumbs
+    div.row__label
+      .label.no-underline#resultsTitle {{message}}
+      ul.display-inline
+        li
+          a.button.btn-result.icon-Filter(href='')
+        li
+          button.btn-result.icon-Save(title='Save results to Collection')
+        li
+          button.btn-result.icon-Share(title='Share results')
+  //dl.sub-nav
+    #navigation
+      dd.active
+        a(href='#') 'item.title'
+      dd
+        a(href='#') 'not active'
+//if results
+  section.row__label
+    if results.size() > 25
+      .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
+    else
+      .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
+    ul.display-inline
+      li
+        //a.button.btn-result.icon-Filter(href='#right-nav') aaaaaaa
+        a.button.btn-result.icon-Filter(href='')
+      //li
+        +save-results-button
+      //li
+        +share-results-button
