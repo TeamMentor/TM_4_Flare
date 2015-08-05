@@ -2,21 +2,21 @@ include ../mixins/form_inputs.jade
 include ../mixins/buttons.jade
 
 div(ng-controller="Signup_Controller")
-  section.row__label
+  .section.row__label
     .label Sign Up
-  section.row(ng-show="showErrorMessage()")
+  .section.row(ng-show="showErrorMessage()")
     .alert.alert-bad(role="alert")
       #message
         span.alert-icon !
         span.alert-text Error:  {{errorMessage}}
 
-  section.row(ng-show="showInfoMessage()")
+  .section.row(ng-show="showInfoMessage()")
     .alert.alert-ok(role="alert")
       #message
         span.alert-icon |
         span.alert-text Info:  {{infoMessage}}
 
-  section.row
+  .section.row
     form#sign-up-form(role="form" ng-submit="signup()")
       .input-field
         +username-input

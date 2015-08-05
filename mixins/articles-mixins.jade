@@ -2,11 +2,11 @@ include icons.jade
 
 mixin curated-content-article
   .col-9
-    section.article-body
-      section.row__article
+    ..section.article-body
+      .section.row__article
         h1 Article Title
   .col-3
-    section.article-info
+    ..section.article-info
       +article-info-editor-option
 
 //- Article Info
@@ -16,9 +16,9 @@ mixin article-info
         +save-button
       li.
         +share-button
-  section.row__label
+  .section.row__label
     .label Relates to:
-  section.row
+  .section.row
     ul.display-inline
       li
         //+show-icon('Technology', technology)
@@ -27,17 +27,17 @@ mixin article-info
         //+show-icon('Phase', phase)
       li
         //+show-icon('Type', type)
-  section.row__label
+  .section.row__label
     .label Belongs to:
-  section.row
+  .section.row
     ul
       li
         a(href='/flare/curated-content')
           +curated-content-icon
           span.text Curated Content
-  section.row__label
+  .section.row__label
     .label Related Articles:
-  section.row
+  .section.row
     ul
       li
         a(href='#') Article Headline
@@ -62,9 +62,9 @@ mixin article-info-editor-option
       +save-button
     li
       +share-button
-  section.row__label
+  .section.row__label
     .label Relates to:
-  section.row
+  .section.row
     ul.display-inline
       li
         //+show-icon('Technology', technology)
@@ -73,17 +73,17 @@ mixin article-info-editor-option
         //+show-icon('Phase', phase)
       li
         //+show-icon('Type', type)
-  section.row__label
+  .section.row__label
     .label Belongs to:
-  section.row
+  .section.row
     ul
       li
         a(href='/flare/curated-content')
           +curated-content-icon
           span.text Curated Content
-  section.row__label
+  .section.row__label
     .label Related Articles:
-  section.row
+  .section.row
     ul
       li
         a(href='#') Article Headline
@@ -102,18 +102,18 @@ mixin article-info-editor-option
 
 mixin article-editor
   .col-9
-    section.article-body
-      section.row
+    .section.article-body
+      .section.row
         form.article-editor
           input(type='text', name='article-title', placeholder='Article Title')
           textarea(name='article-body', placeholder='Article Body')
-          section.import-files
+          .section.import-files
             p
               | You can
               a(href='#')  import
               |  PDFs, images or Word documents.
 
-      section.row__label
+      .section.row__label
         .label Directories
         // This toggles the different editor functionalities for heirarchical structure.
         ul.toggle-bar.display-inline
@@ -127,7 +127,7 @@ mixin article-editor
             li.one-third
               input(type='radio' name='editor' value='delete' id='delete')
               label.button.btn-result.icon-Delete(for='delete')
-      section.row
+      .section.row
         ul.display-inline
           // This is for display before any action is taken
           li.one-third
@@ -163,9 +163,9 @@ mixin article-editor
                       button.btn-editor.cancel(type='cancel')
                         +close-icon
 
-      section.row__label
+      .section.row__label
         .label Filters
-      section.row
+      .section.row
         br
         form.article-editor-grid
           div
@@ -204,13 +204,13 @@ mixin article-editor
               +html5-icon
               span.text HTML5
 
-      section.row__label
+      .section.row__label
         .label Quality
-      section.row
+      .section.row
         p Quality slider, needs to be built with Angular so I can style
 
   .col-3
-    section.article-info
+    .section.article-info
       ul.display-inline
         li
           button.btn-editor(type='submit')

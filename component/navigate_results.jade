@@ -1,7 +1,7 @@
 include ../mixins/icons.jade
 
 if results
-  section.row
+  .section.row
     each result,index in results.take(10)
       if result && result.id && result.title
         article.result

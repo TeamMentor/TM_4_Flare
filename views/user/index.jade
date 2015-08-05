@@ -1,17 +1,14 @@
 block content
   //.application
   div(ng-controller='Index_Controller')
-    main
-      section.row
-        //.col-3
+    .main
+      .section.row
         div(class='{{column_Left}}')
           queries
-        //.col-6
         div(class='{{column_Middle}}')
           results
           breadcrumbs
           articles
           include ../../component/user/pagination.jade
-        //.col-3
         div(class='{{column_Right}}')
           filters
