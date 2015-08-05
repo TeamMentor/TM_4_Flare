@@ -1,40 +1,8 @@
 div(ng-controller='Results_Controller')
-  .desktop
-    #results
-      table
-        tr
-          //if no_Results
-            td
-              p.label#no_results No Results
-              p Please try again
-          td
-            p.label#resultsTitle= 'Query has {{results_Size}} articles'
-          td
-            section.row.pagination
-              .previous
-                span.icon-Arrow-Left
-              .number
-                select
-                  option(value='1') 1
-                  option(value='2') 2
-                  option(value='3') 3
-              .next
-                span.icon-Arrow-Right
-          td
-            #filters
-              table
-                tr
-                  td.text-right('ng-repeat'="(key,value) in current_Filters")
-                    span#activeFilter.filter  {{value}}
-                    span.close
-                      a(href='#' ng-click='clear_Filter(key)') x
-          td
-            ul.display-inline
-              li
-                a#view_Filters.button.btn-result.icon-Filter(href    = '#',
-                                                             title   = 'View Filters',
-                                                             ng-click= 'toggle_Filters()')
-              //li
-              //  button.btn-result.icon-Save(title='Save results to Collection')
-              //li
-                button.btn-result.icon-Share(title='Share results')
+
+section.row__label
+  .label#resultsTitle= 'Query has {{results_Size}} articles'
+  ul.display-inline
+    li
+      a#view_Filters.button.btn-result.icon-Filter(href    = '#',
+        title   = 'View Filters', ng-click= 'toggle_Filters()')
