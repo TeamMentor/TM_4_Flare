@@ -5,6 +5,9 @@ include ../mixins/globals.jade
   .article
     h1 {{article.title}}
     #html.article-content(ng-bind-html='article_Html')
+  br
+  br
+  +copyright
 .col-3
   section.article-info
     section.row__label
@@ -17,5 +20,3 @@ include ../mixins/globals.jade
           #icon-Type(ng-bind-html='icon_Type')
         li
           #icon-Phase(ng-bind-html='icon_Phase')
-
-  +copyright
