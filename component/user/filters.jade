@@ -8,13 +8,12 @@ div(ng-controller='Filters_Controller')
           .label.no-underline
             icon.Filter
             span.text= ' ' + '{{filter.title}}'
-          span.sub-nav__icon
-            a
-              +close-icon
         #results
-          a(ng-repeat='result in filter.results')
-            dd(href='#'  'ng-click'='apply_Filter(result.id, result.title)' 'ng-show'='result.size >0')
+          dd(ng-repeat='result in filter.results')
+            a.filter-link(href='#'  'ng-click'='apply_Filter(result.id, result.title)' 'ng-show'='result.size >0')
               span
                 span#filter-icon(ng-bind-html='result.icon')
                 span.text {{result.title}}
               span.badge {{result.size}}
+            //a.close-link(href='#')
+              +close-icon
