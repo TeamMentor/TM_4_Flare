@@ -1,18 +1,19 @@
 include ../../mixins/icons.jade
 
 div(ng-controller='Filters_Controller')
-  #filters(ng-repeat ='filter in filters')
-    section.row__label
-      .label
-        icon.Filter
-        span.text= ' ' + '{{filter.title}}'
-      //ul.display-inline
-        li
-          a
-            +close-icon
-    section.row
-      filter-item(ng-repeat='result in filter.results')
-        a.filter(ng-href='#'  ng-click='apply_Filter(result.id, result.title)' ng-show='result.size >0')
-          #filter-icon(ng-bind-html='result.icon')
-          span.text {{result.title}}
-          span.badge {{result.size}}
+  section.row
+    dl
+      #filters(ng-repeat ='filter in filters')
+        dt
+          .label.no-underline
+            icon.Filter
+            span.text= ' ' + '{{filter.title}}'
+          //span.sub-nav__icon
+            a
+              +close-icon
+        a(ng-repeat='result in filter.results')
+          dd(ng-href='#'  ng-click='apply_Filter(result.id, result.title)' ng-show='result.size >0')
+            span
+              span#filter-icon(ng-bind-html='result.icon')
+              span.text {{result.title}}
+            span.badge {{result.size}}
