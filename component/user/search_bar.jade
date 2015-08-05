@@ -1,4 +1,3 @@
-include ../../mixins/icons.jade
 .search(ng-controller="Search_Bar_Controller")
   form(ng-submit="submit()")
     ul
@@ -10,4 +9,4 @@ include ../../mixins/icons.jade
 
     input.search-input#search-text(type="text", ng-model="text", placeholder="Search TEAM Mentor")
     button.btn-search#search-button(type="submit")
-      +search-icon
+      icon.Search
