@@ -10,13 +10,16 @@ div(ng-controller='Results_Controller')
           td
             p.label#resultsTitle= 'Showing n {{size}} articles'
           td
-            ul.display-inline
-              li
-                a.button.btn-result.icon-Filter(href='')
-              li
-                button.btn-result.icon-Save(title='Save results to Collection')
-              li
-                button.btn-result.icon-Share(title='Share results')
+            section.row.pagination
+              .previous
+                span.icon-Arrow-Left
+              .number
+                select
+                  option(value='1') 1
+                  option(value='2') 2
+                  option(value='3') 3
+              .next
+                span.icon-Arrow-Right
           td
             table
               tr
@@ -28,38 +31,13 @@ div(ng-controller='Results_Controller')
                   span#activeFilter.filter 'filter 2'
                   span.close
                     a(href='#') x
-        //if activeFilter
-          for filter in activeFilter
-            span#activeFilter.filter= filter.title
-            span.close
-              a(href=href + '/' + activeFilter.filters.remove(filter.id)) x
-  //dl.breadcrumbs
-    div.row__label
-      .label.no-underline#resultsTitle {{message}}
-      ul.display-inline
-        li
-          a.button.btn-result.icon-Filter(href='')
-        li
-          button.btn-result.icon-Save(title='Save results to Collection')
-        li
-          button.btn-result.icon-Share(title='Share results')
-  //dl.sub-nav
-    #navigation
-      dd.active
-        a(href='#') 'item.title'
-      dd
-        a(href='#') 'not active'
-//if results
-  section.row__label
-    if results.size() > 25
-      .label.no-underline#resultsTitle= results.take(25).size() + '/' + results.size() + ' results showing'
-    else
-      .label.no-underline#resultsTitle= results.take(25).size() + ' results showing'
-    ul.display-inline
-      li
-        //a.button.btn-result.icon-Filter(href='#right-nav') aaaaaaa
-        a.button.btn-result.icon-Filter(href='')
-      //li
-        +save-results-button
-      //li
-        +share-results-button
+          td
+            ul.display-inline
+              li
+                a#view_Filters.button.btn-result.icon-Filter(href    = '#',
+                                                             title   = 'View Filters',
+                                                             ng-click= 'toggle_Filters()')
+              //li
+              //  button.btn-result.icon-Save(title='Save results to Collection')
+              //li
+                button.btn-result.icon-Share(title='Share results')

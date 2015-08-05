@@ -3,11 +3,14 @@ block content
   div(ng-controller='Index_Controller')
     main
       section.row
-        .col-3
+        //.col-3
+        div(class='{{column_Left}}')
           queries
-        .col-6
+        //.col-6
+        div(class='{{column_Middle}}')
           results
           breadcrumbs
           articles
-        .col-3
+        //.col-3
+        div(class='{{column_Right}}')
           filters
