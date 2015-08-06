@@ -1,16 +1,21 @@
 include ../mixins/icons.jade
+include ../mixins/globals.jade
 
-section.row
-  .col-2
-  .col-8
-    section.row__article
-      h1 {{title}}
-      #html.article-content(ng-bind-html='article_Html')
+.col-9
+  .article
+    h1 {{article.title}}
+    #html.article-content(ng-bind-html='article_Html')
+  br
+  +copyright
+.col-3
+  .section.article-info
+    .section.row__label
+      .label Relates to:
+    .section.row
       ul.display-inline
         li
-          +show-icon('Technology', technology)
+          #icon-technology(ng-bind-html='icon_Technology')
         li
-          +show-icon('Type', type)
+          #icon-Type(ng-bind-html='icon_Type')
         li
-          +show-icon('Phase', phase)
-  .col-2
+          #icon-Phase(ng-bind-html='icon_Phase')

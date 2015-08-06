@@ -1,22 +1,21 @@
-include ../mixins/icons.jade
-aside#left-nav(ng-controller='User_Navigation_Controller')
+include ../../mixins/icons.jade
+aside(ng-controller='User_Navigation_Controller')
   ul
     li
-      div.application-logo
+      div.logo
     li
       a(ui-sref="main")
         +home-icon
     li
-      a(ui-sref="navigate")
+      //a(ui-sref="queries")
         +index-icon
-    li
-      a(ui-sref="queries")
+      a(ng-click="open_Query_State()")
         +index-icon
     li
       a(ui-sref="docs")
         +info-icon
 
     li
-      a(href="/angular/guest/index")
+      a(href="/angular/guest/home")
         +logout-icon
       //a(ui-sref="logout")

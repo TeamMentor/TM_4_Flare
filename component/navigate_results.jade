@@ -1,7 +1,7 @@
 include ../mixins/icons.jade
 
 if results
-  section.row
+  .section.row
     each result,index in results.take(10)
       if result && result.id && result.title
         article.result
@@ -11,6 +11,10 @@ if results
                 span.label.no-underline
                   +tick-icon
                   span   Seen
+              // Testing, not finished
+                li
+                  span(style='font-size:1.5em; margin-bottom: 100px')
+                    +curated-content-icon
               li
                 +show-icon('Technology',result.technology)
               li

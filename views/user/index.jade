@@ -1,0 +1,14 @@
+block content
+  //.application
+  div(ng-controller='Index_Controller')
+    .main
+      .section.row
+        div(class='{{column_Left}}')
+          queries
+        div(class='{{column_Middle}}')
+          results
+          breadcrumbs
+          articles
+          include ../../component/user/pagination.jade
+        div(class='{{column_Right}}')
+          filters

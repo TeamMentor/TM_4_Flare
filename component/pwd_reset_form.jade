@@ -1,12 +1,15 @@
-section.row__label
+include ../mixins/form_inputs.jade
+include ../mixins/buttons.jade
+
+.section.row__label
   .label Reset your password
-section.row
+.section.row
   form#password-reset-form(role='form' method='post' action='/flare/user/password-reset')
-    section.row
+    .section.row
       .col-6.input-field
         +password-input
       .col-6.input-field
-        +confirm-new-password-input
+        +confirm-password-input
       .col-4.button-field
         br
         +reset-pwd-button

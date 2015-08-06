@@ -2,44 +2,43 @@
 
 mixin username-input
     label Username
-    input(type='text', id='username', placeholder='Username',  ng-model='username')
+    input(type='text', id='username', placeholder='Username',  ng-model='username',required=)
 
 mixin password-input
     label(for='password') Password
     input(type='password', id='password', placeholder='Password',ng-model='password',required,maxlength='256')
 
 mixin confirm-password-input
-  label(for='confirm-password') Confirm Password
-  input(type='password', id='confirm-password', name='confirm-password',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',maxlength='256')
+  label(for='confirmpassword') Confirm Password
+  input(type='password', id='confirmpassword', name='confirmpassword',ng-model='confirmpassword',placeholder='Password',value='#{viewModel?viewModel.confirmpassword:""}',required,maxlength='256')
 
 mixin email-input
   label(for='email') Email Address
-  input(type='email', id='email', name='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',required,maxlength='256')
+  input(type='email', id='email', name='email',ng-model='email', placeholder='Email Address',value='#{viewModel?viewModel.email:""}',required,maxlength='256')
 
 mixin first-name-input
   label(for='firstname') First Name
-  input(type='text', id='firstname', name='firstName', placeholder='First Name',value='#{viewModel?viewModel.firstname:""}',required,maxlength='100')
+  input(type='text', id='firstname', name='firstname',ng-model='firstname', placeholder='First Name',value='#{viewModel?viewModel.firstname:""}',required,maxlength='100')
 
 mixin last-name-input
   label(for='lastname') Last Name
-  input(type='text', id='lastname', name='lastname', placeholder='Last Name',value='#{viewModel?viewModel.lastname:""}',required,maxlength='100')
+  input(type='text', id='lastname', name='lastname',ng-model='lastname', placeholder='Last Name',value='#{viewModel?viewModel.lastname:""}',required,maxlength='100')
 
 mixin company-input
   label(for='company') Company
-  input(type='text', id='company', name='company', placeholder='Company',value='#{viewModel?viewModel.company:""}',maxlength='100')
+  input(type='text', id='company', name='company',ng-model='company',  placeholder='Company',value='#{viewModel?viewModel.company:""}',maxlength='100')
 
 mixin title-input
   label(for='title') Job/Title
-  input(type='text', id='title', name='title', placeholder='Job/Title',value='#{viewModel?viewModel.title:""}',maxlength='100')
+  input(type='text', id='title', name='title',ng-model='title', placeholder='Job/Title',value='#{viewModel?viewModel.title:""}',maxlength='100')
 
 mixin country-input
   label(for='country') Country
-  input(type='text', id='country', name='country', placeholder='Country',value='#{viewModel?viewModel.country:""}',required,maxlength='100')
+  input(type='text', id='country', name='country',ng-model='country', placeholder='Country',value='#{viewModel?viewModel.country:""}',required,maxlength='100')
 
 mixin state-input
   label(for='state') State
-  input(type='text', id='state', name='state', placeholder='state',value='#{viewModel?viewModel.state:""}',maxlength='100')
-
+  input(type='text', id='state', name='state',ng-model='state', placeholder='State',value='#{viewModel?viewModel.state:""}',maxlength='100')
 // User Inputs
 
 mixin name-input
@@ -53,41 +52,3 @@ mixin title-input
 mixin company-input
     label Company
     input(type='text', id='company', placeholder='Company')
-
-
-// Editor Inputs
-
-mixin editor-add-form
-  form
-    label(for='add-directory') Add new directory
-    section.row
-      .col-10
-        input(type='text' id='add-directory')
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-
-mixin editor-edit-form
-  form
-    label(for='edit-directory') Edit directory
-    section.row
-      .col-8
-        input(type='text' id='edit-directory')
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-      .col-2
-        button.btn-editor.cancel(type='submit')
-          +close-icon
-
-mixin editor-delete-form
-  form
-    section.row
-      .col-8
-        label(for='delete-directory') Are you sure you want to delete this?
-      .col-2
-        button.btn-editor(type='submit')
-          +tick-icon
-      .col-2
-        button.btn-editor.cancel(type='cancel')
-          +close-icon

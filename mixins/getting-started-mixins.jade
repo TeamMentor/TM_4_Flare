@@ -2,10 +2,10 @@ include ../../TM_Jade/shared-mixins/globals.jade
 include globals.jade
 
 mixin team-mentor-summary
-  section.tm-summary
-    section.row__label
+  .section.tm-summary
+    .section.row__label
       .label With TEAM Mentor, you can...
-    section.row
+    .section.row
       table
         tr
           td
@@ -24,9 +24,9 @@ mixin team-mentor-summary
             include:marked ../../TM_Static/content/getting-started/summary-point-3.md
 
 mixin sign-up-form
-  section.row__label
+  .section.row__label
     .label Sign Up
-  section.row
+  .section.row
     form#sign-up-form(action='/flare/user/sign-up')
       .input-field
         +username-input
@@ -42,11 +42,11 @@ mixin sign-up-form
           include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
 
 //mixin forgot-pwd-form
-  section.row__label
+  .section.row__label
     .label Forgot your password?
-  section.row
+  .section.row
     form#forgot-pwd-form(action='#')
-      section.row
+      .section.row
         .col-8.input-field
           +email-input
         .col-4.button-field
@@ -54,23 +54,23 @@ mixin sign-up-form
           +get-password-button
 
 mixin pwd-reset-form
-  section.row__label
+  .section.row__label
     .label Reset your password
-  section.row
+  .section.row
     form#password-reset-form(role='form' method='post' action='/flare/user/password-reset')
-      section.row
+      .section.row
         .col-6.input-field
           +password-input
         .col-6.input-field
-          +confirm-new-password-input
+          +confirm-password-input
         .col-4.button-field
           br
           +reset-pwd-button
 
 mixin login-form-validation
-  section.row__label
+  .section.row__label
     .label Login
-  section.row
+  .section.row
     form#login-form(role='form' method='post' action='/flare/user/login')
       .input-field
         +username-input
@@ -82,9 +82,9 @@ mixin login-form-validation
         +get-password-button
 
 mixin sign-up-form-validation
-  section.row__label
+  .section.row__label
     .label Sign Up
-  section.row
+  .section.row
     form#sign-up-form(action='/flare/user/sign-up')
       .input-field
         +username-input
