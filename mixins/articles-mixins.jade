@@ -2,11 +2,17 @@ include icons.jade
 
 mixin curated-content-article
   .col-9
-    ..section.article-body
-      .section.row__article
+    .section.row.article
+      .col-10
         h1 Article Title
+      .col-2
+        ul.display-inline
+          li.full-width
+            a.button.btn-minor.full-width(href='#')
+              +back-icon
+              span.text Back
   .col-3
-    ..section.article-info
+    .section.article-info
       +article-info-editor-option
 
 //- Article Info
