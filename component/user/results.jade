@@ -1,8 +1,7 @@
 div(ng-controller='Results_Controller')
-
-section.row__label
-  .label#resultsTitle= 'Query has {{results_Size}} articles'
-  ul.display-inline
-    li
-      a#view_Filters.button.btn-result.icon-Filter(href    = '#',
-        title   = 'View Filters', ng-click= 'toggle_Filters()')
+  section.row__label
+    .label#resultsTitle= 'Query has {{results_Size}} articles'
+    ul.display-inline
+      li
+        a#view_Filters.button.btn-result.icon-Filter(href    = '#',
+          title   = 'View Filters', ng-click= 'toggle_Filters()')
