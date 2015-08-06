@@ -9,7 +9,7 @@ include form_inputs.jade
 
 
 mixin copyright
-    footer
+    .footer
         a(href='http://www.securityinnovation.com/' target='_blank')
             .si-logo
         .icons
@@ -23,5 +23,5 @@ mixin copyright
                     a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
                         +twitter-icon
                 li
-                    a#terms-and-conditions(href='../misc/terms-and-conditions' title ='Terms and Conditions')
+                    a#terms-and-conditions(ui-sref="terms_and_conditions")
                         +paperclip-icon

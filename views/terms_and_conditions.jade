@@ -4,11 +4,11 @@ include ../mixins/links
 
 block content
   .application
-    main
-      section.row
+    .main
+      .section.row
         .col-3
           +terms-and-conditions-navigation
         .col-9
-          section.row
-            article
+          .section.row
+            .article
               include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

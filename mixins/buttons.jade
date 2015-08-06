@@ -1,24 +1,3 @@
-mixin open-button
-    button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
-        i.fi-plus
-    ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-        li
-            a(href='#') ASP.NET
-        li
-            a(href='#') Android
-        li
-            a(href='#') C++
-        li
-            a(href='#') HTML5
-        li
-            a(href='#') iOS
-        li
-            a(href='#') Java
-        li
-            a(href='#') PHP
-        li
-            a(href='#') Scala
-
 mixin save-button
     button.btn-result.icon-Save(title='Save article to Collection')
 
@@ -35,7 +14,7 @@ mixin share-saved-button
     button.btn-minor.icon-Share(title='Share')
 
 //mixin save-results-button
-//    button.btn-result.icon-Save(title='Save results to Collection')
+    button.btn-result.icon-Save(title='Save results to Collection')
 
 //mixin delete-results-button
     button.btn-result.icon-Delete(title='Delete results from Collection')

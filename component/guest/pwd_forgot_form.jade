@@ -1,10 +1,10 @@
 include ../../mixins/globals.jade
 div(ng-controller='Pwd_Forgot_Controller')
-  section.row__label
+  .section.row__label
     .label Forgot your password?
-  section.row
+  .section.row
     form#forgot-pwd-form(ng-submit='get_Password()')
-      section.row
+      .section.row
         .col-8.input-field
           +email-input
         .col-4.button-field
