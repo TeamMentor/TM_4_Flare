@@ -5,17 +5,16 @@ aside(ng-controller='User_Navigation_Controller')
       div.logo
     li
       a(ui-sref="main")
-        +home-icon
+        icon.Home
     li
       //a(ui-sref="queries")
-        +index-icon
       a(ng-click="open_Query_State()")
-        +index-icon
+        icon.Index
     li
       a(ui-sref="docs")
-        +info-icon
+        icon.Info
 
     li
       a(href="/angular/guest/home")
-        +logout-icon
+        icon.Logout
       //a(ui-sref="logout")
