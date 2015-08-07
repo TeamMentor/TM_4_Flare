@@ -9,12 +9,10 @@ div(ng-controller='Filters_Controller')
             icon.Filter
             span.text= ' ' + '{{filter.title}}'
         #results
-          div(ng-repeat='result in filter.results')             
+          div(ng-repeat='result in filter.results')
             dd('ng-show'='result.size > 0')
-              a.filter-link(href='#'  'ng-click'='apply_Filter(result.id, result.title)')
+              a(href='#'  'ng-click'='apply_Filter(result.id, result.title)')
                 span
                   span#filter-icon(ng-bind-html='result.icon')
                   span.text {{result.title}}
                 span.badge {{result.size}}
-            //a.close-link(href='#')
-              +close-icon
