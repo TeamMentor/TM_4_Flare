@@ -1,10 +1,16 @@
-.section.row.pagination
-  .previous
-    span.icon-Arrow-Left
-  .number
-    select
-      option(value='1') 1
-      option(value='2') 2
-      option(value='3') 3
-  .next
-    span.icon-Arrow-Right
+span(ng-controller='Pagination_Controller')
+  .section.row.pagination
+    .previous
+      a(href='#', ng-click='previous_Page()')
+        span.icon-Arrow-Left
+        span= ' previous'
+    .number
+      //pre {{pages}} (ng-option='page in pages')
+      select(ng-model='currentPage' , ng-change='show_Page()')
+        option(value='1') 1
+        option(value='2') 2
+        option(value='3') 3
+    .next
+      a(href='#', ng-click='next_Page()')
+        span= 'next '
+        span.icon-Arrow-Right
