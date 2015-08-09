@@ -2,7 +2,7 @@
 div(ng-controller='Queries_Controller')
   dl
     dt
-      span.label.no-underline {{title}}
+      span#query_title.label.no-underline {{title}}
       span.sub-nav__icon
         //a(ng-click="show_Previous_Query()")
           +back-icon
