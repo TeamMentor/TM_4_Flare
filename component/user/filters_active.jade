@@ -1,9 +1,4 @@
-.section.row
-  //include active_filter.jade
-  //span.icon-Java
-    span.path1
-    span.path2
-
+.section.row(ng-controller='Filters_Active_Controller')
   .active-filter(ng-repeat='(key, value) in current_Filters')
     span
       span.icon-Design
