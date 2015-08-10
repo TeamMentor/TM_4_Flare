@@ -1,15 +1,19 @@
 span(ng-controller='Pagination_Controller')
+  //adding .main so that it looks ok as a stand alone
+    //.main
   .section.row.pagination
     .previous
       a(href='#', ng-click='previous_Page()')
         span.icon-Arrow-Left
         span= ' previous'
-    .number
-      //pre {{pages}} (ng-option='page in pages')
-      select(ng-model='currentPage' , ng-change='show_Page()')
-        option(value='1') 1
-        option(value='2') 2
-        option(value='3') 3
+
+    .number#current_Page
+      select(ng-model='model.page', ng-change='set_Page()', ng-options='page for page in model.pages')
+
+
+    .number#page_Splits
+      select(ng-model='model.page_Split', ng-change='set_Page_Split()', ng-options='page_Split for page_Split in model.page_Splits')
+
     .next
       a(href='#', ng-click='next_Page()')
         span= 'next '

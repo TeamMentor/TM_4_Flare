@@ -1,6 +1,9 @@
 div(ng-controller='Results_Controller')
   section.row__label
-    .label#resultsTitle Query has {{results_Size}} articles
+    .label#resultsTitle.
+      Query has {{results_Size}} articles ,
+      Page \#{{current_Page}}
+      ({{current_Page_Split}} articles per page)
     ul.display-inline.text-right
       li
         a#view_Filters.button.btn-result.icon-Filter(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')
