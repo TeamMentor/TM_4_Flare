@@ -3,6 +3,8 @@ aside(ng-controller='User_Navigation_Controller')
   ul
     li
       div.logo
+    li(ng-show='show_Loading_Image')
+      img(src='http://v1.preloaders.net/preloaders/98/preview.gif' style='height:15px;width:15px')
     li
       a(ui-sref="main")
         icon.Home
