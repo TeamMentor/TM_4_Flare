@@ -1,7 +1,5 @@
 span(ng-controller='Pagination_Controller')
-  //adding .main so that it looks ok as a stand alone
-    //.main
-  .section.row.pagination
+  .section.row.pagination(ng-show = 'model.pages')
     .previous
       a(href='#', ng-click='previous_Page()')
         span.icon-Arrow-Left

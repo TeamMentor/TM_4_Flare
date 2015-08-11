@@ -1,5 +1,8 @@
 div(ng-controller='Results_Controller')
-  section.row__label
+  section.row__label(ng-hide = 'results_Size')
+    .label#resultsTitle.
+      Query has no results
+  section.row__label(ng-show = 'results_Size')
     .label#resultsTitle.
       Query has {{results_Size}} articles ,
       Page \#{{current_Page}}
@@ -7,7 +10,3 @@ div(ng-controller='Results_Controller')
     ul.display-inline.text-right
       li
         a#view_Filters.button.btn-result.icon-Filter(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')
-
-  //breadcrumbs
-  //filters_active
-  //pagination
