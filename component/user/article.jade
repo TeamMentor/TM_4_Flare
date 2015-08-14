@@ -3,7 +3,7 @@ include ../../mixins/globals.jade
 
 .col-9
   .article
-    h1 {{article.title}}
+    h1.article-title {{article.title}}
     #html.article-content(ng-bind-html='article_Html')
   br
   +copyright
@@ -19,3 +19,7 @@ include ../../mixins/globals.jade
           #icon-Type(ng-bind-html='icon_Type')
         li
           #icon-Phase(ng-bind-html='icon_Phase')
+    .section.row.fixed-bottom
+      .alert.alert-neutral
+        span.text Have a comment about this article? Send our team 
+          a(href='mailto:support@securityinnovation.com') an email.

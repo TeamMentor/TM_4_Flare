@@ -1,14 +1,14 @@
-.section.row
-  //include active_filter.jade
-  //span.icon-Java
-    span.path1
-    span.path2
-
+.section.row(ng-controller='Filters_Active_Controller')
   .active-filter(ng-repeat='(key, value) in current_Filters')
-    span
-      span.icon-Design
-        span.path1
-        span.path2
-      span.text {{value}}
-    span.close
-      a(href='#' 'ng-click'='clear_Filter(key)') x
+    ul.display-inline
+      li
+        span.icon-Design
+          span.path1
+          span.path2
+      li
+        span.text {{value}}
+      li
+        span.close
+          a(href='#' 'ng-click'='clear_Filter(key)')
+            span.icon-Close
+              span.path1

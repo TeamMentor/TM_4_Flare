@@ -1,4 +1,4 @@
 div(ng-controller='Breadcrumbs_Controller')
-  dl.breadcrumbs
+  dl.breadcrumbs(ng-show = 'breadcrumbs')
     dd.active(ng-repeat='breadcrumb in breadcrumbs')
       a(ng-href='#' ng-click='load_Query(breadcrumb)') {{breadcrumb.title}}
