@@ -11,9 +11,9 @@ include ../mixins/icons.jade
   .section.row__label
     .label(ng-show="recent_Articles.length > 0") Recently Viewed Articles
   .section.row
-    article-box(ng-repeat='article in recent_Articles')
+    article-box.article-box(ng-repeat='article in recent_Articles')
 .section.row
   .section.row__label
     .label Top Articles
   .section.row
-    article-box(ng-repeat='article in top_Articles')
+    article-box.article-box(ng-repeat='article in top_Articles')
