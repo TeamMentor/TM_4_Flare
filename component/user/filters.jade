@@ -1,8 +1,8 @@
 include ../../mixins/icons.jade
 
 div(ng-controller='Filters_Controller')
-  .scroll(ng-show='view_Filters')
-    dl
+  .section.row(ng-show='view_Filters')
+    dl.scroll
       #filters(ng-repeat ='filter in filters' ng-hide='hide_Metadata[filter.title]')
         dt
           .label.no-underline
