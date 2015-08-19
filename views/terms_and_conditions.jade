@@ -3,10 +3,8 @@ include ../mixins/links
 
 block content
   .main
-    .section.row
-      .col-3
-        +terms-and-conditions-navigation
-      .col-9
-        .section.row
-          .article
-            include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md
+    .col-3.application-scroll
+      +terms-and-conditions-navigation
+    .col-9.application-scroll
+      .section.row__article
+        include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

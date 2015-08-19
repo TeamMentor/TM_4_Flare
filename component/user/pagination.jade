@@ -11,6 +11,10 @@ span(ng-controller='Pagination_Controller')
         a(href='#', ng-click='next_Page()')
           span.icon-Arrow-Right
           span.text= 'next'
+    .back-to-top
+      a(href='#')
+        span.icon-Arrow-Up
+        span.text= 'back to top'
     .number-of-results#page_Splits
       form
         input(type='radio' name='results-per-page' id='four')

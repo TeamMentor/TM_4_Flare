@@ -1,14 +1,12 @@
 block content
-  div(ng-controller='Index_Controller')
-    .main
-      .section.row
-        div(class='{{column_Left}}')
-          queries
-        div(class='{{column_Middle}}')
-          results
-          breadcrumbs
-          filters_active
-          articles
-          pagination
-        div(class='{{column_Right}}')
-          filters
+  div.main(ng-controller='Index_Controller')
+    div(class='{{column_Left}} application-scroll left-col')
+      queries
+    div(class='{{column_Middle}} application-scroll middle-col')
+      results
+      breadcrumbs
+      filters_active
+      articles
+      pagination
+    div(class='{{column_Right}} application-scroll right-col')
+      filters(class='filters')
