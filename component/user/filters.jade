@@ -3,13 +3,13 @@ include ../../mixins/icons.jade
 div(ng-controller='Filters_Controller')
   .section.row(ng-show='view_Filters')
     dl.scroll
-      #filters(ng-repeat ='filter in filters' ng-hide='hide_Metadata[filter.title]')
+      #filters(ng-repeat ='(title,filter) in filters')
         dt
           .label.no-underline
             icon.Filter
-            span.text= ' ' + '{{filter.title}}'
+            span.text= ' ' + '{{title}}'
         #results
-          div(ng-repeat='result in filter.results')
+          div(ng-repeat='result in filter')
             dd('ng-show'='result.size > 0')
               a(href='#'  'ng-click'='apply_Filter(result.id, result.title, filter.title)')
                 span
