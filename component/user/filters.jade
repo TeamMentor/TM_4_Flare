@@ -11,7 +11,7 @@ div(ng-controller='Filters_Controller')
         #results
           div(ng-repeat='result in filter')
             dd('ng-show'='result.size > 0')
-              a(href='#'  'ng-click'='apply_Filter(result.id, result.title, filter.title)')
+              a(href='#'  'ng-click'='apply_Filter(result.id, result.title, title)')
                 span
                   span#filter-icon(ng-bind-html='result.icon')
                   span.text {{result.title}}
