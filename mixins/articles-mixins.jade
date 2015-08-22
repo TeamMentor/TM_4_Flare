@@ -1,6 +1,21 @@
 include icons.jade
 include buttons.jade
 
+mixin copyright
+  .footer
+    include:marked ../../TM_Static/content/articles/copyright-information.md
+    ul.text-center
+      li
+        p
+          a(href='mailto:support@securityinnovation.com')
+            span.icon-Mail
+            span.text support@securityinnovation.com
+      li.text-center
+        p
+          a(href='#')
+            span.icon-Paperclip
+            span.text Terms & Conditions
+
 mixin curated-content-article
   .col-9
     .section.row.article
