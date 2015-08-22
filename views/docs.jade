@@ -1,3 +1,5 @@
+include ../mixins/globals.jade
+
 block content
   .main(ng-controller='Help_Controller' class='help')
     .section.row
@@ -7,3 +9,4 @@ block content
         #help.section.row__article
           h1#help-title {{title}}
           help-content(ng-bind-html='content')
+        +copyright

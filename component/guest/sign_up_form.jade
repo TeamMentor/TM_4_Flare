@@ -3,7 +3,7 @@ include ../../mixins/buttons.jade
 
 div(ng-controller="Signup_Controller")
   .section.row__label
-    .label Sign Up
+    h4 Sign Up
   #error.section.row(ng-show="showErrorMessage()")
     .alert.alert-bad(role="alert")
         span.alert-icon !
@@ -15,7 +15,7 @@ div(ng-controller="Signup_Controller")
         span.alert-text Info:  {{infoMessage}}
 
   .section.row
-    form#sign-up-form(role="form" ng-submit="signup()")
+    form#sign-up-form.access-form(role="form" ng-submit="signup()")
       .input-field
         +username-input
       .input-field

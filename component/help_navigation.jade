@@ -1,7 +1,6 @@
-dl.help
+dl.help.scroll
   span(ng-repeat = 'view in Views')
     dt.vertical-align
       span.label.no-underline {{view.Title}}
-    .scroll
-      dd(ng-repeat = 'article in view.Articles')
-        a(href='#'+'{{article.Id}}' ng-click='show_Doc(article)') {{article.Title}}
+    dd(ng-repeat = 'article in view.Articles')
+      a(href='#'+'{{article.Id}}' ng-click='show_Doc(article)') {{article.Title}}
