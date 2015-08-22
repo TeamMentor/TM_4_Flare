@@ -2,9 +2,9 @@ include ../../mixins/form_inputs.jade
 include ../../mixins/buttons.jade
 
 .section.row__label
-  .label Reset your password
+  h4 Reset your password
 .section.row
-  form#password-reset-form(role='form' method='post' action='/flare/user/password-reset')
+  form#password-reset-form.access-form(role='form' method='post' action='/flare/user/password-reset')
     .section.row
       .col-6.input-field
         +password-input
