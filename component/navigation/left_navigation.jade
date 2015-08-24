@@ -6,12 +6,12 @@ aside(ng-controller='User_Navigation_Controller')
     li(ng-show='show_Loading_Image')
       img(src='http://v1.preloaders.net/preloaders/98/preview.gif' style='height:15px;width:15px')
     li
-      a(ui-sref="main")
-        icon.Home
-    li
       //a(ui-sref="queries")
       a(href='#' ng-click="open_Query_State()")
-        icon.Index
+        icon.Home
+    li
+      a(ui-sref="main")
+        icon.User
     li
       a(ui-sref="docs")
         icon.Info

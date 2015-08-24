@@ -2,7 +2,7 @@ include ../../mixins/form_inputs.jade
 
 div(ng-controller="Login_Controller")
   .section.row__label
-    .label Login
+    h4 Label
   .section.row(ng-show="showErrorMessage()")
     .alert.alert-bad(role="alert")
       #message
@@ -16,7 +16,7 @@ div(ng-controller="Login_Controller")
         span.alert-text Info:  {{infoMessage}}
 
   .section.row
-    form#login-form(role="form" ng-submit="login()")
+    form#login-form.access-form(role="form" ng-submit="login()")
       .input-field
         +username-input
       .input-field

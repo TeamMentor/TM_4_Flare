@@ -1,27 +1,35 @@
-//include ../mixins/icons.jade
 include ../../mixins/globals.jade
+include ../../mixins/articles-mixins.jade
 
 .col-9
   .article
     h1.article-title {{article.title}}
     #html.article-content(ng-bind-html='article_Html')
   br
-  +copyright
+  br
+  br
+  +article-copyright
 .col-3
   .section.article-info
     ul.display-inline
       li
         +share-button
     .section.row__label
-      .label Relates to:
+      .label Metadata:
     .section.row
-      ul.display-inline
+      ul
         li
-          #icon-technology(ng-bind-html='icon_Technology')
+          span
+            #icon-technology(ng-bind-html='icon_Technology')
+          span.text Hi
         li
-          #icon-Type(ng-bind-html='icon_Type')
+          span
+            #icon-Type(ng-bind-html='icon_Type')
+          span.text Hi
         li
-          #icon-Phase(ng-bind-html='icon_Phase')
+          span
+            #icon-Phase(ng-bind-html='icon_Phase')
+          span.text Hi
     .section.row.fixed-bottom
       .alert.alert-neutral
         span.text Have a comment about this article? Send our team 
