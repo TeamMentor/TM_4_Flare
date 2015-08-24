@@ -9,5 +9,7 @@
     input.search-input#search-text(type="text", ng-model="text", placeholder="Search TEAM Mentor", ng-change='get_Words(text)', autocomplete="off" autocorrect="off" autocapitalize="off")
     button.btn-search#search-button(type="submit")
       icon.Search
-select#recommendations
-  option(ng-repeat='word in words' value='word') {{word}}
+
+div(ng-controller="Recommendations_Controller")
+  select#recommendations(ng-show='words.length > 0')
+    option(ng-repeat='word in words' value='word') {{word}}
