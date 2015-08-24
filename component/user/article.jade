@@ -1,36 +1,36 @@
 include ../../mixins/globals.jade
 include ../../mixins/articles-mixins.jade
-
-.col-9
-  .article
-    h1.article-title {{article.title}}
-    #html.article-content(ng-bind-html='article_Html')
-  br
-  br
-  br
-  +article-copyright
-.col-3
-  .section.article-info
-    ul.display-inline
-      li
-        +share-button
-    .section.row__label
-      .label Metadata:
-    .section.row
-      ul
+div(ng-controller="Article_Controller")
+  .col-9
+    .article
+      h1.article-title {{article.title}}
+      #html.article-content(ng-bind-html='article_Html')
+    br
+    br
+    br
+    +article-copyright
+  .col-3
+    .section.article-info
+      ul.display-inline
         li
-          span
-            #icon-technology(ng-bind-html='icon_Technology')
-          span.text Hi
-        li
-          span
-            #icon-Type(ng-bind-html='icon_Type')
-          span.text Hi
-        li
-          span
-            #icon-Phase(ng-bind-html='icon_Phase')
-          span.text Hi
-    .section.row.fixed-bottom
-      .alert.alert-neutral
-        span.text Have a comment about this article? Send our team 
-          a(href='mailto:support@securityinnovation.com') an email.
+          +share-button
+      .section.row__label
+        .label Metadata:
+      .section.row
+        ul
+          li
+            span
+              #icon-technology(ng-bind-html='icon_Technology')
+            span.text Hi
+          li
+            span
+              #icon-Type(ng-bind-html='icon_Type')
+            span.text Hi
+          li
+            span
+              #icon-Phase(ng-bind-html='icon_Phase')
+            span.text Hi
+      .section.row.fixed-bottom
+        .alert.alert-neutral
+          span.text Have a comment about this article? Send our team
+            a(href='mailto:support@securityinnovation.com') an email.
