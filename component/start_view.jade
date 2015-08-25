@@ -4,6 +4,8 @@ include ../mixins/icons.jade
         .label Popular Search Terms
     .section.row(ng-controller="Search_Controller")
         .article.search-term(ng-repeat="search in top_Search")
+            div
+              span Star
             a(href='{{search.url}}')
                 +search-icon
                 span {{search.title}}
