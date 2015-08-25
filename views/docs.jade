@@ -2,11 +2,10 @@ include ../mixins/globals.jade
 
 block content
   .main(ng-controller='Help_Controller' class='help')
-    .section.row
-      .col-3.application-scroll
-        help-navigation
-      .col-9.application-scroll
-        #help.section.row__article
-          h1#help-title {{title}}
-          help-content(ng-bind-html='content')
-        +copyright
+    .col-3.application-scroll
+      help-navigation
+    .col-9.application-scroll
+      #help.section.row__article
+        h1#help-title {{title}}
+        help-content(ng-bind-html='content')
+      +copyright
