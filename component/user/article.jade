@@ -9,6 +9,18 @@ div(ng-controller="Article_Controller")
     br
     br
     +article-copyright
+    .share-modal
+      .navbar
+        .label.no-underline Share this article
+        ul
+          li
+            a(href='#')
+              icon.Close
+      .content
+        form
+          label Copy the URL
+          input(type='text')
+          a.button.btn-search Copy
   .col-3
     .section.article-info
       ul.display-inline
