@@ -1,4 +1,4 @@
 div(ng-controller="Recommendations_Controller")
   ul#recommendations(ng-show='words.length > 0')
-    li(ng-repeat='word in words' value='word') {{word}}
+    li(ng-repeat='word in words' value='word' ng-click='select_Word(word)') {{word}}
 
