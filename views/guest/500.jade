@@ -1,0 +1,17 @@
+extends ../../_layouts/angular-page
+include ../../mixins/error-mixins
+include ../../mixins/landing-page
+block content
+    #application
+        .row
+            .col-3
+                .lge-container
+                    br
+            .col-6
+                .lge-container
+                    +error_500
+            .col-3
+                .lge-container
+                    br
+    br
+    +footer-div
