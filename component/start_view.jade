@@ -3,10 +3,12 @@ include ../mixins/icons.jade
     .section.row__label
         .label Popular Search Terms
     .section.row(ng-controller="Search_Controller")
-        .article.search-term(ng-repeat="search in top_Search")
-            a(href='{{search.url}}')
-                +search-icon
-                span {{search.title}}
+        .search-term(ng-repeat="search in top_Search")
+            span.icon
+                icon.Star
+            span.link
+                a(href='{{search.url}}')
+                    span {{search.title}}
 div(ng-controller='Article_Controller')
     .section.row
         .section.row__label
