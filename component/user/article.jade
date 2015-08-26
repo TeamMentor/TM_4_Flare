@@ -1,5 +1,6 @@
 include ../../mixins/globals.jade
 include ../../mixins/articles-mixins.jade
+
 div(ng-controller="Article_Controller")
   .col-9
     .article
@@ -9,18 +10,6 @@ div(ng-controller="Article_Controller")
     br
     br
     +article-copyright
-    .share-modal
-      .navbar
-        .label.no-underline Share this article
-        ul
-          li
-            a(href='#')
-              icon.Close
-      .content
-        form
-          label Copy the URL
-          input(type='text')
-          a.button.btn-search Copy
   .col-3
     .section.article-info
       ul.display-inline
@@ -46,3 +35,4 @@ div(ng-controller="Article_Controller")
         .alert.alert-neutral
           span.text Have a comment about this article? Send our team
             a(href='mailto:support@securityinnovation.com') an email.
+//+share-modal
