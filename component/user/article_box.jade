@@ -7,6 +7,8 @@
         #icon-technology(ng-bind-html='icon_Type')
       li
         #icon-technology(ng-bind-html='icon_Phase')
+      //li
+        icon.Curated-Content(title='This article is a part of Curated Content')
   .summary
     a(ng-href='{{article.url}}', id='{{article.id}}')
       h4#article-headline {{article.title}}

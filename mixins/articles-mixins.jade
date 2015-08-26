@@ -16,6 +16,21 @@ mixin article-copyright
             span.icon-Paperclip
             span.text Terms & Conditions
 
+mixin share-modal
+  .share-modal
+    .navbar
+      .label.no-underline Share this article
+      ul
+        li
+          a(href='#')
+            icon.Close
+    .content
+      form
+        label Copy the URL
+        input(type='text')
+        a.button.btn-search
+          icon.Copy
+
 mixin curated-content-article
   .col-9
     .section.row.article
