@@ -1,4 +1,5 @@
 include ../../mixins/form_inputs.jade
+include ../../mixins/globals.jade
 
 div(ng-controller="Login_Controller")
   .section.row__label
@@ -8,7 +9,7 @@ div(ng-controller="Login_Controller")
       #message
         span.alert-icon !
         span.alert-text Error:  {{errorMessage}}
-
+          +tm-support-email
   .section.row(ng-show="showInfoMessage()")
     .alert.alert-ok(role="alert")
       #message
