@@ -1,0 +1,22 @@
+include ../mixins/application-mixins
+
+block content
+  .application
+    .main
+      .section.row
+        .col-3
+          dl
+            dt
+              .label Curated Content
+              span.sub-nav__icon
+                +back-icon
+            dd
+              a(href='#') Item One
+            dd
+              a(href='#') Item Two
+            dd
+              a(href='#') Item Three
+        .col-9
+          .section.row
+            article-box
+            //include ../component/result_article.jade

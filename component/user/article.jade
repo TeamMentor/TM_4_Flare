@@ -1,20 +1,9 @@
 include ../../mixins/globals.jade
 include ../../mixins/articles-mixins.jade
-
 div(ng-controller="Article_Controller")
   .col-9
     .article
       h1.article-title {{article.title}}
-      #html.article-content(ng-bind-html='article_Html')
-    //.section.row.article
-      .col-10
-        h1.article-title {{article.title}}
-      .col-2
-        ul.display-inline
-          li.full-width
-            a.button.btn-minor.full-width(href='#')
-              +back-icon
-              span.text Back
       #html.article-content(ng-bind-html='article_Html')
     br
     br
@@ -41,12 +30,7 @@ div(ng-controller="Article_Controller")
             span
               #icon-Phase(ng-bind-html='icon_Phase')
             span.text Hi
-          //li
-            span
-              icon.Curated-Content
-            span.text This article is part of the Gateways
       .section.row.fixed-bottom
         .alert.alert-neutral
           span.text Have a comment about this article? Send our team
             a(href='mailto:support@securityinnovation.com') an email.
-//+share-modal
