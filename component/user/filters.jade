@@ -1,6 +1,6 @@
 include ../../mixins/icons.jade
 
-div(ng-controller='Filters_Controller')
+div(ng-controller='Filters_Controller' ng-show='visible')
   .section.row(ng-show='view_Filters')
     dl.scroll
       #filters(ng-repeat ='(title,filter) in filters')
