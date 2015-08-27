@@ -154,16 +154,15 @@ mixin article-editor
         .label Directories
         // This toggles the different editor functionalities for heirarchical structure.
         ul.toggle-bar.display-inline
-          form.article-editor.text-center
-            li.one-third
-              input(type='radio' name='editor' value='add' id='add')
-              label.button.btn-result.icon-Add(for='add')
-            li.one-third
-              input(type='radio' name='editor' value='edit' id='edit')
-              label.button.btn-result.icon-Edit(for='edit')
-            li.one-third
-              input(type='radio' name='editor' value='delete' id='delete')
-              label.button.btn-result.icon-Delete(for='delete')
+          li
+            a.button.btn-result(href='#')
+              icon.Add
+          li
+            a.button.btn-result(href='#')
+              icon.Edit
+          li
+            a.button.btn-result(href='#')
+              icon.Delete
       .section.row
         ul.display-inline
           // This is for display before any action is taken
