@@ -21,16 +21,22 @@ div(ng-controller="Article_Controller")
           li
             span
               #icon-technology(ng-bind-html='icon_Technology')
-            span.text Hi
+            span.text {{article.technology}}
           li
             span
               #icon-Type(ng-bind-html='icon_Type')
-            span.text Hi
+            span.text {{article.type}}
           li
             span
               #icon-Phase(ng-bind-html='icon_Phase')
-            span.text Hi
+            span.text {{article.phase}}
+            
       .section.row.fixed-bottom
         .alert.alert-neutral
-          span.text Have a comment about this article? Send our team
-            a(href='mailto:support@securityinnovation.com') an email.
+          div(ng-show="showFeedbackBanner()")
+            span.text Have a comment about this article?
+              a#tm-support-email(href='{{githubContentUrl}}'+"/new?title={{article.title}} &body={{articleUrl}}" target="_blank")      Open an issue here.
+
+          div(ng-show="showGeneralFeedback()")
+            span.text Have a comment about this article? Send our team
+              a(href='mailto:support@securityinnovation.com')  an email.
