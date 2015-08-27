@@ -1,6 +1,6 @@
 include ../../mixins/globals.jade
 include ../../mixins/articles-mixins.jade
-div(ng-controller="Article_Controller")
+div(ng-controller="Article_Controller" ng-show="fullArticleLoaded()")
   .col-9
     .article
       h1.article-title {{article.title}}
