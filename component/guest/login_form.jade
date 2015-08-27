@@ -9,6 +9,7 @@ div(ng-controller="Login_Controller")
       #message
         span.alert-icon !
         span.alert-text Error:  {{errorMessage}}
+        div(ng-show="showSupportEmail()")
           +tm-support-email
   .section.row(ng-show="showInfoMessage()")
     .alert.alert-ok(role="alert")
