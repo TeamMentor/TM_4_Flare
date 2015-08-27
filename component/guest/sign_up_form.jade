@@ -1,5 +1,6 @@
 include ../../mixins/form_inputs.jade
 include ../../mixins/buttons.jade
+include ../../mixins/globals.jade
 
 div(ng-controller="Signup_Controller")
   .section.row__label
@@ -8,6 +9,9 @@ div(ng-controller="Signup_Controller")
     .alert.alert-bad(role="alert")
         span.alert-icon !
         span.alert-text Error:  {{errorMessage}}
+
+        div(ng-show="showSupportEmail()")
+          +tm-support-email
 
   #info.section.row(ng-show="showInfoMessage()")
     .alert.alert-ok(role="alert")
