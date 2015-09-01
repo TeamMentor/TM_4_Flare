@@ -2,6 +2,12 @@ block content
   div.main(ng-controller='Index_Controller')
     div(class='{{column_Left}} application-scroll left-col')
       queries
+      .found-issue.alert-ok
+        span.alert-icon !
+        // Hide this one, display on click of !
+          span.alert-text Found an issue?  
+            a(href='#') Contact  
+            | our team.
     div(class='{{column_Middle}} middle-col')
       breadcrumbs
       results
