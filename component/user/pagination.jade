@@ -1,4 +1,4 @@
-span(ng-controller='Pagination_Controller')
+span(ng-controller='Pagination_Controller' ng-show='model.pages.size() >1')
   .section.row(ng-show = 'model.pages')
     .pagination
       .previous
