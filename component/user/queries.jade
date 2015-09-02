@@ -4,9 +4,8 @@ div(ng-controller='Queries_Controller')
     dt
       span#query_title.label.no-underline {{title}}
       span.sub-nav__icon
-        //a(ng-click="show_Previous_Query()")
-          +back-icon
-
+        a(ng-click="show_Previous_Query()")
+          icon.Arrow-Left
     #containers.scroll
       div(ng-repeat="container in containers")
         //if container.size > 0
