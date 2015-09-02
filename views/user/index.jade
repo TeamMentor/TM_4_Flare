@@ -2,15 +2,7 @@ block content
   div.main(ng-controller='Index_Controller')
     div(class='{{column_Left}} application-scroll left-col')
       queries
-      .found-issue.alert-ok
-        a(href='#')
-          span.alert-icon !
-        span.alert-text Found an issue?  
-          a(href='#') Contact  
-          | our team.
-        span.close
-          a(href='#')
-            icon.Close
+      found_issue
     div(class='{{column_Middle}} middle-col')
       breadcrumbs
       results
