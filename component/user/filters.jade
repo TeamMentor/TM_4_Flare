@@ -8,6 +8,8 @@ div(ng-controller='Filters_Controller' ng-show='visible')
           .label.no-underline
             icon.Filter
             span.text= ' ' + '{{title}}'
+          span
+            icon.Arrow-Down
         #results
           div(ng-repeat='result in filter')
             dd('ng-show'='result.size > 0')

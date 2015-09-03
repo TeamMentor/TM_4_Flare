@@ -4,9 +4,7 @@ div(ng-controller='Results_Controller' ng-show='visible')
       Query has no results
   section.row__label(ng-show = 'results_Size')
     .label#resultsTitle.
-      Query has {{results_Size}} articles ,
-      Page \#{{current_Page}}
-      ({{current_Page_Split}} articles per page)
+      Showing #{ (current_Page_Split * current_Page > results_Size) ? '{{current_Page_Split * current_Page}}' : '{{results_Size}}' } out of {{results_Size}} articles
     ul.display-inline.text-right
       li
         a#view_Filters.button.btn-result.icon-Filter(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')

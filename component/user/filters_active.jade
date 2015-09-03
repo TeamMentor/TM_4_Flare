@@ -2,11 +2,9 @@
   .active-filter(ng-repeat='(key, value) in current_Filters')
     ul.display-inline
       li
-        span.icon-Design
-          span.path1
-          span.path2
+        span#path1(ng-bind-html='value.filter_Icon')
       li
-        span.text {{value}}
+        span.text {{value.filter_Title}}
       li
         span.close
           a(href='#' 'ng-click'='clear_Filter(key)')

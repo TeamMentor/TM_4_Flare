@@ -1,6 +1,6 @@
-span(ng-controller='Pagination_Controller' ng-show='model.pages.size() >1')
+span(ng-controller='Pagination_Controller')
   .section.row(ng-show = 'model.pages')
-    .pagination
+    .pagination(ng-show ='model.pages.size() >1')
       .previous
         a(href='#', ng-click='previous_Page()')
           span.icon-Arrow-Left
@@ -11,11 +11,11 @@ span(ng-controller='Pagination_Controller' ng-show='model.pages.size() >1')
         a(href='#', ng-click='next_Page()')
           span.icon-Arrow-Right
           span.text= 'next'
-    .back-to-top
-      a(href='#')
+    .back-to-top(ng-show="ShowTopButton()")
+      a(href='#', ng-click="goToTop()")
         span.icon-Arrow-Up
         span.text= 'back to top'
-    .number-of-results#page_Splits
+    .number-of-results#page_Splits(ng-show='model.pages.size() >1')
       form
         input(type='radio' name='results-per-page' id='four')
         label(for='four') 4
