@@ -6,7 +6,7 @@
     select(ng-model='selected_Technology'
            ng-change='select_Technology(selected_Technology)'
            ng-options='technology as technology.title for technology in technologies')
-    input.search-input#search-text(type="text", ng-model="text", placeholder="Search TEAM Mentor",
+    input.search-input#search-text(type="text", ng-model="text", placeholder="Search All of TEAM Mentor",
                                    ng-change='get_Words(text)', ng-focus='with_Focus(true)'
                                    ng-blur='with_Focus(false)'
                                    autocomplete="off" autocorrect="off" autocapitalize="off")
