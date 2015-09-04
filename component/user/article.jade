@@ -13,7 +13,9 @@ div(ng-controller="Article_Controller" ng-show="fullArticleLoaded()")
     .section.article-info
       ul.display-inline
         li
-          +share-button
+          a.button.btn-result
+            icon.Share
+            span Share
       .section.row__label
         .label Metadata:
       .section.row
@@ -30,7 +32,6 @@ div(ng-controller="Article_Controller" ng-show="fullArticleLoaded()")
             span.icon
               #icon-Phase(ng-bind-html='icon_Phase')
             span.text {{article.phase}}
-            
       .section.row.fixed-bottom
         .alert.alert-neutral
           div(ng-show="showFeedbackBanner()")
