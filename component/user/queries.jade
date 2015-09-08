@@ -1,8 +1,8 @@
 //include ../../mixins/icons.jade
 div(ng-controller='Queries_Controller' ng-show='visible')
   dl
-    //dt
-      span#query_title.label.no-underline {{title}}
+    dt
+      h6#query_title {{title}}
       span.sub-nav__icon
         a(ng-click="show_Previous_Query()")
           icon.Arrow-Left
