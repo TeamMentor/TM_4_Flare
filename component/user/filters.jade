@@ -4,7 +4,7 @@ div(ng-controller='Filters_Controller' ng-show='visible')
   .section.row(ng-show='view_Filters')
     dl.scroll
       dt
-        h6 Filter by
+        p Filter by
       #filters(ng-repeat ='(title,filter) in filters')
         dt.header
           span.label.no-underline
