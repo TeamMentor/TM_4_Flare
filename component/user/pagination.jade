@@ -17,11 +17,11 @@ span(ng-controller='Pagination_Controller')
         span.text= 'back to top'
     .number-of-results#page_Splits(ng-show='model.pages.size() >1')
       form
-        input(type='radio' name='results-per-page' id='four')
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='four' value="4" ng-change='set_Page_Split(value)')
         label(for='four') 4
-        input(type='radio' name='results-per-page' id='ten' checked='checked')
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='ten' checked='checked' value="10" ng-change='set_Page_Split(value)' )
         label(for='ten') 10
-        input(type='radio' name='results-per-page' id='twenty')
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='twenty' value="20" ng-change='set_Page_Split(value)')
         label(for='twenty') 20
       ul
         li
