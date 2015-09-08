@@ -2,7 +2,7 @@
 include ../mixins/application-mixins
 
 block content
-  .application
+  .main
     .section.row
       .col-1
       .col-10
@@ -12,16 +12,28 @@ block content
             li.full-width
               button Go to app
         .section.row
-          .article.result
-            .summary
-              h2 Search
-              p TEAM Mentor 4.0 has faster and more reliable search results. Search the database by filter, issue or technology.
-          .article.result
-            .summary
-              h2 Navigate
-              p Not sure where to start? You can browse our index and find groups of articles that cover entire topics.
-          .article.result
-            .summary
-              h2 Filters
-              p Filter your results to find articles that directly relate to you. You can filter by technology, phase and type.
+          .col-4
+            .article-box
+              .result
+                .summary
+                  br
+                  h2 Search
+                  br
+                  p TEAM Mentor 4.0 has faster and more reliable search results. Search the database by filter, issue or technology.
+          .col-4
+            .article-box
+              .result
+                .summary
+                  br
+                  h2 Navigate
+                  br
+                  p Not sure where to start? You can browse our index and find groups of articles that cover entire topics.
+          .col-4
+            .article-box
+              .result
+                .summary
+                  br
+                  h2 Filters
+                  br
+                  p Filter your results to find articles that directly relate to you. You can filter by technology, phase and type.
       .col-1
