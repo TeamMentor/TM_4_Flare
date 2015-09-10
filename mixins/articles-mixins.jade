@@ -17,19 +17,21 @@ mixin article-copyright
             span.text Terms & Conditions
 
 mixin curated-content-article
-  .col-9
-    .section.row.article
-      .col-10
-        h1 Article Title
-      .col-2
-        ul.display-inline
-          li.full-width
-            a.button.btn-minor.full-width(href='#')
-              +back-icon
-              span.text Back
-  .col-3
-    .section.article-info
-      +article-info
+  div(ng-controller="Gateways_Controller")
+    .col-1
+      .section.row.article
+        .col-10
+          h1#help-title {{title}}
+          div(ng-bind-html='content')
+        .col-2
+          ul.display-inline
+            li.full-width
+              a.button.btn-minor.full-width(href='#')
+                +back-icon
+                span.text Back
+    .col-3
+      .section.article-info
+        +article-info
 
 //- Article Info
 mixin article-info
