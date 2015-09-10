@@ -2,7 +2,7 @@ include ../../mixins/icons.jade
 aside(ng-controller='User_Navigation_Controller')
   ul
     li
-      div.logo
+      span.logo
     li(ng-show='show_Loading_Image')
       icon.Loading.rotating
     li
@@ -15,7 +15,6 @@ aside(ng-controller='User_Navigation_Controller')
     li
       a(ui-sref="docs")
         icon.Info
-
     li
       a(href="/angular/guest/logout")
         icon.Logout
