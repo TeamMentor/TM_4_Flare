@@ -8,12 +8,13 @@ block content
     .col-9.application-scroll
       .article
         h1.article-title {{title}}
+        br
         #html.article-content(ng-bind-html='content')
       br
       br
       +article-copyright
 
-      .section.article-info
+      //.section.article-info
         ul.display-inline
           li
             a.button.btn-result
