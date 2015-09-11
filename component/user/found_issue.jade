@@ -1,4 +1,5 @@
-.found-issue.alert-ok
-  span.alert-text Found an issue?  
-    a(href='#') Contact  
-    | our team.
+div(ng-show = 'view_Filters')
+  .found-issue.alert-ok
+    span.alert-text= 'Found an issue? '
+      a(href='#')= 'Contact'
+      =  ' our team.'
