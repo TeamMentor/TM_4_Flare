@@ -6,15 +6,15 @@ block content
     .col-3.application-scroll
       include ../component/gateway_navigation
     .col-9.application-scroll
-      .article
+      .article.curated-content
         h1.article-title {{title}}
         br
         #html.article-content(ng-bind-html='content')
-      br
-      br
-      +article-copyright
+        br
+        br
+        +article-copyright
 
-      //.section.article-info
+      .section.article-info
         ul.display-inline
           li
             a.button.btn-result
