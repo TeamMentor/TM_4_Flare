@@ -1,14 +1,15 @@
 include ../../mixins/icons.jade
 aside(ng-controller='User_Navigation_Controller')
   ul
-    li
-      span.logo
     li(ng-show='show_Loading_Image')
       icon.Loading.rotating
     li
       //a(ui-sref="queries")
       a(href='index' ng-click="open_Query_State()")
         icon.Home
+    li
+      a(href="guides")
+        icon.Curated-Content
     li
       a(ui-sref="main")
         icon.User
