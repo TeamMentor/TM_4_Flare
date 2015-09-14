@@ -6,43 +6,5 @@ block content
     .col-3.application-scroll
       include ../component/gateway_navigation
     .col-9.application-scroll
-      .article.curated-content
-        h1.article-title {{title}}
-        br
-        #html.article-content(ng-bind-html='content')
-        br
-        br
-        +article-copyright
-
-      .section.article-info
-        ul.display-inline
-          li
-            a.button.btn-result
-              span.icon
-                icon.Share
-              span.text Share
-        .section.row__label
-          .label(ng-show="showMetadata()") Metadata:
-        .section.row(ng-show="showMetadata()")
-          ul
-            li
-              span.icon
-                #icon-technology(ng-bind-html='icon_Technology')
-              span.text {{article.technology}}
-            li
-              span.icon
-                #icon-Type(ng-bind-html='icon_Type')
-              span.text {{article.type}}
-            li
-              span.icon
-                #icon-Phase(ng-bind-html='icon_Phase')
-              span.text {{article.phase}}
-        .section.row.fixed-bottom
-          .alert.alert-neutral
-            div(ng-show="showFeedbackBanner()")
-              span.text Have a comment about this article?
-                a#tm-support-email(href='{{githubContentUrl}}'+"/new?title={{article.title}} &body={{articleUrl}}" target="_blank")      Open an issue here.
-
-            div(ng-show="showGeneralFeedback()")
-              span.text Have a comment about this article? Send our team
-                a(href='mailto:support@securityinnovation.com')  an email.
+      +curated-content-article-content
+      +curated-content-article-info
