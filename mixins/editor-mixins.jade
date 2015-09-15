@@ -1,0 +1,278 @@
+mixin article-info-editor-option
+  ul.display-inline
+    li
+      +edit-button
+    li
+      +save-button
+    li
+      +share-button
+  .section.row__label
+    .label Relates to:
+  .section.row
+    ul.display-inline
+      li
+        //+show-icon('Technology', technology)
+        span.text= technology
+      li
+        //+show-icon('Phase', phase)
+      li
+        //+show-icon('Type', type)
+  .section.row__label
+    .label Belongs to:
+  .section.row
+    ul
+      li
+        a(href='/flare/curated-content')
+          +curated-content-icon
+          span.text Curated Content
+  .section.row__label
+    .label Related Articles:
+  .section.row
+    ul
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+      li
+        a(href='#') Article Headline
+
+mixin article-editor
+  .col-9
+    .section.article-body
+      .section.row
+        form.article-editor
+          input(type='text', name='article-title', placeholder='Article Title')
+          textarea(name='article-body', placeholder='Article Body')
+          .section.import-files
+            p
+              | You can
+              a(href='#')  import
+              |  PDFs, images or Word documents.
+
+      .section.row__label
+        .label Directories
+        // This toggles the different editor functionalities for heirarchical structure.
+        ul.toggle-bar.display-inline
+          li
+            a.button.btn-result(href='#')
+              icon.Add
+          li
+            a.button.btn-result(href='#')
+              icon.Edit
+          li
+            a.button.btn-result(href='#')
+              icon.Delete
+      .section.row
+        ul.display-inline
+          // This is for display before any action is taken
+          li.one-third
+            dl
+              dt
+                .label Container
+          // This should be used for when the user toggles the Add or Edit functionality
+          li.one-third
+            dl
+              dt
+                .label Container
+                span.sub-nav__icon
+                  +back-icon
+              dd
+                a.active(href='#') Directory
+              dd
+                a(href='#') Directory
+              dd
+                a(href='#') Directory
+          // This should be used if the user wants to delete a container
+          li.one-third
+            dl
+              dt
+                .label Container
+              dd
+                form
+                  label(for='delete-directory') Are you sure you want to delete this?
+                  ul.display-inline
+                    li
+                      button.btn-editor(type='submit')
+                        +tick-icon
+                    li
+                      button.btn-editor.cancel(type='cancel')
+                        +close-icon
+
+      .section.row__label
+        .label Filters
+      .section.row
+        br
+        form.article-editor-grid
+          div
+            input(type="checkbox" id='filter1')
+            label(for='filter1')
+              +all-icon
+              span Technology Independant
+          div
+            input(type="checkbox" id='filter2')
+            label(for='filter2')
+              +android-icon
+              span Android
+          div
+            input(type="checkbox" id='filter3')
+            label(for='filter3')
+              +scala-icon
+              span Scala
+          div
+            input(type="checkbox" id='filter4')
+            label(for='filter4')
+              +wcf-icon
+              span WCF
+          div
+            input(type="checkbox" id='filter5')
+            label(for='filter5')
+              +web-app-icon
+              span Web Application
+          div
+            input(type="checkbox" id='filter6')
+            label(for='filter6')
+              +ios-icon
+              span iOS
+          div
+            input(type="checkbox" id='filter7')
+            label(for='filter7')
+              +html5-icon
+              span.text HTML5
+
+      .section.row__label
+        .label Quality
+      .section.row
+        p Quality slider, needs to be built with Angular so I can style
+
+  .col-3
+    .section.article-info
+      ul.display-inline
+        li
+          button.btn-editor(type='submit')
+            +tick-icon
+        li
+          button.btn-editor.cancel(type='submit')
+            +close-icon
+
+mixin editor-navbar
+  dt.editor
+    form.text-center
+      div
+        input(type='radio' name='editor' value='add' id='add')
+        label(for='add') Add
+      div
+        input(type='radio' name='editor' value='edit' id='edit')
+        label(for='edit')
+          +edit-icon
+      div
+        input(type='radio' name='editor' value='move' id='move')
+        label(for='move') Move
+      div
+        input(type='radio' name='editor' value='delete' id='delete')
+        label(for='delete')
+          +delete-icon
+
+mixin editor-directory
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    +editor-navbar
+
+mixin directory-add
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      form
+        label(for='add-directory') Add new directory
+        section.row
+          .col-10
+            input(type='text' id='add-directory')
+          .col-2
+            button.btn-editor(type='submit')
+              +tick-icon
+    +editor-navbar
+
+mixin directory-edit
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      form
+        label(for='edit-directory') Edit directory
+        section.row
+          .col-8
+            input(type='text' id='edit-directory')
+          .col-2
+            button.btn-editor(type='submit')
+              +tick-icon
+          .col-2
+            button.btn-editor.cancel(type='submit')
+              +close-icon
+    +editor-navbar
+
+mixin directory-delete
+  dl
+    dt
+      span.label.no-underline Title
+      span.sub-nav__icon
+        +back-icon
+    if(containers)
+      #containers.scroll
+        each container in containers
+          if container.size > 0
+            a(href= href + container.id , id=container.id)
+              dd
+                span.text= container.title
+                span.badge= container.size
+    dd
+      form
+        section.row
+          .col-8
+            label(for='delete-directory') Are you sure you want to delete this?
+          .col-2
+            button.btn-editor(type='submit')
+              +tick-icon
+          .col-2
+            button.btn-editor.cancel(type='cancel')
+              +close-icon
+    +editor-navbar
+

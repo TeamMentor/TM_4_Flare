@@ -1,30 +1,11 @@
 include ../../mixins/form_inputs.jade
+include ../../mixins/forms.jade
 include ../../mixins/globals.jade
 
 div(ng-controller="Login_Controller")
   .section.row__label
     h4 Login
-  .section.row(ng-show="showErrorMessage()")
-    .alert.alert-bad(role="alert")
-      #message
-        span.alert-icon !
-        span.alert-text Error:  {{errorMessage}}
-        div(ng-show="showSupportEmail()")
-          +tm-support-email
-  .section.row(ng-show="showInfoMessage()")
-    .alert.alert-ok(role="alert")
-      #message
-        span.alert-icon |
-        span.alert-text Info:  {{infoMessage}}
-
+  +alert-bad
+  +alert-ok
   .section.row
-    form#login-form.access-form(role="form" ng-submit="login()")
-      .input-field
-        +username-input
-      .input-field
-        +password-input
-      .button-field
-        button.full-width(type="submit", id="btn-login") Login
-      .button-field.text-right
-        br
-        a.text-right#pwd_forgot(href="pwd_forgot") Forgot your password?
+    +login-form

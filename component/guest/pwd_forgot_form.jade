@@ -1,14 +1,10 @@
 include ../../mixins/buttons.jade
+include ../../mixins/forms.jade
 include ../../mixins/form_inputs.jade
 
 div(ng-controller='Pwd_Forgot_Controller')
   .section.row__label
     h4 Forgot your password?
   .section.row
-    form#forgot-pwd-form.access-form(ng-submit='get_Password()')
-      .section.row
-        .col-8.input-field
-          +email-input
-        .col-4.button-field
-          +get-password-button
+    +forgot-password-form
   alert-ok
