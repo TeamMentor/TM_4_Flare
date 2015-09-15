@@ -51,6 +51,11 @@ mixin article-metadata
         span.icon
           #icon-Phase(ng-bind-html='icon_Phase')
         span.text {{article.phase}}
+      li
+        span.icon
+          icon.Curated-Content
+        span.text This article is part of the 
+          a(href='guides') Security Guide
 
 mixin article-feedback
   .section.row.fixed-bottom
