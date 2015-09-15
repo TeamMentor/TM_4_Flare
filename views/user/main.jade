@@ -1,8 +1,28 @@
-include ../../mixins/application-mixins.jade
 include ../../mixins/links.jade
 block content
   .main
-    .col-3
-    .col-6
+    .col-3.application-scroll
+      div
+        dl
+          dt
+            p#query_title Welcome to TEAM Mentor
+          #containers.scroll
+            div
+              a(href='#')
+                dd
+                  span.text Popular Search Terms
+                  span.badge 12
+              a(href='#')
+                dd
+                  span.text Top Searches
+                  span.badge 12
+              a(href='#')
+                dd
+                  span.text Recently Viewed Searches
+                  span.badge 12
+              a(href='#')
+                dd
+                  span.text My Searches
+                  span.badge 12
+    .col-9.application-scroll
       include ../../component/start_view.jade
-    .col-3
