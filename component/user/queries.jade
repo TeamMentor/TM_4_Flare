@@ -8,7 +8,6 @@ div(ng-controller='Queries_Controller' ng-show='visible')
           icon.Arrow-Left
     #containers.scroll
       div(ng-repeat="container in containers")
-        //if container.size > 0
         a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' ng-show='container.size >0')
           dd
             span.text {{container.title}}

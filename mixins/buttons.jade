@@ -4,6 +4,21 @@ mixin share-button
       icon.Share
     span.text Share
 
+mixin login-button
+  button.full-width(type="submit", id="btn-login") Login
+
+mixin sign-up-button
+  button.full-width(type='submit', id='btn-sign-up') Sign Up
+
+mixin forgot-password-button
+  a.text-right#pwd_forgot(href="pwd_forgot") Forgot your password?
+
+mixin get-password-button
+  button.full-width(type='submit' id='btn-get-password') Retrieve password
+
+mixin reset-pwd-button
+  button(type='submit', id='btn-reset-pwd') Reset password
+
 
 
 
@@ -40,12 +55,3 @@ mixin clear-all-button
 
 mixin edit-button
     button.btn-result.icon-Edit(type='submit', id='btn-edit')
-
-mixin reset-pwd-button
-    button(type='submit', id='btn-reset-pwd') Reset password
-
-mixin sign-up-button
-    button.full-width(type='submit', id='btn-sign-up') Sign Up
-
-mixin get-password-button
-    button.full-width(type='submit' id='btn-get-password') Retrieve password

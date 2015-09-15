@@ -11,10 +11,12 @@ span(ng-controller='Pagination_Controller')
         a(href='#', ng-click='next_Page()')
           span.icon-Arrow-Right
           span.text= 'next'
+
     .back-to-top(ng-show="ShowTopButton()")
       a(href='#', ng-click="goToTop()")
         span.icon-Arrow-Up
         span.text= 'back to top'
+
     .number-of-results#page_Splits(ng-show='model.pages.size() >1')
       form
         input(type='radio' ng-model='model.page_Split' name='results-per-page' id='four' value="4" ng-change='set_Page_Split(value)')
