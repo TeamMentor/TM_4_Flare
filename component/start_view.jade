@@ -1,21 +1,29 @@
-.section.row
-    .section.row__label
-        .label Popular Search Terms
-    .section.row(ng-controller="Search_Controller")
-        .search-term(ng-repeat="search in top_Search")
-            span.icon
-                icon.Star
-            span.link
-                a(href='{{search.url}}')
-                    span {{search.title}}
 div(ng-controller='Article_Controller')
+  a(name='popular_Search_Terms')
+  .section.row
+    .section.row__label
+      .label Popular Search Terms
+    .section.row(ng-controller="Search_Controller")
+      .search-term(ng-repeat="search in top_Search")
+        span.icon
+          icon.Star
+        span.link
+          a(href='{{search.url}}')
+            span {{search.title}}
+
+  a(name='recently_Viewed_Articles')
+  .section.row
+    .section.row__label
+      .label(ng-show="recent_Articles.length > 0") Recently Viewed Articles
     .section.row
-        .section.row__label
-            .label(ng-show="recent_Articles.length > 0") Recently Viewed Articles
-        .section.row
-            article-box.article-box(ng-repeat='article in recent_Articles')
+      article-box.article-box(ng-repeat='article in recent_Articles')
+
+  a(name='top_Articles')
+  .section.row
+    .section.row__label
+      .label Top Articles
     .section.row
-        .section.row__label
-            .label Top Articles
-        .section.row
-            article-box.article-box(ng-repeat='article in top_Articles' class='article-box')
+      article-box.article-box(ng-repeat='article in top_Articles' class='article-box')
+    .section.row__label
+      a(name='top_Articles')
+        .label Top Articles
