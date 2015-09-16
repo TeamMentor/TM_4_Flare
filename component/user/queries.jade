@@ -8,7 +8,7 @@ div(ng-controller='Queries_Controller' ng-show='visible')
       p#query_title {{title}}
       //span.sub-nav__icon
         a(href='#' ng-click="show_Previous_Query()")
-          icon.Arrow-Left
+          icon.Arrow-Up
     #containers.scroll
       div(ng-repeat="container in containers")
         a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' ng-show='container.size >0')
