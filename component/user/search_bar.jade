@@ -2,7 +2,8 @@
   form(ng-submit="submit()")
     ul
       li
-        div.logo
+        a(href='/')
+          div.logo
     select(ng-model='selected_Technology'
            ng-change='select_Technology(selected_Technology)'
            ng-options='technology as technology.title for technology in technologies')
