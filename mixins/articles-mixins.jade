@@ -12,7 +12,7 @@ mixin curated-content-article-content
   .article.curated-content
     h1.article-title {{title}}
     br
-    #html.article-content(ng-bind-html='content')
+    #html.article-content(dynamic="content")
     br
     br
     br
