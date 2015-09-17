@@ -4,12 +4,14 @@ block content
     div(class='{{column_Left}} application-scroll left-col')
       queries
     div(class='{{column_Middle}} middle-col')
-      breadcrumbs
+      .display-desktop
+        breadcrumbs
       results
       filters_active
       .scrolling-results
         articles
         pagination
     div(class='{{column_Right}} application-scroll right-col')
-      found_issue
+      .display-desktop
+        found_issue
       filters(class='filters')
