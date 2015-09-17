@@ -83,7 +83,7 @@ mixin article-editor
               dt
                 .label Container
                 span.sub-nav__icon
-                  +back-icon
+                  icon.Back
               dd
                 a.active(href='#') Directory
               dd
@@ -101,10 +101,10 @@ mixin article-editor
                   ul.display-inline
                     li
                       button.btn-editor(type='submit')
-                        +tick-icon
+                        icon.Tick
                     li
                       button.btn-editor.cancel(type='cancel')
-                        +close-icon
+                        icon.Close
 
       .section.row__label
         .label Filters
@@ -114,22 +114,22 @@ mixin article-editor
           div
             input(type="checkbox" id='filter1')
             label(for='filter1')
-              +all-icon
+              icon.All
               span Technology Independant
           div
             input(type="checkbox" id='filter2')
             label(for='filter2')
-              +android-icon
+              icon.Android
               span Android
           div
             input(type="checkbox" id='filter3')
             label(for='filter3')
-              +scala-icon
+              icon.Scala
               span Scala
           div
             input(type="checkbox" id='filter4')
             label(for='filter4')
-              +wcf-icon
+              icon.WCF
               span WCF
           div
             input(type="checkbox" id='filter5')
@@ -139,12 +139,12 @@ mixin article-editor
           div
             input(type="checkbox" id='filter6')
             label(for='filter6')
-              +ios-icon
+              icon.IOS
               span iOS
           div
             input(type="checkbox" id='filter7')
             label(for='filter7')
-              +html5-icon
+              icon.HTML5
               span.text HTML5
 
       .section.row__label
@@ -157,10 +157,10 @@ mixin article-editor
       ul.display-inline
         li
           button.btn-editor(type='submit')
-            +tick-icon
+            icon.Tick
         li
           button.btn-editor.cancel(type='submit')
-            +close-icon
+            icon.Close
 
 mixin editor-navbar
   dt.editor
@@ -171,21 +171,21 @@ mixin editor-navbar
       div
         input(type='radio' name='editor' value='edit' id='edit')
         label(for='edit')
-          +edit-icon
+          icon.Edit
       div
         input(type='radio' name='editor' value='move' id='move')
         label(for='move') Move
       div
         input(type='radio' name='editor' value='delete' id='delete')
         label(for='delete')
-          +delete-icon
+          icon.Delete
 
 mixin editor-directory
   dl
     dt
       span.label.no-underline Title
       span.sub-nav__icon
-        +back-icon
+        icon.Back
     if(containers)
       #containers.scroll
         each container in containers
@@ -201,7 +201,7 @@ mixin directory-add
     dt
       span.label.no-underline Title
       span.sub-nav__icon
-        +back-icon
+        icon.Back
     if(containers)
       #containers.scroll
         each container in containers
@@ -218,7 +218,7 @@ mixin directory-add
             input(type='text' id='add-directory')
           .col-2
             button.btn-editor(type='submit')
-              +tick-icon
+              icon.Tick
     +editor-navbar
 
 mixin directory-edit
@@ -226,7 +226,7 @@ mixin directory-edit
     dt
       span.label.no-underline Title
       span.sub-nav__icon
-        +back-icon
+        icon.Back
     if(containers)
       #containers.scroll
         each container in containers
@@ -243,10 +243,10 @@ mixin directory-edit
             input(type='text' id='edit-directory')
           .col-2
             button.btn-editor(type='submit')
-              +tick-icon
+              icon.Tick
           .col-2
             button.btn-editor.cancel(type='submit')
-              +close-icon
+              icon.Close
     +editor-navbar
 
 mixin directory-delete
