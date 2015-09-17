@@ -4,9 +4,10 @@ mixin article-content
   .article
     h1.article-title {{article.title}}
     #html.article-content(ng-bind-html='article_Html')
-  br
-  br
-  br
+    br
+    br
+    br
+    +article-copyright
 
 mixin curated-content-article-content
   .article.curated-content
