@@ -32,7 +32,7 @@ mixin curated-content-article-info
     ul.display-inline
       li
         +share-button
-    +article-metadata
+    +curated-content-article-metadata
     +article-feedback
 
 mixin article-metadata
@@ -57,6 +57,28 @@ mixin article-metadata
           icon.Curated-Content
         span.text This article is part of the 
           a(href='guides') Security Guide
+
+mixin curated-content-article-metadata
+  .section.row__label
+    .label Metadata:
+  .section.row
+    ul
+      li
+        span.icon
+          #icon-technology(ng-bind-html='icon_Technology')
+        span.text {{article.technology}}
+      li
+        span.icon
+          #icon-Type(ng-bind-html='icon_Type')
+        span.text {{article.type}}
+      li
+        span.icon
+          #icon-Phase(ng-bind-html='icon_Phase')
+        span.text {{article.phase}}
+      li
+        span.icon
+          icon.Curated-Content
+        span.text Security Guides
 
 mixin article-feedback
   .section.row.fixed-bottom

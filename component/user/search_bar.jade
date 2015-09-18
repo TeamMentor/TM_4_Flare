@@ -5,6 +5,10 @@
         a(href='/')
           div.logo
     div
+      button.btn-search
+        icon.Filter
+      ul.technology
+        li Technology
       select(ng-model='selected_Technology'
              ng-change='select_Technology(selected_Technology)'
              ng-options='technology as technology.title for technology in technologies')

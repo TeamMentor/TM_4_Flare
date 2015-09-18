@@ -5,7 +5,8 @@ div(ng-controller='Results_Controller' ng-show='visible')
   section.row__label(ng-show = 'results_Size')
     .label#resultsTitle
       div(ng-controller="Pagination_Controller")
-          {{pagginMessage}}
+        {{pagginMessage}}
     ul.display-inline.text-right
       li
-        a#view_Filters.button.btn-result.icon-Filter(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')
+        a#view_Filters.button.btn-result(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')
+          .icon-Filter
