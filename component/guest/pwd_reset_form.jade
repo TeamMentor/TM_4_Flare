@@ -1,8 +1,24 @@
 include ../../mixins/form_inputs.jade
 include ../../mixins/forms.jade
 include ../../mixins/buttons.jade
+include ../../mixins/globals.jade
 
-.section.row__label
-  h4 Reset your password
-.section.row
-  +reset-password-form
+div(ng-controller='Pwd_Reset_Controller')
+  .section.row__label
+    h4 Reset your password ...
+
+  #error
+    +alert-bad
+  #info
+    +alert-ok
+
+  .section.row
+    form#password-reset-form.access-form(role='form' ng-submit='reset_Password()')
+      .section.row
+        .col-6.input-field
+          +password-input
+        .col-6.input-field
+          +confirm-password-input
+        .col-4.button-field
+          br
+          +reset-pwd-button
