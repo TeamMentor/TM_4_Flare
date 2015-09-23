@@ -11,4 +11,28 @@ div(ng-controller="Signup_Controller")
   #info
     +alert-ok
   .section.row
-    +sign-up-form
+    form#sign-up-form.access-form(role="form" ng-submit="signup()")
+      .input-field
+        +username-input
+      .input-field
+        +email-input
+      .input-field
+        +password-input
+      .input-field
+        +confirm-password-input
+      .input-field
+        +first-name-input
+      .input-field
+        +last-name-input
+      .input-field
+        +company-input
+      .input-field
+        +title-input
+      .input-field
+        +country-input
+      .input-field
+        +state-input
+      .conditions
+        include:marked ../../../TM_Static/content/getting-started/agree-to-toc.md
+      .button-field
+        +sign-up-button
