@@ -1,7 +1,25 @@
 include ../../mixins/getting-started-mixins
+include ../../mixins/form_inputs
 
 block content
-  .section.row
+  .section.row__label
+    h4 Sign Up
+  form.access-form
+    .section.row
+      .col-6
+        +first-name-input
+        +last-name-input
+        +email-input
+        +password-input
+        +confirm-password-input
+      .col-6
+        +username-input
+        +company-input
+        +title-input
+        +country-input
+        +state-input
+
+  //.section.row
     .col-7
       sign-up-form
     .col-5
