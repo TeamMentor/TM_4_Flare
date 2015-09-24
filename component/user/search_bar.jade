@@ -5,13 +5,12 @@
         a(href='/')
           div.logo
     div
-      button.btn-search
+      button.btn-search(ng-click='show_Mobile_Dropbox=true')
         icon.Menu
-      ul.technology
-        li Technology
-        li Website
-        li Java
-        li Scala
+      ul.technology(ng-show='show_Mobile_Dropbox', style = 'display:block')
+        li(ng-repeat='technology in technologies')
+            a(href='#' ng-click ='select_Technology_Mobile(technology)') {{technology.title}}
+
       select(ng-model='selected_Technology'
              ng-change='select_Technology(selected_Technology)'
              ng-options='technology as technology.title for technology in technologies')
