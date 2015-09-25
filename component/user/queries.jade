@@ -22,7 +22,7 @@
               span.text {{container.title}}
               span.badge {{container.size}}
 
-div(ng-controller='Queries_Controller' ng-show='visible')
+div#queries(ng-controller='Queries_Controller' ng-show='visible')
   dl
     dt
       p#query_title {{title}}

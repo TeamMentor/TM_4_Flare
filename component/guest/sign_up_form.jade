@@ -6,9 +6,23 @@ include ../../mixins/globals.jade
 div(ng-controller="Signup_Controller")
   .section.row__label
     h4 Sign Up
-  #error
-    +alert-bad
-  #info
-    +alert-ok
-  .section.row
-    +sign-up-form
+  form.access-form
+    .section.row
+      .col-6
+        +first-name-input
+        +last-name-input
+        +email-input
+        +password-input
+        +confirm-password-input
+      .col-6
+        +username-input
+        +company-input
+        +title-input
+        +country-input
+        +state-input
+    .section.row
+      .col-6
+        br
+        include:marked ../../../TM_Static/content/getting-started/agree-to-toc.md
+      .col-6
+        +sign-up-button

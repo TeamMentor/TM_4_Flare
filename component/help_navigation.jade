@@ -3,4 +3,4 @@ dl.help.scroll
     dt.vertical-align
       p {{view.Title}}
     dd(ng-repeat = 'article in view.Articles')
-      a(href='#'+'{{article.Id}}' ng-click='show_Doc(article)') {{article.Title}}
+      a(href='docs/'+'{{article.Id}}' ng-click='show_Doc(article.id)') {{article.Title}}
