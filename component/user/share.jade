@@ -9,8 +9,9 @@ div(ng-controller='Share_Controller')
      div(ng-show='show_Share_Box')
       .section.row
           form.content
-            .col-11
-              input(type='text', placeholder='Article URL' ng-model='article_Link')
+            .col-11#share_article_link
+              textarea(placeholder='Article URL')
+                {{article_Link}}
             .col-1
               a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' )
                 icon.Copy
