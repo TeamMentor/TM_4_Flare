@@ -1,0 +1,20 @@
+//.modal
+div(ng-controller='Share_Controller')
+  ul.display-inline
+    li
+      a.button.btn-result(href='#' ng-click='show_Share_Box=!show_Share_Box')
+        span.icon
+          icon.Share
+        span.text Share
+     div(ng-show='show_Share_Box')
+      .section.row
+          form.content
+            .col-11
+              input(type='text', placeholder='Article URL' ng-model='article_Link')
+            .col-1
+              a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' )
+                icon.Copy
+      .section.row(ng-show="showInfoMessage()")
+        .alert.alert-ok(role="alert")
+          #message
+            span.alert-text {{infoMessage}}
