@@ -55,18 +55,19 @@ mixin curated-content-article-metadata
     .label Metadata:
   .section.row
     ul
-      li
-        span.icon
-          #icon-technology(ng-bind-html='icon_Technology')
-        span.text {{article.technology}}
-      li
-        span.icon
-          #icon-Type(ng-bind-html='icon_Type')
-        span.text {{article.type}}
-      li
-        span.icon
-          #icon-Phase(ng-bind-html='icon_Phase')
-        span.text {{article.phase}}
+      div(ng-show="showMetadata()")
+        li
+          span.icon
+            #icon-technology(ng-bind-html='icon_Technology')
+          span.text {{article.technology}}
+        li
+          span.icon
+            #icon-Type(ng-bind-html='icon_Type')
+          span.text {{article.type}}
+        li
+          span.icon
+            #icon-Phase(ng-bind-html='icon_Phase')
+          span.text {{article.phase}}
       li
         span.icon
           icon.Curated-Content
