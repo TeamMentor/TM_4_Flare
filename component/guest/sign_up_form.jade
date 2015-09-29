@@ -6,16 +6,18 @@ include ../../mixins/globals.jade
 div(ng-controller="Signup_Controller")
   .section.row__label
     h4 Sign Up
-  form.access-form
+  +alert-bad
+  +alert-ok
+  form#sign-up-form.access-form(role="form" ng-submit="signup()")
     .section.row
       .col-6
         +first-name-input
         +last-name-input
-        +email-input
+        +username-input
         +password-input
         +confirm-password-input
       .col-6
-        +username-input
+        +email-input
         +company-input
         +title-input
         +country-input
