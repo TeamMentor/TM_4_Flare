@@ -1,6 +1,7 @@
-div(ng-controller='Start_View_Controller')
-  a(name='popular_Search_Terms')
-  .section.row
+div
+
+  //a(name='popular_Search_Terms')
+  //.section.row
     .section.row__label
       .label Popular Search Terms
     .section.row
@@ -18,12 +19,19 @@ div(ng-controller='Start_View_Controller')
     .section.row
       article-box.article-box(ng-repeat='article in recent_Articles')
 
-  a(name='top_Articles')
-  .section.row
+  //a(name='top_Articles')
+  //.section.row
     .section.row__label
       .label Top Articles
     .section.row
       article-box.article-box(ng-repeat='article in top_Articles' class='article-box')
+
+  a(name='my_Top_Articles')
+  .section.row
+    .section.row__label
+      .label My Top Articles
+    .section.row
+      article-box.article-box(ng-repeat='article in my_Top_Articles' class='article-box')
 
   br
   br

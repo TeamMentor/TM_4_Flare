@@ -1,6 +1,6 @@
 include ../../mixins/links.jade
 block content
-  .main
+  .main(ng-controller='Start_View_Controller')
     .col-3.application-scroll
       div
         dl
@@ -8,18 +8,23 @@ block content
             p#query_title Welcome to TEAM Mentor
           #containers.scroll
             div
-              a(href='#popular_Search_Terms')
+              //a(href='#popular_Search_Terms')
                 dd
                   span.text Popular Search Terms
                   span.badge 3
               a(href='#recently_Viewed_Articles')
                 dd
                   span.text Recently Viewed Articles
-                  span.badge 3
-              a(href='#top_Articles')
+                  span.badge {{ recent_Articles.size() }}
+              //a(href='#top_Articles')
                 dd
                   span.text Top Articles
-                  span.badge 3
+                  span.badge {{ top_Articles.size() }}
+
+              a(href='#my_Top_Articles')
+                dd
+                  span.text My Top Articles
+                  span.badge {{ my_Top_Articles.size() }}
               //a(href='#')
                 dd
                   a(href='#my_Searches')
