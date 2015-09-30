@@ -3,18 +3,11 @@ div(ng-controller='Filters_Controller' ng-show='visible')
     dl
       dt
         p Filter by
-      .scroll
-        #filters(ng-repeat ='(title,filter) in filters')
-          dt.header
-            span.label.no-underline
-              span.text= ' ' + '{{title}}'
-            span.sub-nav__icon
-              icon.Arrow-Down
-          #results
-            div(ng-repeat='result in filter')
-              dd('ng-show'='result.size > 0')
-                a(href='#'  'ng-click'='apply_Filter(result.id, result.title, title)')
-                  span
-                    span#filter-icon(ng-bind-html='result.icon')
-                    span.text {{result.title}}
-                  span.badge {{result.size}}
+  .section.row__label(ng-repeat ='(title,filter) in filters')
+    .label= ' ' + '{{title}}'
+    .filter-container(ng-repeat='result in filter')
+      span('ng-show'='result.size > 0')
+        a(href='#'  'ng-click'='apply_Filter(result.id, result.title, title)')
+          span#filter-icon(ng-bind-html='result.icon')
+          span.text {{result.title}}
+          span.badge {{result.size}}
