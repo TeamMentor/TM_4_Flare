@@ -31,7 +31,7 @@ div#queries(ng-controller='Queries_Controller' ng-show='visible')
           icon.Arrow-Down
     #containers.scroll
       div(ng-repeat="container in containers")
-        a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' ng-show='container.size >0')
+        a(href='index/{{container.id}}', id='{{container.id}}', ng-click='load_Query($event, container.id)' ng-show='container.size >0')
           dd
             span.text {{container.title}}
             span.badge {{container.size}}

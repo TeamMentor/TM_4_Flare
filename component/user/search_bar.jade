@@ -5,9 +5,9 @@
         a(href='/')
           div.logo
     div
-      button.btn-search(ng-click='show_Mobile_Dropbox=true')
+      button.btn-search(ng-click='toggle_Mobile_Dropbox()')
         icon.Menu
-      ul.technology(ng-show='show_Mobile_Dropbox', style = 'display:block')
+      ul.technology(ng-show='show_Mobile_Dropbox()')
         li(ng-repeat='technology in technologies')
             a(href='#' ng-click ='select_Technology_Mobile(technology)') {{technology.title}}
 
