@@ -7,5 +7,5 @@ block content
     .col-9.application-scroll
       #help.section.article
         h1#help-title {{title}}
-        help-content(ng-bind-html='content')
+        help-content(dynamic="content")
         +copyright
