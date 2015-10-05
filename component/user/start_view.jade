@@ -1,0 +1,38 @@
+div
+
+  //a(name='popular_Search_Terms')
+  //.section.row
+    .section.row__label
+      .label Popular Search Terms
+    .section.row
+      .search-term(ng-repeat="search in top_Search")
+        span.icon
+          icon.Star
+        span.link
+          a(href='{{search.url}}')
+            span {{search.title}}
+
+  a(name='recently_Viewed_Articles')
+  .section.row
+    .section.row__label
+      .label(ng-show="recent_Articles.length > 0") Recently Viewed Articles
+    .section.row
+      article-box.article-box(ng-repeat='article in recent_Articles')
+
+  //a(name='top_Articles')
+  //.section.row
+    .section.row__label
+      .label Top Articles
+    .section.row
+      article-box.article-box(ng-repeat='article in top_Articles' class='article-box')
+
+  a(name='my_Top_Articles')
+  .section.row
+    .section.row__label
+      .label My Top Articles
+    .section.row
+      article-box.article-box(ng-repeat='article in my_Top_Articles' class='article-box')
+
+  br
+  br
+  br

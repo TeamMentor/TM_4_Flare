@@ -1,0 +1,10 @@
+include ../../mixins/globals.jade
+include ../../mixins/articles-mixins.jade
+div(ng-controller="Article_Controller" ng-show="show_Article_Data()")
+  .col-9
+    +article-content
+  .col-3
+    .section.article-info
+      +article-metadata
+      share
+      +article-feedback

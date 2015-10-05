@@ -1,0 +1,12 @@
+.section.row(ng-controller='Filters_Active_Controller')
+  .active-filter(ng-repeat='(key, value) in current_Filters')
+    ul.display-inline
+      li
+        span#path1(ng-bind-html='value.filter_Icon')
+      li
+        span.text {{value.filter_Title}}
+      li
+        span.close
+          a(href='#' 'ng-click'='clear_Filter(key)')
+            span.icon-Close
+              span.path1

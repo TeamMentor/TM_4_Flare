@@ -1,0 +1,17 @@
+block content
+  div.main(ng-controller='Index_Controller')
+    //include ../../component/user/loading_bar
+    div(class='{{column_Left}} application-scroll left-col')
+      queries
+    div(class='{{column_Middle}} middle-col')
+      .display-desktop
+        breadcrumbs
+      results
+      filters_active
+      .scrolling-results
+        articles
+        pagination
+    div(class='{{column_Right}} application-scroll right-col')
+      .display-desktop
+        found_issue
+      filters(class='filters')

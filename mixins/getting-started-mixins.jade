@@ -2,10 +2,10 @@ include ../../TM_Jade/shared-mixins/globals.jade
 include globals.jade
 
 mixin team-mentor-summary
-  section.tm-summary
-    section.row__label
+  .section.tm-summary
+    .section.row__label
       .label With TEAM Mentor, you can...
-    section.row
+    .section.row
       table
         tr
           td
@@ -23,54 +23,54 @@ mixin team-mentor-summary
           td
             include:marked ../../TM_Static/content/getting-started/summary-point-3.md
 
-mixin sign-up-form
-  section.row__label
-    .label Sign Up
-  section.row
-    form#sign-up-form(action='/flare/user/sign-up')
-      .input-field
-        +username-input
-      .input-field
-        +email-input
-      .input-field
-        +password-input
-      .input-field
-        +confirm-password-input
-      .button-field
-        +sign-up-button
-      .conditions
-          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
+//mixin sign-up-form
+//  .section.row__label
+//    .label Sign Up
+//  .section.row
+//    form#sign-up-form(action='/flare/user/sign-up')
+//      .input-field
+//        +username-input
+//      .input-field
+//        +email-input
+//      .input-field
+//        +password-input
+//      .input-field
+//        +confirm-password-input
+//      .button-field
+//        +sign-up-button
+//      .conditions
+//          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
 
 //mixin forgot-pwd-form
-  section.row__label
+  .section.row__label
     .label Forgot your password?
-  section.row
+  .section.row
     form#forgot-pwd-form(action='#')
-      section.row
+      .section.row
         .col-8.input-field
           +email-input
         .col-4.button-field
           br
           +get-password-button
 
-mixin pwd-reset-form
-  section.row__label
+//mixin pwd-reset-form
+  .section.row__label
     .label Reset your password
-  section.row
+  .section.row
     form#password-reset-form(role='form' method='post' action='/flare/user/password-reset')
-      section.row
+      .section.row
         .col-6.input-field
           +password-input
         .col-6.input-field
-          +confirm-new-password-input
+          +confirm-password-input
         .col-4.button-field
           br
           +reset-pwd-button
 
 mixin login-form-validation
-  section.row__label
+  .section.row__label
     .label Login
-  section.row
+  .section.row
     form#login-form(role='form' method='post' action='/flare/user/login')
       .input-field
         +username-input
@@ -81,24 +81,24 @@ mixin login-form-validation
       .button-field
         +get-password-button
 
-mixin sign-up-form-validation
-  section.row__label
-    .label Sign Up
-  section.row
-    form#sign-up-form(action='/flare/user/sign-up')
-      .input-field
-        +username-input
-        p.validation Your username should only contain letters and numbers.
-      .input-field
-        +email-input
-        p.validation We'll email you a confirmation.
-      .input-field
-        +password-input
-        p.validation Your password should be at least 8 characters long. It should have at least one of each of the following: uppercase and lowercase letters, number and special character.
-      .input-field
-        +confirm-password-input
-        p.validation Type your password again.
-      .button-field
-        +sign-up-button
-      .conditions
-          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
+//mixin sign-up-form-validation
+//  .section.row__label
+//    .label Sign Up
+//  .section.row
+//    form#sign-up-form(action='/flare/user/sign-up')
+//      .input-field
+//        +username-input
+//        p.validation Your username should only contain letters and numbers.
+//      .input-field
+//        +email-input
+//        p.validation We'll email you a confirmation.
+//      .input-field
+//        +password-input
+//        p.validation Your password should be at least 8 characters long. It should have at least one of each of the following: uppercase and lowercase letters, number and special character.
+//      .input-field
+//        +confirm-password-input
+//        p.validation Type your password again.
+//      .button-field
+//        +sign-up-button
+//      .conditions
+//          include:marked ../../TM_Static/content/getting-started/agree-to-toc.md

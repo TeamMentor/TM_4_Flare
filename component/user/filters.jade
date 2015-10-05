@@ -1,0 +1,20 @@
+div(ng-controller='Filters_Controller' ng-show='visible')
+  .section.row(ng-show='view_Filters')
+    dl
+      dt
+        p Filter by
+      .scroll
+        #filters(ng-repeat ='(title,filter) in filters')
+          dt.header
+            span.label.no-underline
+              span.text= ' ' + '{{title}}'
+            span.sub-nav__icon
+              icon.Arrow-Down
+          #results
+            div(ng-repeat='result in filter')
+              dd('ng-show'='result.size > 0')
+                a(href='#'  'ng-click'='apply_Filter(result.id, result.title, title)')
+                  span
+                    span#filter-icon(ng-bind-html='result.icon')
+                    span.text {{result.title}}
+                  span.badge {{result.size}}

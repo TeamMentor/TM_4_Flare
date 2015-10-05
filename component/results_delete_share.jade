@@ -1,9 +1,11 @@
-section.row__label
+include ../mixins/buttons.jade
+
+.section.row__label
     .label Saved Items
     ul.display-inline
       li
         a.button.btn-result.icon-Filter(href='')
       li
-        +delete-results-button
+        button.btn-result.icon-Delete(title='Delete results from Collection')
       li
-        +share-results-button
+        button.btn-result.icon-Share(title='Share results')

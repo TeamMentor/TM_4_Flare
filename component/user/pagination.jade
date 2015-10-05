@@ -1,0 +1,31 @@
+span(ng-controller='Pagination_Controller')
+  .section.row(ng-show = 'model.pages')
+    .pagination(ng-show ='model.pages.size() >1')
+      .previous
+        a(href='#', ng-click='previous_Page()')
+          span.icon-Arrow-Left
+          span.text= 'back'
+      .number#current_Page
+        select(ng-model='model.page', ng-change='set_Page()', ng-options='page for page in model.pages')
+      .next
+        a(href='#', ng-click='next_Page()')
+          span.icon-Arrow-Right
+          span.text= 'next'
+
+    .back-to-top(ng-show="ShowTopButton()")
+      a(href='#', ng-click="goToTop()")
+        span.icon-Arrow-Up
+        span.text= 'back to top'
+
+    .number-of-results#page_Splits(ng-show='model.pages.size() >1')
+      form
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='four' value="4" ng-change='set_Page_Split(value)')
+        label(for='four') 4
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='ten' checked='checked' value="10" ng-change='set_Page_Split(value)' )
+        label(for='ten') 10
+        input(type='radio' ng-model='model.page_Split' name='results-per-page' id='twenty' value="20" ng-change='set_Page_Split(value)')
+        label(for='twenty') 20
+      ul
+        li
+          span.text results per page
+      //select(ng-model='model.page_Split', ng-change='set_Page_Split()', ng-options='page_Split for page_Split in model.page_Splits')

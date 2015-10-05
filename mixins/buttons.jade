@@ -1,23 +1,30 @@
-mixin open-button
-    button.controls.dropdown(href='#', data-dropdown='article-open', aria-controls='drop1', aria-expanded='false')
-        i.fi-plus
-    ul#article-open.f-dropdown.active(data-dropdown-content='', aria-hidden='true', tabindex='-1')
-        li
-            a(href='#') ASP.NET
-        li
-            a(href='#') Android
-        li
-            a(href='#') C++
-        li
-            a(href='#') HTML5
-        li
-            a(href='#') iOS
-        li
-            a(href='#') Java
-        li
-            a(href='#') PHP
-        li
-            a(href='#') Scala
+mixin share-button
+  a.button.btn-result
+    span.icon
+      icon.Share
+    span.text Share
+
+mixin login-button
+  button.full-width(type="submit", id="btn-login") Login
+
+mixin sign-up-button
+  button.full-width(type='submit', id='btn-sign-up') Sign Up
+
+mixin forgot-password-button
+  a.text-right#pwd_forgot(href="pwd_forgot") Forgot your password?
+
+mixin get-password-button
+  button.full-width(type='submit' id='btn-get-password') Retrieve password
+
+mixin reset-pwd-button
+  button(type='submit', id='btn-reset-pwd') Reset password
+
+
+
+
+
+
+
 
 mixin save-button
     button.btn-result.icon-Save(title='Save article to Collection')
@@ -28,19 +35,16 @@ mixin delete-button
 mixin delete-saved-button
     button.btn-minor.icon-Delete(title='Delete')
 
-mixin share-button
-    button.btn-result.icon-Share(title='Share all articles')
-
 mixin share-saved-button
     button.btn-minor.icon-Share(title='Share')
 
-mixin save-results-button
+//mixin save-results-button
     button.btn-result.icon-Save(title='Save results to Collection')
 
-mixin delete-results-button
+//mixin delete-results-button
     button.btn-result.icon-Delete(title='Delete results from Collection')
 
-mixin share-results-button
+//mixin share-results-button
     button.btn-result.icon-Share(title='Share results')
 
 mixin clear-selected-button
@@ -50,7 +54,4 @@ mixin clear-all-button
     button(type='submit', id='btn-clear-all') Clear All
 
 mixin edit-button
-    button(type='submit', id='btn-edit') Edit
-
-mixin reset-pwd-button
-    button(type='submit', id='btn-reset-pwd') Reset password
+    button.btn-result.icon-Edit(type='submit', id='btn-edit')

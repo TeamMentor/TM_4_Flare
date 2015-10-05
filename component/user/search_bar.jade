@@ -1,0 +1,26 @@
+.search(ng-controller="Search_Bar_Controller")
+  form(ng-submit="submit()")
+    ul
+      li
+        a(href='/')
+          div.logo
+    div
+      button.btn-search(ng-click='toggle_Mobile_Dropbox()')
+        icon.Menu
+      ul.technology(ng-show='show_Mobile_Dropbox()')
+        li(ng-repeat='technology in technologies')
+            a(href='#' ng-click ='select_Technology_Mobile(technology)') {{technology.title}}
+
+      select(ng-model='selected_Technology'
+             ng-change='select_Technology(selected_Technology)'
+             ng-options='technology as technology.title for technology in technologies')
+      input.search-input#search-text(type="text", ng-model="text", placeholder="{{searchPlaceholder}}",
+                                     ng-change='get_Words(text)', ng-focus='with_Focus(true)'
+                                     ng-blur='with_Focus(false)'
+                                     autocomplete="off" autocorrect="off" autocapitalize="off")
+      button.btn-search#search-button(type="submit")
+        icon.Search
+
+div(ng-controller="Recommendations_Controller")
+  ul#recommendations(ng-show='words.length > 0')
+    li(ng-repeat='word in words' value='word' ng-click='select_Word(word)') {{word}}

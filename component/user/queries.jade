@@ -1,16 +1,37 @@
-include ../../mixins/icons.jade
-div(ng-controller='Queries_Controller')
+.display-mobile
+  include found_issue.jade
+  include breadcrumbs.jade
+
+//div(ng-controller='Queries_Controller' ng-show='visible')
   dl
     dt
-      span.label.no-underline {{title}}
-      span.sub-nav__icon
-        //a(ng-click="show_Previous_Query()")
-          +back-icon
+      p#query_title {{title}}
+      //span.sub-nav__icon
+        a(href='#' ng-click="show_Previous_Query()")
+          icon.Arrow-Down
+    ul.scroll
+      li
+        dt
+          p Level 2 Directory
+      li
+        dt
+          p Level 3 Directory
+        div(ng-repeat="container in containers")
+          a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' ng-show='container.size >0')
+            dd
+              span.text {{container.title}}
+              span.badge {{container.size}}
 
+div#queries(ng-controller='Queries_Controller' ng-show='visible')
+  dl
+    dt
+      p#query_title {{title}}
+      span.sub-nav__icon
+        a(href='#' ng-click="show_Previous_Query()")
+          icon.Arrow-Down
     #containers.scroll
       div(ng-repeat="container in containers")
-        //if container.size > 0
-        a(href='#', id='{{container.id}}', ng-click='load_Query(container.id)' )
+        a(href='index/{{container.id}}', id='{{container.id}}', ng-click='load_Query($event, container.id)' ng-show='container.size >0')
           dd
             span.text {{container.title}}
             span.badge {{container.size}}

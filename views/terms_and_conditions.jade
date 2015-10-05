@@ -1,16 +1,10 @@
-//extends ../_to_be_wired_in/_layouts/page_logged_in
 include ../mixins/articles-mixins
 include ../mixins/links
 
 block content
-  .application
-    //include ../component/left_navigation.jade
-    //include ../component/filters.jade
-    main
-      section.row
-        .col-3
-          +terms-and-conditions-navigation
-        .col-9
-          section.row
-            article
-              include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md
+  .main
+    .col-3.application-scroll
+      +terms-and-conditions-navigation
+    .col-9.application-scroll
+      .article
+        include:marked ../../TM_Static/content/terms-and-conditions/terms-and-conditions.md

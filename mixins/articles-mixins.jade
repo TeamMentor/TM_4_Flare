@@ -1,48 +1,100 @@
-mixin curated-content-article
-  .col-9
-    section.article-body
-      section.row__article
-        h1= title
-        //include:md ../../TM_Static/content/articles/article-new-window.md
-        //#html.article-content!= article_Html
-  .col-3
-    section.article-info
-      +article-info
+include buttons.jade
 
-//- Article Info
-mixin article-info
-  section.row__label
-    .label Relates to:
-  section.row
+mixin article-content
+  .article
+    h1.article-title {{article.title}}
+    #html.article-content(ng-bind-html='article_Html')
+    br
+    br
+    br
+    +article-copyright
+
+mixin curated-content-article-content
+  .article.curated-content
+    h1.article-title {{title}}
+    br
+    #html.article-content(dynamic="content")
+    br
+    br
+    br
+    +article-copyright
+
+mixin curated-content-article-info
+  .section.article-info.curated-content
     ul.display-inline
       li
-        +show-icon('Technology', technology)
-        span.text= technology
-      li
-        +show-icon('Phase', phase)
-      li
-        +show-icon('Type', type)
-  section.row__label
-    .label Belongs to:
-  section.row
+        +share-button
+    +curated-content-article-metadata
+    +article-feedback
+
+mixin article-metadata
+  .section.row__label
+    .label Metadata:
+  .section.row
     ul
       li
-        a(href='/flare/curated-content')
-          +curated-content-icon
-          span.text Curated Content
-    //ul.display-inline
-      li.half-width
-        +save-button
-      li.half-width
-        +share-button
+        span.icon
+          #icon-technology(ng-bind-html='icon_Technology')
+        span.text {{article.technology}}
+      li
+        span.icon
+          #icon-Type(ng-bind-html='icon_Type')
+        span.text {{article.type}}
+      li
+        span.icon
+          #icon-Phase(ng-bind-html='icon_Phase')
+        span.text {{article.phase}}
+      //li
+        span.icon
+          icon.Curated-Content
+        span.text This article is part of the 
+          a(href='guides') Security Guide
 
-//- Related Courses and Articles
-mixin related-options
-  section.row__label
-    .label Related Articles
-  section.row
-      //+articles-list
-  section.row__label
-    .label Related Courses
-  section.row
-    //+articles-list
+mixin curated-content-article-metadata
+  .section.row__label
+    .label Metadata:
+  .section.row
+    ul
+      div(ng-show="showMetadata()")
+        li
+          span.icon
+            #icon-technology(ng-bind-html='icon_Technology')
+          span.text {{article.technology}}
+        li
+          span.icon
+            #icon-Type(ng-bind-html='icon_Type')
+          span.text {{article.type}}
+        li
+          span.icon
+            #icon-Phase(ng-bind-html='icon_Phase')
+          span.text {{article.phase}}
+      li
+        span.icon
+          icon.Curated-Content
+        span.text Security Guides
+
+mixin article-feedback
+  .section.row.fixed-bottom
+    .alert.alert-neutral
+      div(ng-show="showFeedbackBanner()")
+        span.text Have a comment about this article?
+          a#tm-support-email(href='{{githubContentUrl}}'+"/new?title={{article.title}} &body={{articleUrl}}" target="_blank")      Open an issue here.
+
+      div(ng-show="showGeneralFeedback()")
+        span.text Have a comment about this article? Send our team
+          a(href='mailto:support@securityinnovation.com')  an email.
+
+mixin article-copyright
+  .footer
+    include:marked ../../TM_Static/content/articles/copyright-information.md
+    ul.text-center
+      li
+        p
+          a(href='mailto:support@securityinnovation.com')
+            span.icon-Mail
+            span.text support@securityinnovation.com
+      li.text-center
+        p
+          a(ui-sref='terms_and_conditions')
+            span.icon-Paperclip
+            span.text Terms & Conditions

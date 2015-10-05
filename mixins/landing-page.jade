@@ -2,67 +2,67 @@ include ../../TM_Jade/shared-mixins/globals.jade
 include globals.jade
 
 mixin usp
-  section.usp
+  .section.usp
     include:md ../../TM_Static/content/landing-pages/usp.md
-    a.button.half-width(href='get-started') Start your free trial today
+    a.button(ui-sref="sign_up") Start your free trial today
 
 mixin reasons
-  section.row.reasons
+  .section.reasons
     include:md ../../TM_Static/content/landing-pages/reasons-div-heading.md
-    section.row
+    .section.row
       .col-3.text-center
         .fix-vulnerabilities
       .col-9
         include:md ../../TM_Static/content/landing-pages/selling-point-1.md
-    section.row
+    .section.row
       .col-3.text-center
         .reduce-vulnerabilities
       .col-9
         include:md ../../TM_Static/content/landing-pages/selling-point-2.md
-    section.row
+    .section.row
       .col-3.text-center
         .improve-process
       .col-9
         include:md ../../TM_Static/content/landing-pages/selling-point-3.md
 
 mixin clients
-  section.clients
+  .section.clients
     include:md ../../TM_Static/content/landing-pages/clients-div-heading.md
     img(src='/assets/clients/flare-logos.jpg')
 
 mixin about-tagline
-  section.about
+  .section.about
     include:md ../../TM_Static/content/landing-pages/about-tm-tagline.md
 
 mixin about-us
-  section.about-us
+  .section.about-us
     include:md ../../TM_Static/content/landing-pages/about-tm-summary.md
 
 mixin features
-  section.features
+  .section.features
     include:md ../../TM_Static/content/landing-pages/features-div-heading.md
-    section.row
+    .section.row
       .col-3.text-center
         .delivers-compliance
       .col-9
         include:md ../../TM_Static/content/landing-pages/feature-1.md
-    section.row
+    .section.row
       .col-3.text-center
         .integrates
       .col-9
         include:md ../../TM_Static/content/landing-pages/feature-2.md
-    section.row
+    .section.row
       .col-3.text-center
         .cross-references
       .col-9
         include:md ../../TM_Static/content/landing-pages/feature-3.md
-    section.row
+    .section.row
       .col-3.text-center
         .provides-guidance
       .col-9
         include:md ../../TM_Static/content/landing-pages/feature-4.md
 
 mixin call-to-action
-  section.call-to-action
+  .section.call-to-action
     include:md ../../TM_Static/content/landing-pages/call-to-action.md
-    a.button.half-width(href='../getting-started/index') See for yourself
+    a.button(ui-sref="sign_up") See for yourself

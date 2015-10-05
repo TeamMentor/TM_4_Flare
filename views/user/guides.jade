@@ -1,0 +1,10 @@
+include ../../mixins/articles-mixins
+include ../../mixins/globals.jade
+
+block content
+  .main(ng-controller='Gateways_Controller' class='help')
+    .col-3.application-scroll
+      include ../../component/gateway_navigation
+    .col-9.application-scroll
+      +curated-content-article-content
+      +curated-content-article-info

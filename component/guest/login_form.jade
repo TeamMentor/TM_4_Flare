@@ -1,0 +1,11 @@
+include ../../mixins/form_inputs.jade
+include ../../mixins/forms.jade
+include ../../mixins/globals.jade
+
+div(ng-controller="Login_Controller")
+  .section.row__label
+    h4 Login
+  +alert-bad
+  +alert-ok
+  .section.row
+    +login-form

@@ -1,0 +1,57 @@
+mixin login-form
+  form#login-form.access-form(role="form" ng-submit="login()")
+    .input-field
+      +username-input
+    .input-field
+      +password-input
+    .button-field
+      +login-button
+    .button-field.text-right
+      br
+      +forgot-password-button
+
+//mixin sign-up-form
+//  form#sign-up-form.access-form(role="form" ng-submit="signup()")
+//    .input-field
+//      +username-input
+//    .input-field
+//      +email-input
+//    .input-field
+//      +password-input
+//    .input-field
+//      +confirm-password-input
+//    .input-field
+//      +first-name-input
+//    .input-field
+//      +last-name-input
+//    .input-field
+//      +company-input
+//    .input-field
+//      +title-input
+//    .input-field
+//      +country-input
+//    .input-field
+//      +state-input
+//    .conditions
+//      include:marked ../../TM_Static/content/getting-started/agree-to-toc.md
+//    .button-field
+//      +sign-up-button
+
+mixin forgot-password-form
+  form#forgot-pwd-form.access-form(ng-submit='get_Password()')
+    .section.row
+      .col-8.input-field
+        +email-input
+      .col-4.button-field
+        +get-password-button
+
+//mixin reset-password-form
+  form#password-reset-form.access-form(role='form' method='post' action='/flare/user/password-reset')
+    .section.row
+      .col-6.input-field
+        +password-input
+      .col-6.input-field
+        +confirm-password-input
+      .col-4.button-field
+        br
+        +reset-pwd-button
