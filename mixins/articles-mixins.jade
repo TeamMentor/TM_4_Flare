@@ -44,6 +44,13 @@ mixin article-metadata
         span.icon
           #icon-Phase(ng-bind-html='icon_Phase')
         span.text {{article.phase}}
+  .section.row
+    ul.display-inline
+      li
+        a.button.btn-result(href='#' ng-click="show_feedback_button()")
+          span.icon
+            icon.Share
+          span.text Share
       //li
         span.icon
           icon.Curated-Content
