@@ -5,19 +5,19 @@ mixin share-button
     span.text Share
 
 mixin login-button
-  button.full-width(type="submit", id="btn-login") Login
+  button.full-width(type="submit", id="btn-login" ng-disabled="isDisabled") Login
 
 mixin sign-up-button
-  button.full-width(type='submit', id='btn-sign-up') Sign Up
+  button.full-width(type='submit', id='btn-sign-up' ng-disabled="isDisabled") Sign Up
 
 mixin forgot-password-button
   a.text-right#pwd_forgot(href="pwd_forgot") Forgot your password?
 
 mixin get-password-button
-  button.full-width(type='submit' id='btn-get-password') Retrieve password
+  button.full-width(type='submit' id='btn-get-password' ng-disabled="isDisabled") Retrieve password
 
 mixin reset-pwd-button
-  button(type='submit', id='btn-reset-pwd') Reset password
+  button(type='submit', id='btn-reset-pwd' ng-disabled="isDisabled") Reset password
 
 
 
