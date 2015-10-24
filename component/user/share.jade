@@ -5,7 +5,7 @@ div(ng-controller='Share_Controller' ng-show='show_feedback')
               .col-1
                   .label.no-underline {{modalMessage()}}
               .col-5(ng-show="showInfoMessage()")
-                  .section.row
+                  .section.row(style="padding-top:0px")
                       .alert-nav.alert-ok(role="alert" ng-show="showInfoMessage()")
                           span {{infoMessage}}
               ul
