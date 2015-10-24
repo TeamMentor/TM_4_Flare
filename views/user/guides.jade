@@ -1,5 +1,6 @@
 include ../../mixins/articles-mixins
 include ../../mixins/globals.jade
+include ../../mixins/articles-mixins.jade
 
 block content
   .main(ng-controller='Gateways_Controller' class='help')
@@ -7,4 +8,5 @@ block content
       include ../../component/gateway_navigation
     .col-9.application-scroll
       +curated-content-article-content
+      share
       +curated-content-article-info

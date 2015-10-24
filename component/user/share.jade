@@ -1,21 +1,19 @@
-//.modal
-div(ng-controller='Share_Controller')
-  ul.display-inline
-    li
-      a.button.btn-result(href='#' ng-click='show_Share_Box=!show_Share_Box')
-        span.icon
-          icon.Share
-        span.text Share
-     div(ng-show='show_Share_Box')
-      .section.row
+div(ng-controller='Share_Controller' ng-show='show_feedback')
+  div(ng-show='show_feedback')
+        .modal
+          .navbar
+              .col-1
+                  .label.no-underline {{modalMessage()}}
+              .col-5(ng-show="showInfoMessage()")
+                  .section.row(style="padding-top:0px")
+                      .alert-nav.alert-ok(role="alert" ng-show="showInfoMessage()")
+                          span {{infoMessage}}
+              ul
+                  li
+                    icon.Close(ng-click="closeModalWindow()")
           form.content
-            .col-11#share_article_link
-              textarea(placeholder='Article URL')
-                {{article_Link}}
-            .col-1
-              a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' )
-                icon.Copy
-      .section.row(ng-show="showInfoMessage()")
-        .alert.alert-ok(role="alert")
-          #message
-            span.alert-text {{infoMessage}}
+              .col-11#share_article_link
+                  input(id="share_link" type='text', placeholder='Article URL' value='{{article_Link}}')
+              .col-1
+                a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' ng-show="showCopyButton" )
+                  icon.Copy
