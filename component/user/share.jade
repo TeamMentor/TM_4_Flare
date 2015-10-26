@@ -2,12 +2,12 @@ div(ng-controller='Share_Controller' ng-show='show_feedback')
   div(ng-show='show_feedback')
         .modal
           .navbar
-              .col-1
+              .col-11
                   .label.no-underline {{modalMessage()}}
-              .col-5(ng-show="showInfoMessage()")
-                  .section.row(style="padding-top:0px")
-                      .alert-nav.alert-ok(role="alert" ng-show="showInfoMessage()")
-                          span {{infoMessage}}
+              //.col-5(ng-show="showInfoMessage()")
+              //    .section.row(style="padding-top:0px")
+              //        .alert-nav.alert-ok(role="alert" ng-show="showInfoMessage()")
+              //            span {{infoMessage}}
               ul
                   li
                     icon.Close(ng-click="closeModalWindow()")
@@ -15,5 +15,5 @@ div(ng-controller='Share_Controller' ng-show='show_feedback')
               .col-11#share_article_link
                   input(id="share_link" type='text', placeholder='Article URL' value='{{article_Link}}')
               .col-1
-                a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' ng-show="showCopyButton" )
+                a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' ng-show="false" )
                   icon.Copy
