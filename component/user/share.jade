@@ -13,7 +13,7 @@ div(ng-controller='Share_Controller' ng-show='show_feedback')
                     icon.Close(ng-click="closeModalWindow()")
           form.content
               .col-11#share_article_link
-                  input(id="share_link" type='text', placeholder='Article URL' value='{{article_Link}}')
-              .col-1
-                a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' ng-show="false" )
-                  icon.Copy
+                  input(id="share_link" type='text', placeholder='Article URL' value='{{article_Link}}' readonly=true)
+              //.col-1
+              //  a.button.btn-editor(href ='#' ng-click='copy_Article_Link()' ng-show="false" )
+              //    icon.Copy
