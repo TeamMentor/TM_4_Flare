@@ -3,13 +3,6 @@ include buttons.jade
 mixin article-content
   .article
     h1.article-title {{article.title}}
-    .section.row(ng-show ="showRedirectMessage()")
-      .alert.alert-ok(role="alert")
-        div#message
-          span.alert-icon !
-          span.alert-text {{redirectMessage}}
-          icon.Loading.rotating
-
     #html.article-content(ng-bind-html='article_Html')
     br
     br
