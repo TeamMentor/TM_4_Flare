@@ -8,5 +8,5 @@ div(ng-controller='Results_Controller' ng-show='visible')
         span {{paginMessage }}
     ul.display-inline.text-right
       li
-        a#view_Filters.button.btn-result(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()')
+        a#view_Filters.button.btn-result(href = '#', title = 'View Filters', ng-click= 'toggle_Filters()' ng-show="showCollapseFilters")
           .icon-Filter
