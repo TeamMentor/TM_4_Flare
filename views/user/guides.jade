@@ -1,10 +1,14 @@
 include ../../mixins/articles-mixins
 include ../../mixins/globals.jade
-
+include ../../mixins/articles-mixins.jade
 block content
   .main(ng-controller='Gateways_Controller' class='help')
-    .col-3.application-scroll
-      include ../../component/gateway_navigation
-    .col-9.application-scroll
-      +curated-content-article-content
-      +curated-content-article-info
+    .col-3.application-scroll(ng-show="!showNoGuidesMessage()")
+        include ../../component/gateway_navigation
+    .col-11.application-scroll(ng-show="showNoGuidesMessage()")
+        #404-message.article(style="text-align: center;")
+            include:marked ../../../TM_Static/content/application/no-guides.md
+    .col-9.application-scroll(ng-show="!showNoGuidesMessage()")
+        +curated-content-article-content
+        share
+        +curated-content-article-info
