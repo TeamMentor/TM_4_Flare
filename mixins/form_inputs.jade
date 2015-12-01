@@ -3,7 +3,7 @@
 mixin username-input
   .input-group
     label Username
-    input(type='text', id='username', placeholder='Username',  ng-model='username',required=)
+    input(type='text', id='username', placeholder='Username',  ng-model='username',required,maxlength='256')
 
 mixin password-input
   .input-group
