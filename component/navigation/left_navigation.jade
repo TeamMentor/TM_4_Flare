@@ -14,6 +14,9 @@ aside(ng-controller='User_Navigation_Controller')
     li
       a(ui-sref="docs" title='Docs')
         icon.Info
-    li
+    li(ng-show="ShowLogOutBtn")
       a(href="/angular/guest/logout" title='Logout')
         icon.Logout
+
+    li(ng-show="!ShowLogOutBtn")
+      img.icon
