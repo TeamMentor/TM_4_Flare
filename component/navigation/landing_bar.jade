@@ -1,6 +1,10 @@
 include ../../mixins/links.jade
 nav
-  a.logo(ui-sref='home')
+  if(global.custom && global.custom.custom_navigation)
+    a.logo(ui-sref='home')
+    div.logo.customization(style="background-image:url(" + global.custom.custom_navigation.logo + ") !important")
+  else
+    a.logo(ui-sref='home')
   .links
     ul.display-inline
       li
