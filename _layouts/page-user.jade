@@ -4,6 +4,10 @@ append head
   base(href='/angular/user/')
 
 append body
-  search-bar
+  if global.custom && global.custom.custom_navigation
+    include ../component/user/customer_search_bar
+  else
+    include ../component/user/search_bar
+
   left-navigation(class="navigation")
   div(ui-view)
