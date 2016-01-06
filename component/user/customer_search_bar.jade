@@ -4,7 +4,10 @@
             li.half-width
                 div.logo.logosearch
             li.half-width
-                div.logosearch(style="background-image:url(" + global.custom.custom_navigation.logo + ") !important")
+                if global.custom.custom_navigation.logo == '/logos/for_the_journey_logo.jpg'
+                    div.logosearch(style="background-image:url(" + global.custom.custom_navigation.logo + ");margin-top:auto;background-size: 90% !important")
+                else
+                    div.logosearch(style="background-image:url(" + global.custom.custom_navigation.logo + ") !important")
         div
             button.btn-search(ng-click='toggle_Mobile_Dropbox()')
                 icon.Menu

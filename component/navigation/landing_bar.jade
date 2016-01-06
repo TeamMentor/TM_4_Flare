@@ -1,10 +1,11 @@
 include ../../mixins/links.jade
 nav
   if(global.custom && global.custom.custom_navigation)
-    a.logo(ui-sref='home')
     if global.custom.custom_navigation.logo == '/logos/for_the_journey_logo.jpg'
-      div.logo.customization(style="background-image:url(" + global.custom.custom_navigation.logo + ");background-size: 219px !important")
+      a.logo(ui-sref='home' style="background-size: 70% !important")
+      div.logo.customization(style="background-image:url(" + global.custom.custom_navigation.logo + ");background-size: 80% !important")
     else
+      a.logo(ui-sref='home' style="background-size: 75% !important")
       div.logo.customization(style="background-image:url(" + global.custom.custom_navigation.logo + ") !important")
   else
     a.logo(ui-sref='home')
