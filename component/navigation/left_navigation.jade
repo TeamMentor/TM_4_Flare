@@ -8,12 +8,12 @@ aside(ng-controller='User_Navigation_Controller')
     li
       a(href="guides" title='Security Guide')
         icon.Curated-Content
-    li
-      a(ui-sref="main" title='Saved Searches')
-        icon.Save
+    //li
+      //a(ui-sref="main" title='Saved Searches')
+      //icon.Save
     li
       a(ui-sref="docs" title='Docs')
         icon.Info
-    li
+    li(ng-show="ShowLogOutBtn")
       a(href="/angular/guest/logout" title='Logout')
         icon.Logout

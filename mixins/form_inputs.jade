@@ -3,47 +3,47 @@
 mixin username-input
   .input-group
     label Username
-    input(type='text', id='username', placeholder='Username',  ng-model='username',required=)
+    input(type='text', id='username', placeholder='Username',  ng-model='form.username',required,maxlength='256')
 
 mixin password-input
   .input-group
     label(for='password') Password
-    input(type='password', id='password', placeholder='Password',ng-model='password',required,maxlength='256')
+    input(type='password', id='password', placeholder='Password',ng-model='form.password',required,maxlength='256')
 
 mixin confirm-password-input
   .input-group
     label(for='confirmpassword') Confirm Password
-    input(type='password', id='confirmpassword',ng-model='confirmpassword',placeholder='Password',required,maxlength='256')
+    input(type='password', id='confirmpassword',ng-model='form.confirmpassword',placeholder='Password',required,maxlength='256')
 
 mixin email-input
   .input-group
     label(for='email') Email Address
-    input(type='email', id='email',ng-model='email', placeholder='Email Address',required,maxlength='256')
+    input(type='email', id='email',ng-model='form.email', placeholder='Email Address',required,maxlength='256')
 
 mixin first-name-input
   .input-group
     label(for='firstname') First Name
-    input(type='text', id='firstname',ng-model='firstname', placeholder='First Name',required,maxlength='100')
+    input(type='text', id='firstname',ng-model='form.firstname', placeholder='First Name',required,maxlength='100')
 
 mixin last-name-input
   .input-group
     label(for='lastname') Last Name
-    input(type='text', id='lastname',ng-model='lastname', placeholder='Last Name',required,maxlength='100')
+    input(type='text', id='lastname',ng-model='form.lastname', placeholder='Last Name',required,maxlength='100')
 
 mixin company-input
   .input-group
     label(for='company') Company
-    input(type='text', id='company',ng-model='company',  placeholder='Company', maxlength='100')
+    input(type='text', id='company',ng-model='form.company',  placeholder='Company', maxlength='100')
 
 mixin title-input
   .input-group
     label(for='title') Job/Title
-    input(type='text', id='title', ng-model='title', placeholder='Job/Title',maxlength='100')
+    input(type='text', id='title', ng-model='form.title', placeholder='Job/Title',maxlength='100')
 
 mixin country-input
   .input-group
     label(for='country') Country
-    select(id='country',ng-model='country', required)
+    select(id='country',ng-model='form.country', required)
       option(value="" default selected) Select country
       option(value='AF') Afghanistan
       option(value='AX') &angst;land Islands
@@ -295,4 +295,4 @@ mixin country-input
 mixin state-input
   .input-group
     label(for='state') State
-    input(type='text', id='state',ng-model='state', placeholder='State',maxlength='100')
+    input(type='text', id='state',ng-model='form.state', placeholder='State',maxlength='100')

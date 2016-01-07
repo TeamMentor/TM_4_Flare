@@ -2,5 +2,10 @@ include ../../mixins/globals
 
 block content
   .main
-    +alert-ok
-    +alert-bad
+    .section.row
+      .col-2
+      .col-10
+        #404-message.article
+          include:marked ../../../TM_Static/content/error-pages/error-404.md
+        //+alert-ok
+        //+alert-bad

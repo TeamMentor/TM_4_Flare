@@ -1,6 +1,8 @@
-div(ng-show = 'view_Filters')
+div(ng-controller="UserFeedback_Controller" ng-show ="showBanner()")
   .found-issue.alert-ok
-    div
-      span.alert-text= 'Found an issue? '
-        a(href='#')= 'Contact'
-        =  ' our team.'
+    div(ng-show="showFeedbackBanner()")
+      span.alert-text= 'Found an issue? Open it '
+        a#tm-support-link(href='{{githubUrl}}' target="_blank") here.
+    div(ng-show="showGeneralFeedback()")
+     span.alert-text= 'Found an issue? Send us '
+       a(href='mailto:support@securityinnovation.com')  an email.

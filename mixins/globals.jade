@@ -2,7 +2,7 @@ include buttons.jade
 include form_inputs.jade
 
 //- Website Name
-- var head_title = 'TEAM Mentor 4.0'
+- var head_title = 'TEAM Mentor 4.2'
 
 mixin copyright
   .footer
@@ -12,7 +12,7 @@ mixin copyright
     .icons
       ul
         li
-          .label.no-underline TEAM Mentor 4.0
+          .label.no-underline TEAM Mentor 4.2
         li
           a(href='mailto:support@securityinnovation.com' title='Email')
             icon.Mail
@@ -20,7 +20,7 @@ mixin copyright
           a(href='http://www.twitter.com/SecInnovation' target='_blank' title='Twitter')
             icon.Twitter
         li
-          a#terms-and-conditions(ui-sref="terms_and_conditions")
+          a#terms-and-conditions(ui-sref="terms-and-conditions")
             icon.Paperclip
 
 mixin tm-support-email
@@ -31,7 +31,7 @@ mixin alert-ok
     .alert.alert-ok(role="alert")
       #message
         span.alert-icon !
-        span.alert-text Info:  {{infoMessage}}
+        span.alert-text {{infoMessage}}
 
 mixin alert-bad
   .section.row(ng-show="showErrorMessage()")

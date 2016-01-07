@@ -1,10 +1,17 @@
 include ../../mixins/globals.jade
 include ../../mixins/articles-mixins.jade
 div(ng-controller="Article_Controller" ng-show="show_Article_Data()")
-  .col-9
+  .col-9(ng-show ="!showRedirectMessage()")
     +article-content
-  .col-3
+    share
+  .div(ng-show ="showRedirectMessage()", style= "position: fixed;left: 20%;top:10%;text-align: center;")
+    .section.row
+      .alert.alert-ok(role="alert")
+        div#message
+          span.alert-icon !
+          span.alert-text {{redirectMessage}}
+          icon.Loading.rotating
+  .col-3(ng-show ="!showRedirectMessage()")
     .section.article-info
       +article-metadata
-      share
       +article-feedback
